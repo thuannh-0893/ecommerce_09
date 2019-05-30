@@ -11,6 +11,7 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+/test
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -47,3 +48,19 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+/public/uploads
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+/config/application.yml
+/config/database.yml
+
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+.rvmrc
+
+.byebug_history
