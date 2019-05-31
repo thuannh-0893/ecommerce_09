@@ -1,5 +1,9 @@
 vi:
   shared:
+    error_messages:
+      form_error: 
+        one: "Biểu mẫu chứa 1 lỗi"
+        other: "Biểu mẫu chứa %{count} lỗi"
   products:
     product:
       view_more: "xem chi tiết"

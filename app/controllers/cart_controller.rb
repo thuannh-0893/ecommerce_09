@@ -29,14 +29,4 @@ class CartController < ApplicationController
     delete_product params[:product_id]
     redirect_to cart_index_path
   end
-
-  private
-
-  def list_products_cart products_in_cart
-    @products = Product.find_product_id(products_in_cart.keys)
-    @products.each do |p|
-      p.total_quantity = products_in_cart[p.id.to_s].to_i
-      p.price_discounted = price_discounted p.price, p.discount
-    end
-  end
 end

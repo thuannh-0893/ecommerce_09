@@ -10,8 +10,11 @@ en:
     error[delete_failed]: "Delete failed"
     error[invalid_activation_link]: "Invalid activation link"
     error[product_not_found]: "Product not found"
+    error[create-order-fail]: "Order failed!"
+    error[create-order-fail-save]: "There was an error saving the order. Please review the ordered products!"
     info[email_reset]: "Email sent with password reset instructions"
     info[signup]: "Please check your email to activate your account."
+    info[create-order]: "Order successfully! Order information has been sent via email. Thank you"
     success[updated_profile]: "Profile updated"
     success[deleted_user]: "User deleted"
     success[welcome]: "Welcome to Sample App!"
@@ -38,6 +41,11 @@ en:
       category:
         name: "Name"
         parent_category: "Parent category"
+      order:
+        receiver_name: "Receiver name"
+        receiver_phone: "Receiver phone"
+        receiver_address: "Receiver address"
+        description: "Description"
   alert:
     success[ajax_shopping]: "Add cart successfully!"
     error[ajax_shopping]: "Error"
@@ -56,6 +64,21 @@ en:
       format:
         format: "%u%n"
         unit: "$"
-        separator: '.'
-        delimiter: ','
+        separator: "."
+        delimiter: ","
         precision: 2
+  activerecord:
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        avatar: "Avatar"
+        password: "Password"
+        password_confirmation: "Confirmation"
+      order:
+        receiver_name: "Receiver name"
+        receiver_phone: "Receiver phone"
+        receiver_address: "Receiver address"
+        description: "Description"

@@ -1,4 +1,5 @@
 <% provide :title, t(".title") %>
+<% provide :button_text, t(".order") %>
 <h1><%= t ".title" %></h1>
 <div class="container">
   <table id="cart" class="table table-hover table-condensed">
@@ -8,7 +9,6 @@
         <th><%= t ".price" %></th>
         <th><%= t ".quantity" %></th>
         <th><%= t ".total" %></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,22 +16,14 @@
     </tbody>
     <tfoot>
       <tr>
-        <td>
-          <%= link_to home_path, class: "btn btn-warning" do %>
-            <i class="fa fa-angle-left"></i> <%= t ".back" %>
-          <% end %>
-        </td>
+        <td></td>
         <td colspan="2" class="hidden-xs"></td>
         <td class="hidden-xs text-center">
-          <strong><%= t ".subtotal"%> <span id="subtotal"><%= number_to_currency get_subtotal_price(@products) %></span></strong>
+          <strong><%= t ".subtotal"%> <%= number_to_currency get_subtotal_price(@products) %></strong>
         </td>
-        <td>
-          <%= link_to new_order_path, class: "btn btn-success btn-block" do %>
-            <%= t ".next" %> <i class="fa fa-angle-right"></i>
-          <% end %>
-        </td>
+        <td></td>
       </tr>
     </tfoot>
   </table>
+  <%= render "form" %>
 </div>
-<%= javascript_include_tag "ajax_cart" %>

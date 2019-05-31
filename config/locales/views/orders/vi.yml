@@ -1,0 +1,9 @@
+vi:
+  orders:
+    new:
+      title: "Đơn đặt hàng"
+      price: "Giá"
+      quantity: "Số lượng"
+      total: "Thành tiền"
+      subtotal: "Tổng tiền:"
+      order: "Đặt hàng"

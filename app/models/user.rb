@@ -8,7 +8,7 @@ class User < ApplicationRecord
   enum role: {customer: 0, admin: 1}
   mount_uploader :avatar, PictureUploader
 
-  validates :name,  presence: true,
+  validates :name, presence: true,
     length: {maximum: Settings.user.name.max_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
@@ -20,6 +20,7 @@ class User < ApplicationRecord
     length: {minimum: Settings.user.password.min_length}
 
   before_save :downcase_email
+  scope :by_name, ->{order(name: :asc)}
 
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
