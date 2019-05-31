@@ -1,0 +1,28 @@
+en:
+  history_orders:
+    index:
+      title: "History Order"
+      order_id: "ID"
+      date: "Purchase date"
+      product: "Product"
+      subtotal: "Subtotal"
+      status: "Status"
+    order:
+      detail: "Detail"
+    modal:
+      detail_order: "Detail Order #"
+      close: "Close"
+      order_id: "ID"
+      date: "Purchase date"
+      subtotal: "Subtotal"
+      status: "Status"
+      receiver_name: "Receiver name"
+      receiver_phone: "Receiver phone"
+      receiver_address: "Receiver address"
+      description: "Description"
+      order_details: "Order Details"
+      product: "Product"
+      quantity: "Quantity"
+      total: "Total"
+      order_info: "Order Information"
+      receiver_info: "Receiver Information"

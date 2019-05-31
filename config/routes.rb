@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/search", to: "searchs#index"
-
+    get "/history-orders", to: "history_orders#index"
     resources :orders, only: %i(new create)
     resources :cart
     resources :users

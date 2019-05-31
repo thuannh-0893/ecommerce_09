@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th><%= t ".order_id" %></th>
+        <th id="product-width"><%= t ".product" %></th>
+        <th><%= t ".date" %></th>
+        <th><%= t ".subtotal" %></th>
+        <th><%= t ".status" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "history_orders/order", collection: @history_orders %>
+    </tbody>
+  </table>
+  <div class="filter-bar d-flex flex-wrap align-items-center">
+    <%= will_paginate %>
+  </div>
+  <%= render partial: "history_orders/modal", collection: @history_orders %>
+</div>
