@@ -1,0 +1,6 @@
+vi:
+  layouts:
+    application:
+      language_en: "English"
+      language_vi: "Tiếng Việt"
+      title: "Ecommerce"
