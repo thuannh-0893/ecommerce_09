@@ -3,3 +3,14 @@ en:
     new:
       title: "Sign up"
       create: "Create"
+    show:
+      title: "Profile"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      edit_profile: "Edit profile"
+      my_history: "My order history"
+    edit:
+      title: "Edit profile"
+      edit: "Edit"
