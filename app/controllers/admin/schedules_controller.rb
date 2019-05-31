@@ -5,8 +5,7 @@ class Admin::SchedulesController < Admin::BaseController
   authorize_resource :schedule
 
   def index
-    @schedules = Schedule.paginate page: params[:page],
-      per_page: Settings.per_page
+    @schedules = Schedule.page(params[:page]).per Settings.per_page
   end
 
   def create

@@ -4,8 +4,7 @@ class Admin::UsersController < Admin::BaseController
   authorize_resource
 
   def index
-    @users = User.by_name.paginate page: params[:page],
-      per_page: Settings.per_page
+    @users = User.by_name.page(params[:page]).per Settings.per_page
   end
 
   def new

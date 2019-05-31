@@ -6,8 +6,8 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Product.user_request(current_user.id)
-                       .by_updated_at.paginate page: params[:page],
-                        per_page: Settings.products.per_page
+                       .by_updated_at.page(params[:page])
+                       .per Settings.products.per_page
   end
 
   def show; end

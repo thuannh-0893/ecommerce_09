@@ -23,6 +23,7 @@ gem "groupdate"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "kaminari", git: "https://github.com/kaminari/kaminari"
 gem "mini_magick", "~> 4.8"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "nested_form_fields"
@@ -40,9 +41,9 @@ gem "sass-rails", "~> 5.0"
 gem "search_cop"
 gem "uglifier", ">= 1.3.0"
 gem "wicked_pdf"
-gem "will_paginate"
 gem "wkhtmltopdf-binary"
 gem "zip-zip"
+# gem "will_paginate"
 # gem "capistrano-rails", group: :development
 # gem "mini_racer", platforms: :ruby
 

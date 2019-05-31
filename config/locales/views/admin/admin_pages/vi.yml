@@ -3,6 +3,7 @@ vi:
     admin_pages:
       index:
         title: "Trang quản lí"
+        charts: "Biểu đồ"
         users: "Người dùng"
         categories: "Danh mục"
         products: "Sản phẩm"
