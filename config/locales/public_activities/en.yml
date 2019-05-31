@@ -19,3 +19,8 @@ en:
         message: "Your order has been completed"
       canceled:
         message: "Your order has been canceled"
+    schedule:
+      on_schedule:
+        message: "%{schedule} started"
+      off_schedule:
+        message: "%{schedule} end"

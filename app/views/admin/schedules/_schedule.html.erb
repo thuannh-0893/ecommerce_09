@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= counter_index schedule_counter %>
+  </td>
+  <td><a href=""><%= schedule.name %></a></td>
+  <td><%= l schedule.start_time %></td>
+  <td><%= l schedule.end_time %></td>
+  <td><%= schedule.discount %></td>
+  <td>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-<%= schedule.id %>">
+      <%= t ".detail" %>
+    </button>
+  </td>
+  <td>
+    <%= link_to(admin_schedule_path(schedule), method: :delete, data: { confirm: t(".confirm") }) do %>
+      <span class="far fa-trash-alt"></span> <%= t ".delete" %>
+    <% end %>
+  </td>
+</tr>

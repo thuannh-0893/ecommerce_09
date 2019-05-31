@@ -9,6 +9,9 @@ vi:
         exportCSV: "Xuất tệp CSV"
         exportExcel: "Xuất tệp Excel"
         exportCSV_template: "Xuất tệp CSV mẫu"
+        scheduler: "Lịch khuyến mãi"
+        name: "Tên"
+        search: "Tìm kiếm"
       new:
         title: "Thêm sản phẩm mới"
         add: "Thêm"
@@ -18,3 +21,6 @@ vi:
         edit: "Lưu thay đổi"
         home: "Trang quản lí"
         destroy: "Xóa"
+      modal:
+        scheduler_title: "Lịch khuyến mãi"
+        add: "Thêm lịch"

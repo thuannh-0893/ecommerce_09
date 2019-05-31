@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   has_many :products_orders, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :item_photos, dependent: :destroy
+  has_many :product_schedules, dependent: :destroy
 
   delegate :name, to: :category, prefix: true
 
@@ -21,12 +22,13 @@ class Product < ApplicationRecord
   scope :find_product_id, ->(id){where id: id}
   scope :lasted, ->{order created_at: :desc}
   scope :high_discount, ->{order discount: :desc}
-  search_scope :search do
+  search_scope :search_product_public do
     attributes all: [:name, :description]
     options :all, type: :fulltext
     attributes category: "category.name"
     options :category, type: :fulltext
   end
+  scope :activated, ->{where activated: true}
   scope :not_yet_activate, ->{where activated: false}
   scope :select_price_discounted,
     ->{select("products.*", "price*(100-discount) as price_discounted")}

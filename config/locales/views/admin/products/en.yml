@@ -9,6 +9,9 @@ en:
         exportCSV: "Export CSV"
         exportExcel: "Export Excel"
         exportCSV_template: "Export Template"
+        scheduler: "Promotion schedule"
+        name: "Name"
+        search: "Search"
       new:
         title: "Add new product"
         add: "Add"
@@ -18,3 +21,6 @@ en:
         edit: "Save changes"
         home: "Dashboard"
         destroy: "Destroy"
+      modal:
+        scheduler_title: "Promotion schedule"
+        add: "Add schedule"

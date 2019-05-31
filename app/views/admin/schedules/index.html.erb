@@ -1,50 +1,54 @@
 <% provide :title, t(".title") %>
 <section class="section_gap_bottom">
   <div class="main-content">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+      <ul class="breadcrumb">
+        <li>
+          <i class="ace-icon fa fa-home home-icon"></i>
+          <%= link_to t(".home"), admin_path %>
+        </li>
+        <li class="active"><%= t ".title" %></li>
+      </ul>
+      <!-- /.breadcrumb -->
+    </div>
     <div class="main-content-inner container">
       <div class="page-content">
         <div class="page-header">
+          <h1><%= t ".title" %></h1>
           <hr>
         </div>
         <!-- /.page-header -->
         <div class="row">
           <div class="col-xs-12">
-            <h5>
-              <%= link_to(new_request_path) do %>
-                <span class="fas fa-plus"><%= t ".new" %></span>
-              <% end %>
-            </h5>
-            <!-- div.dataTables_borderWrap -->
             <div>
-              <% if @requests.any? %>
+              <% if @schedules.any? %>
                 <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
                       <th>ID</th>
                       <th><%= t ".name" %></th>
-                      <th><%= t ".picture" %></th>
-                      <th><%= t ".price" %></th>
-                      <th><%= t ".category" %></th>
-                      <th><%= t ".created_at" %></th>
-                      <th><%= t ".updated_at" %></th>
-                      <th><%= t ".status" %></th>
+                      <th><%= t ".start_time" %></th>
+                      <th><%= t ".end_time" %></th>
+                      <th><%= t ".discount" %></th>
+                      <th></th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <%= render partial: "requests/request", collection: @requests %>
+                    <%= render @schedules %>
                   </tbody>
                 </table>
               <% else %>
-                <%= t ".not_have_product" %>
+                <%= t ".empty" %>
               <% end %>
             </div>
           </div>
         </div>
       </div>
+      <%= paginate @schedules %>
       <!-- /.page-content -->
-      <%= paginate @requests %>
     </div>
   </div>
+  <%= render partial: "admin/schedules/modal", collection: @schedules %>
   <!-- /.main-content -->
 </section>

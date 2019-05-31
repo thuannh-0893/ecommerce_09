@@ -5,8 +5,7 @@ class Admin::OrdersController < Admin::BaseController
 
   def index
     @orders = Order.by_created_at.includes(:products_orders, :products)
-                   .paginate page: params[:page],
-                     per_page: Settings.products.per_page
+                   .page(params[:page]).per Settings.products.per_page
   end
 
   def update

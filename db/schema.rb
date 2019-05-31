@@ -10,6 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_06_24_020748) do
+=======
+ActiveRecord::Schema.define(version: 2019_06_17_060709) do
+>>>>>>> fe0c182... Add gem devise
+=======
+>>>>>>> ransack
 ActiveRecord::Schema.define(version: 2019_06_24_060710) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,6 +45,10 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
+<<<<<<< HEAD
+=======
+>>>>>>> 5e5fce2... Add realtime notification
+>>>>>>> ransack
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -85,6 +99,15 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "product_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "schedule_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_schedules_on_product_id"
+    t.index ["schedule_id"], name: "index_product_schedules_on_schedule_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -100,6 +123,17 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["name", "description"], name: "name", type: :fulltext
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    t.index ["name", "description"], name: "name_2", type: :fulltext
+>>>>>>> Rufus Schedule
+=======
+    t.index ["name", "description"], name: "name_2", type: :fulltext
+>>>>>>> 584ce39... ransack
+>>>>>>> ransack
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -123,6 +157,16 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_rates_on_product_id"
     t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.float "discount", default: 0.0
+    t.integer "activated", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -153,6 +197,8 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
   add_foreign_key "history_views", "products"
   add_foreign_key "history_views", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "product_schedules", "products"
+  add_foreign_key "product_schedules", "schedules"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "products_orders", "orders"

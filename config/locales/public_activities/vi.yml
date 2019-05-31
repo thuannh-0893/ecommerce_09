@@ -19,3 +19,8 @@ vi:
         message: "Đơn hàng của bạn đã hoàn thành"
       canceled:
         message: "Đơn hàng của bạn đã bị hủy"
+    schedule:
+      on_schedule:
+        message: "%{schedule} đã bắt đầu"
+      off_schedule:
+        message: "%{schedule} đã kết thúc"
