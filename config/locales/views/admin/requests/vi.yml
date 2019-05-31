@@ -1,0 +1,10 @@
+vi:
+  admin:
+    requests:
+      index:
+        title: "Sản phẩm được đề xuất"
+        home: "Trang quản lí"
+      request:
+        confirm: "Bạn có chắc muốn xóa?"
+        aprove: "Chấp nhận"
+        delete: "Xóa"

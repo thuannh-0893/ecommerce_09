@@ -1,7 +1,7 @@
 <tr>
   <td><%= product_counter + 1 %></td>
-  <td><a href=""><%= product.name %></a></td>
-  <td><%= image_tag "p6.jpg", size: "40" %></td>
+  <td><%= link_to product.name, product, target: "_blank"%></td>
+  <td><%= image_tag product.item_photos.first.photo_url, class: "table-img" %></td>
   <td><%= number_to_currency(product.price) %></td>
   <td><%= product.quantity %></td>
   <td><%= product.discount %></td>

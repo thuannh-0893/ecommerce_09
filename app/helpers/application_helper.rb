@@ -22,4 +22,8 @@ module ApplicationHelper
   def sub_comments parent_id
     @sub_comments = Comment.sub_comments(parent_id).by_date
   end
+
+  def counter_index index
+    index + Settings.add_index
+  end
 end

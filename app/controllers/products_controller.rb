@@ -1,8 +1,7 @@
 class ProductsController < ApplicationController
   include ProductsHelper
-
-  before_action :load_categories, except: %i(destroy show)
-  before_action :find_product, except: %i(new create index filter)
+  before_action :load_categories
+  before_action :find_product, only: :show
 
   def index
     shop_parmas = params.slice(:rating,

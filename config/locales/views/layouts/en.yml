@@ -13,6 +13,7 @@ en:
       login: "Login"
       signup: "Sign up"
       logout: "Logout"
+      request_product: "Requested products"
       my_orders: "My orders"
       dashboard: "Dash board"
       hot_trend: "Hot trend"
