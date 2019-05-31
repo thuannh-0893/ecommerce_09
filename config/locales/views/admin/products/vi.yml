@@ -5,3 +5,11 @@ vi:
         title: "Quản lí sản phẩm"
         home: "Trang quản lí"
         new: "Thêm sản phẩm mới"
+      new:
+        title: "Thêm sản phẩm mới"
+        add: "Thêm"
+        home: "Trang quản lí"
+      edit:
+        title: "Chỉnh sửa sản phẩm"
+        edit: "Lưu thay đổi"
+        home: "Trang quản lí"

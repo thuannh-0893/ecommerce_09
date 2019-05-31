@@ -1,7 +1,7 @@
 <!-- single product -->
 <div class="col-sm-4">
   <div class="single-product">
-    <%= image_tag "p6.jpg", alt: "product" %>
+    <%= image_tag product.picture.url, alt: product.name %>
     <div class="product-details">
       <!-- sample data -->
       <h6><%= product.name %></h6>

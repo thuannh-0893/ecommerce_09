@@ -18,4 +18,16 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true,
     length: {minimum: Settings.user.password.min_length}
+
+  before_save :downcase_email
+
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password? token
+  end
+
+  def downcase_email
+    self.email = email.downcase
+  end
 end

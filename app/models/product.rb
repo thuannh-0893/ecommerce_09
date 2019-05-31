@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :products_orders, dependent: :destroy
   has_many :comments, dependent: :destroy
+  mount_uploader :picture, PictureUploader
 
   scope :by_updated_at, ->{order(updated_at: :desc)}
   scope :find_product_id, ->(id){where id: id}

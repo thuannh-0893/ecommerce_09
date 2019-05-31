@@ -3,5 +3,13 @@ en:
     products:
       index:
         title: "Products"
-        home: "Home"
+        home: "Dashboard"
         new: "Add new product"
+      new:
+        title: "Add new product"
+        add: "Add"
+        home: "Dashboard"
+      edit:
+        title: "Edit product"
+        edit: "Save changes"
+        home: "Dashboard"
