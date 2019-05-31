@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   before_action :admin_user
   before_action :find_category, except: %i(new create index)
-  before_action :list_categories
+  before_action :load_categories
   before_action :list_parent_categories
 
   def index

@@ -73,11 +73,12 @@
         </div>
       </li>
     </ul>
-    <form class="navbar-form navbar-right">
+    <%= form_tag(search_path, method: :get, class: "navbar-form navbar-right") do %>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <%= text_field_tag :keyword, "", class: "form-control", placeholder: "Search" %>
+        <%= submit_tag "Search", id: "submitsearch", tabindex: "-1" %>
       </div>
-    </form>
+    <% end %>
   </div>
   <!-- /.navbar-collapse -->
 </nav>

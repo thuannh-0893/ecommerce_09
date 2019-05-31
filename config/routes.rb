@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    # get "/orders", to: "orders#new"
-    # post "/orders", to: "orders#create"
+    get "/search", to: "searchs#index"
+
     resources :orders, only: %i(new create)
     resources :users
     resources :cart

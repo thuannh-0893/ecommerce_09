@@ -9,6 +9,8 @@ class Product < ApplicationRecord
 
   scope :by_updated_at, ->{order(updated_at: :desc)}
   scope :find_product_id, ->(id){where id: id}
+  s_query = "MATCH (name, description) AGAINST (? IN NATURAL LANGUAGE MODE)"
+  scope :search, ->(keyword){where(s_query, keyword)}
 
   attr_accessor :total_quantity, :price_discounted
 

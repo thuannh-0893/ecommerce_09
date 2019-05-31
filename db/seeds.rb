@@ -1,3 +1,6 @@
+sql_products = "ALTER TABLE products ADD FULLTEXT (name, description)"
+ActiveRecord::Base.connection.execute(sql)
+
 categories = []
 15.times do |n|
   name = Faker::Lorem.word + Faker::Lorem.word

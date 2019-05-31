@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :list_categories
+  before_action :load_categories
   before_action :find_product, except: %i(new create index)
   before_action :sub_cat, except: %i(index show destroy)
 
