@@ -12,16 +12,25 @@
       </li>
     </ul>
     <ul class="userbar nav navbar-nav navbar-right">
-      <li>
-        <%= link_to(signup_path) do %>
-          <span class="glyphicon glyphicon-user"></span> <%= t ".signup" %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to("#") do %>
-          <span class="glyphicon glyphicon-log-in"></span> <%= t ".login" %>
-        <% end %>
-      </li>
+      <% if logged_in? %>
+        <li><%= link_to @current_user.name, current_user %></li>
+        <% if @current_user.admin? %>
+          <li><%= link_to t(".dashboard"), "#" %></li>
+        <% end %>>
+        <li><%= link_to t(".my_orders"), "#" %></li>
+        <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+      <% else %>
+        <li>
+          <%= link_to(signup_path) do %>
+            <span class="glyphicon glyphicon-user"></span> <%=t(".signup")%>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(login_path) do %>
+            <span class="glyphicon glyphicon-log-in"></span> <%=t(".login")%>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
     <ul class="languages">
       <%= link_to t(".language_en"), locale: :en %>

@@ -1,0 +1,8 @@
+vi:
+  sessions:
+    new:
+      title: "Đăng nhập"
+      signup: "Đăng kí ngay!"
+      new_user: "Chưa có tài khoản?"
+      remember: "Duy trì đăng nhập"
+      forgot_password: "Quên mật khẩu"
