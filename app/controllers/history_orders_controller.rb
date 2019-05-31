@@ -1,5 +1,4 @@
 class HistoryOrdersController < ApplicationController
-  before_action :load_categories
   before_action :logged_in_user, only: :index
 
   def index

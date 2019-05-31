@@ -15,6 +15,7 @@ vi:
     info[email_reset]: "Email đã được gửi đi với hướng dẫn đặt lại mật khẩu"
     info[signup]: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản"
     info[create-order]: "Đặt hàng thành công! Thông tin đặt hàng đã được gửi qua email. Cảm ơn bạn"
+    info[create-order-fail]: "Đặt hàng không thành công!"
     success[updated_profile]: "Đã cập nhận hồ sơ"
     success[deleted_user]: "Đã xóa người dùng"
     success[welcome]: "Chào mừng đến với Sample App!"

@@ -16,6 +16,26 @@ class Product < ApplicationRecord
   scope :high_discount, ->{order discount: :desc}
   s_query = "MATCH (name, description) AGAINST (? IN NATURAL LANGUAGE MODE)"
   scope :search, ->(keyword){where(s_query, keyword)}
+  scope :select_price_discounted,
+    ->{select("products.*", "price*(100-discount) as price_discounted")}
+
+  scope :sort_product, (lambda do |sort_option|
+    case sort_option
+    when "sort_a_z"
+      order(name: :asc)
+    when "sort_z_a"
+      order(name: :desc)
+    when "sort_new"
+      order(created_at: :desc)
+    when "sort_price_a_z"
+      order(price_discounted: :desc)
+    when "sort_price_z_a"
+      order(price_discounted: :asc)
+    end
+  end)
+  scope :rating, ->(rating_option){where("rating > ?", rating_option)}
+  scope :price_min, ->(price_min){where("price > ?", price_min)}
+  scope :price_max, ->(price_max){where("price < ?", price_max)}
 
   attr_accessor :total_quantity, :price_discounted
 
