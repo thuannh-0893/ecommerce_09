@@ -7,6 +7,7 @@ $gray-medium-light: #eaeaea;
 $gray-light: #777;
 $gray: #555;
 $gray-darker: #222;
+$transparent-black: rgba(0, 0, 0, .15);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -19,6 +20,7 @@ $gray-darker: #222;
 body {
   padding-top: 60px;
   width: 100%;
+  margin-top: 70px;
 }
 
 section {
@@ -93,13 +95,88 @@ p {
   right: 20px;
 }
 
+.userbar {
+  margin-right: 150px;
+}
+
+/* menu header*/
+.menubar {
+  margin-top: 50px;
+}
+
+.navbar-nav li>span {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+  margin-bottom: 1rem;
+}
+
+/* breakpoint and up - mega dropdown styles */
+@media screen and (min-width: 767px) {
+
+  /* remove the padding from the navbar so the dropdown hover state is not broken */
+  .navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 0 10px;
+  }
+
+  /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+  .navbar .nav-item {
+    padding: .5rem .5rem;
+    margin: 0 .25rem;
+  }
+
+  /* makes the dropdown full width  */
+  .navbar .dropdown {
+    position: static;
+  }
+
+  .navbar .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    /*  height of nav-item  */
+    top: 45px;
+
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  /* shows the dropdown menu on hover */
+  .navbar .dropdown:hover .dropdown-menu,
+  .navbar .dropdown .dropdown-menu:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  .navbar .dropdown-menu {
+    border: 1px solid $transparent-black;
+    background-color: white;
+  }
+
+}
+
 /* footer */
 
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  position: relative;
+  min-height: 70px;
+  border: 1px solid transparent;
+  background-color: $gray-darker;
+  border-color: black;
 
   a {
     color: $gray;
@@ -107,10 +184,6 @@ footer {
     &:hover {
       color: $gray-darker;
     }
-  }
-
-  small {
-    float: left;
   }
 
   ul {

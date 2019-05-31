@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t ".title" %></title>
+    <title><%= t ".base_title" %> | <%= yield(:title) %></title>
     <%= render "layouts/rails_default" %>
     <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-    <div class="languages">
-      <%= link_to t(".language_en"), locale:"en" %>
-      <%= link_to t(".language_vi"), locale:"vi" %>
-    </div>
     <%= render "layouts/header" %>
     <div class="container">
       <%= yield %>

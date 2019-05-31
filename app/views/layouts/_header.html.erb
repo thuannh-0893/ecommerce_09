@@ -5,10 +5,72 @@
       <li><%= link_to t(".home"), home_path %></li>
       <li><%= link_to t(".contact"), contact_path %></li>
       <li><%= link_to t(".about"), about_path %></li>
+      <li>
+        <%= link_to("#") do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span> <%=t(".cart", count: 2)%>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="userbar nav navbar-nav navbar-right">
+      <li>
+        <%= link_to("#") do %>
+          <span class="glyphicon glyphicon-user"></span> <%= t ".signup" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to("#") do %>
+          <span class="glyphicon glyphicon-log-in"></span> <%= t ".login" %>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="languages">
+      <%= link_to t(".language_en"), locale:"en" %>
+      <%= link_to t(".language_vi"), locale:"vi" %>
     </ul>
   </nav>
-  <div class="languages">
-    <%= link_to t(".language_en"), locale:"en" %>
-    <%= link_to t(".language_vi"), locale:"vi" %>
-  </div>
 </header>
+<nav class="menubar navbar navbar-fixed-top navbar-inverse">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#"><%= t ".hot_trend" %></a></li>
+      <li><a href="#"><%= t ".new_products" %></a></li>
+      <li><a href="#"><%= t ".sale_off" %></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= t ".categories" %> <span class="caret"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="container">
+            <div class="row">
+              <% 4.times.each do |single| %>
+                <div class="col col-xs-6 col-md-3">
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <span class="nav-link text-bold">Category</span>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link item</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link item</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.col  -->
+              <% end %>
+            </div>
+          </div>
+          <!--  /.container  -->
+        </div>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>

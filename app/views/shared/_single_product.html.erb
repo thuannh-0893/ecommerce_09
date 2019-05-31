@@ -1,0 +1,33 @@
+<!-- single product -->
+<div class="col-sm-4">
+  <div class="single-product">
+    <%= image_tag "p6.jpg", alt: "product" %>
+    <div class="product-details">
+      <!-- sample data -->
+      <h6>addidas New Hammer sole
+        for Sports person</h6>
+      <div class="price">
+        <h6>$150.00</h6>
+        <h6 class="l-through">$210.00</h6>
+      </div>
+      <div class="rating_list">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <!-- end sample data -->
+      <div class="prd-bottom">
+        <a href="" class="social-info">
+          <span class="fas fa-cart-plus"></span>
+          <p class="hover-text"><%= t (".add_to_cart") %></p>
+        </a>
+        <a href="" class="social-info">
+          <span class="fas fa-info"></span>
+          <p class="hover-text"><%= t (".view_more") %></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

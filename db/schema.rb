@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_05_31_023218) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["parent_id"], name: "fk_rails_82f48f7407"
   end
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.text "content"
     t.bigint "parent_id"
     t.bigint "user_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "history_views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "history_views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.datetime "viewed_at"
     t.bigint "user_id"
     t.bigint "product_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["user_id"], name: "index_history_views_on_user_id"
   end
 
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "receiver_name"
     t.string "receiver_phone"
     t.string "receiver_address"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.float "price"
     t.integer "quantity", default: 0
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
-  create_table "products_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "products_orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "quantity", default: 0
     t.float "actual_price"
     t.bigint "order_id"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["product_id"], name: "index_products_orders_on_product_id"
   end
 
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
     t.bigint "user_id"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_023218) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
