@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user
+  authorize_resource
+
   before_action :find_order, only: :show
 
   def show; end
@@ -9,7 +10,7 @@ class OrdersController < ApplicationController
     list_products_cart products_in_cart
     return @order = Order.new if @products.any?
     flash[:danger] = t "helpers.info[access_denied]"
-    redirect_to index_cart_path
+    redirect_to cart_index_path
   end
 
   def create
@@ -23,7 +24,7 @@ class OrdersController < ApplicationController
       flash[:info] = t "helpers.info[create-order]"
       redirect_to order_path(@order)
     end
-  rescue StandardError
+  rescue ActiveRecord::RecordInvalid
     flash[:danger] = t "helpers.error[create-order-fail-save]"
     render :new
   end

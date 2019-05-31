@@ -50,6 +50,8 @@ en:
     success[add_to_products]: "Added to list products"
     warning[login]: "Please log in."
     warning[not_active]: "Account not activated yet. Check your email for the activation link."
+    warning[login_cancan]: "You have no rights. Please login to check."
+    warning[not_authorized]: "You are not authorized to access this page."
     max_size: "should be less than %{size}MB"
     label:
       user:
