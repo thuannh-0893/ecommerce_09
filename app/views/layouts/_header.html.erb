@@ -7,13 +7,13 @@
       <li><%= link_to t(".about"), about_path %></li>
       <li>
         <%= link_to("#") do %>
-          <span class="glyphicon glyphicon-shopping-cart"></span> <%=t(".cart", count: 2)%>
+          <span class="glyphicon glyphicon-shopping-cart"></span> <%= t ".cart", count: 2 %>
         <% end %>
       </li>
     </ul>
     <ul class="userbar nav navbar-nav navbar-right">
       <li>
-        <%= link_to("#") do %>
+        <%= link_to(signup_path) do %>
           <span class="glyphicon glyphicon-user"></span> <%= t ".signup" %>
         <% end %>
       </li>
@@ -24,8 +24,8 @@
       </li>
     </ul>
     <ul class="languages">
-      <%= link_to t(".language_en"), locale:"en" %>
-      <%= link_to t(".language_vi"), locale:"vi" %>
+      <%= link_to t(".language_en"), locale: :en %>
+      <%= link_to t(".language_vi"), locale: :vi %>
     </ul>
   </nav>
 </header>

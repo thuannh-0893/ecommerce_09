@@ -1,5 +1,6 @@
 en:
   shared:
-    single_product:
+  products:
+    product:
       view_more: "view more"
       add_to_cart: "add to cart"

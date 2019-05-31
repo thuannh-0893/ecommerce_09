@@ -1,0 +1,5 @@
+vi:
+  users:
+    new:
+      title: "Đăng kí"
+      create: "Tạo tài khoản"

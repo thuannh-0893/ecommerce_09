@@ -1,3 +1,14 @@
 vi:
-  language_en: "English"
-  language_vi: "Tiếng Việt"
+  helpers:
+    label:
+      user:
+        name: "Tên"
+        email: "Email"
+        phone: "Điện thoại"
+        address: "Địa chỉ"
+        avatar: "Ảnh đại diện"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+      session:
+        email: "Email"
+        password: "Mật khẩu"

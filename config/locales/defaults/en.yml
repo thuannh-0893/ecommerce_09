@@ -1,3 +1,14 @@
 en:
-  language_en: "English"
-  language_vi: "Tiếng Việt"
+  helpers:
+    label:
+      user:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        avatar: "Avatar"
+        password: "Password"
+        password_confirmation: "Confirmation"
+      session:
+        email: "Email"
+        password: "Password"
