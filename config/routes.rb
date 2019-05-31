@@ -7,18 +7,21 @@ Rails.application.routes.draw do
     get "/home", to: "static_pages#home"
     get "/contact", to: "static_pages#contact"
     get "/about", to: "static_pages#about"
+    get "/search", to: "static_pages#search"
     get "/admin", to: "admin/admin_pages#index"
-    get "/signup", to: "users#new"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/search", to: "searchs#index"
 
     resources :orders, only: %i(new create)
-    resources :users
     resources :cart
+    resources :users
+    get "/signup", to: "users#new"
+    resources :products
+    get "/shop", to: "products#index"
     namespace :admin do
-      resources :categories
+      resources :categories, except: %i(show)
       resources :products
     end
   end

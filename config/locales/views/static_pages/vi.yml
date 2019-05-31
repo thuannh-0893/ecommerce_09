@@ -8,5 +8,16 @@ vi:
       description_html: "Trang liên hệ"
     home:
       title: "Trang chủ"
-    admin:
-      title: "Trang quản lí"
+      lasted-products: "Sản phẩm mới"
+      saleoff-products: "Khuyến mãi"
+    feature:
+      free-dilivery: "Miễn phí vận chuyển"
+      return-policy: "Chính sách đổi trả"
+      support: "Hỗ trợ 24/7"
+      secure-payment: "Bảo mật thanh toán"
+    product_feature:
+      hot-trend: "Xu hướng"
+      new-products: "Sản phẩm mới"
+      sale-off: "Khuyến mãi"
+      high-rating: "Đánh giá cao"
+      shop: "Cửa hàng"

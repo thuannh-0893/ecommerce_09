@@ -8,5 +8,16 @@ en:
       description_html: "Contact page"
     home:
       title: "Home"
-    admin:
-      title: "Admin page"
+      lasted-products: "Lasted products"
+      saleoff-products: "Coming products"
+    feature:
+      free-dilivery: "Free Delivery"
+      return-policy: "Return Policy"
+      support: "24/7 Support"
+      secure-payment: "Secure Payment"
+    product_feature:
+      hot-trend: "Hot trend"
+      new-products: "New products"
+      sale-off: "Sale off"
+      high-rating: "High rating"
+      shop: "Shop"
