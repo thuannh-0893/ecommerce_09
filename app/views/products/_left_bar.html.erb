@@ -2,7 +2,7 @@
   <div class="sidebar-categories">
     <div class="head"><%= t ".categories" %></div>
     <ul class="main-categories">
-      <% @list_categories.each do |category| %>
+      <% @categories.each do |category| %>
         <% if category.parent_id.nil? %>
           <li class="main-nav-list">
             <div class="row col-lg-12">

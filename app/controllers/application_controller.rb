@@ -38,6 +38,6 @@ class ApplicationController < ActionController::Base
   end
 
   def load_categories
-    @list_categories = Category.all.by_name
+    @categories = Category.by_name
   end
 end

@@ -7,8 +7,10 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   mount_uploader :picture, PictureUploader
 
-  scope :by_updated_at, ->{order(updated_at: :desc)}
+  scope :by_updated_at, ->{order updated_at: :desc}
   scope :find_product_id, ->(id){where id: id}
+  scope :lasted, ->{order created_at: :desc}
+  scope :high_discount, ->{order discount: :desc}
   s_query = "MATCH (name, description) AGAINST (? IN NATURAL LANGUAGE MODE)"
   scope :search, ->(keyword){where(s_query, keyword)}
 
