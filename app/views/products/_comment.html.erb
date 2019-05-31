@@ -8,7 +8,7 @@
               <div class="comment_item">
                 <div class="media">
                   <div class="d-flex">
-                    <%= image_tag comment.user.avatar.url%>
+                    <%= image_tag comment.user.avatar.url %>
                   </div>
                   <div class="media-body">
                     <h4><%= comment.user.name %></h4>
@@ -23,7 +23,7 @@
                 <div class="reply_comment_item reply" data="<%= comment.id %>">
                   <div class="media">
                     <div class="d-flex">
-                      <%= image_tag reply_comment.user.avatar.url, size: "50x50"%>
+                      <%= image_tag reply_comment.user.avatar.url %>
                     </div>
                     <div class="media-body">
                       <h4><%= reply_comment.user.name %></h4>
@@ -52,9 +52,9 @@
     </div>
     <div class="col-lg-6">
       <div class="review_box">
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <h4><%= t ".post_a_comment"%></h4>
-          <form id="fComment" action="javascript:void(0)" class="row contact_form">
+          <form action="javascript:void(0)" class="row contact_form">
             <div class="col-md-12">
               <div class="form-group">
                 <textarea pid="<%= @product.id %>" parent_id="" class="form-control"

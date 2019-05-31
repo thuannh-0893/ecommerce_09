@@ -3,14 +3,21 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
+    # devise_for :users
+    devise_for :users, controllers: {
+      registrations: "users/registrations"
+    }
+    devise_scope :user do
+      get "/login", to: "devise/sessions#new"
+      post "/login", to: "devise/sessions#create"
+      delete "/logout", to: "devise/sessions#destroy"
+      get "/signup", to: "devise/registrations#new"
+    end
 
     get "/home", to: "static_pages#home"
     get "/contact", to: "static_pages#contact"
     get "/about", to: "static_pages#about"
     get "/admin", to: "admin/admin_pages#index"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     get "/search", to: "searchs#index"
     get "/history-orders", to: "history_orders#index"
     post "/rates", to: "rates#create"
@@ -19,9 +26,8 @@ Rails.application.routes.draw do
     resources :orders, only: %i(new create show)
     resources :cart, only: %i(index create update)
     delete "cart_destroy", to: "cart#destroy"
-    resources :users
+    resources :users, only: %i(show)
     resources :requests
-    get "/signup", to: "users#new"
     resources :products, only: %i(index show)
     get "/shop", to: "products#index"
     resources :item_photos, only: :destroy

@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <% if current_user.history_views.any? %>
     <% current_user.history_views.each do |h| %>
       <div class="col-lg-4 col-md-4 col-sm-6 mb-20">

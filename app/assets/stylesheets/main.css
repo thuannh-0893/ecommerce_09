@@ -8,6 +8,11 @@
 /* Wide Mobile Layout: 480px */
 /* Section Gaps css
 ============================================================================================ */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .no-padding {
   padding: 0;
 }
@@ -6883,6 +6888,7 @@ label {
 
 .login_form_inner .reg_form {
   padding-top: 60px;
+  justify-content: center;
 }
 
 .login_form_inner .reg_form h3 {

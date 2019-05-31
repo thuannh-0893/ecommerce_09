@@ -74,3 +74,8 @@ $(function () {
   var url = $(location).attr('href');
   $('.fb-share-button').attr('data-href', url)
 });
+
+$(function () {
+  $('div.alert-notice').addClass('alert-success');
+  $('div.alert-alert').addClass('alert-danger');
+});

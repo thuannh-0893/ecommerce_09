@@ -1,11 +1,11 @@
 <%= form_for(@order) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.label :receiver_name %>
-  <%= f.text_field :receiver_name, class: "form-control", value: @current_user.name %>
+  <%= f.text_field :receiver_name, class: "form-control", value: current_user.name %>
   <%= f.label :receiver_phone %>
-  <%= f.telephone_field :receiver_phone, class: "form-control", value: @current_user.phone %>
+  <%= f.telephone_field :receiver_phone, class: "form-control", value: current_user.phone %>
   <%= f.label :receiver_address %>
-  <%= f.text_field :receiver_address, class: "form-control", value: @current_user.address %>
+  <%= f.text_field :receiver_address, class: "form-control", value: current_user.address %>
   <%= f.label :description %>
   <%= f.text_area :description, class: "form-control" %>
   <%= f.submit yield(:button_text), class: "primary-btn" %>
