@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get "/home", to: "static_pages#home"
     get "/contact", to: "static_pages#contact"
     get "/about", to: "static_pages#about"
+    get "/admin", to: "admin/admin_pages#index"
     get "/signup", to: "users#new"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
@@ -15,5 +16,8 @@ Rails.application.routes.draw do
     get "/cart", to: "cart#show"
     delete "/cart", to: "cart#destroy"
     resources :users
+    namespace :admin do
+      resources :categories
+    end
   end
 end

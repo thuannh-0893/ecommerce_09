@@ -1,0 +1,20 @@
+en:
+  admin:
+    categories:
+      index:
+        title: "Categories"
+        name: "Category"
+        parent_name: "Parent category"
+        new: "Add new category"
+        home: "Home"
+        empty: "No category"
+      category:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "You sure?"
+      new:
+        title: "New category"
+        add: "Add category"
+      edit:
+        title: "Edit category"
+        edit: "Edit"

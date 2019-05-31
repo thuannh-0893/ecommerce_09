@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= category_counter + 1 %>
+  </td>
+  <td><a href=""><%= category.name %></a></td>
+  <% if (parent_category = find_parent category.parent_id) %>
+    <td><%= parent_category.name %></td>
+  <% else %>
+    <td></td>
+  <% end %>
+  <td>
+    <%= link_to(edit_admin_category_path(category)) do %>
+      <span class="far fa-edit"></span> <%= t ".edit" %>
+    <% end %>
+    <%= link_to(admin_category_path(category), method: :delete, data: { confirm: t(".confirm") }) do %>
+      <span class="far fa-trash-alt"></span> <%= t ".delete" %>
+    <% end %>
+  </td>
+</tr>

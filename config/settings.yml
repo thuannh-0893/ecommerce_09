@@ -9,6 +9,9 @@ user:
   password:
     min_length: 6
   size: 80
+category:
+  max_length: 50
+  min_length: 5
 per_page: 10
 accept_image: "image/jpeg,image/gif,image/png"
 products:

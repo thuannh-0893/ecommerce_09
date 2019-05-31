@@ -1,0 +1,10 @@
+en:
+  admin:
+    admin_pages:
+      index:
+        title: "Admin page"
+        users: "Users"
+        categories: "Categories"
+        products: "Products"
+        orders: "Orders"
+        requested_products: "Requested products"
