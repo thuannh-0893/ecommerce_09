@@ -6,7 +6,7 @@ class Admin::RequestsController < ApplicationController
   def index
     @requests = Product.not_yet_activate.by_updated_at
                        .paginate page: params[:page],
-                        per_page: Settings.products.per_page
+                          per_page: Settings.products.per_page
   end
 
   def update

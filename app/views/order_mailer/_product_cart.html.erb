@@ -1,0 +1,9 @@
+<tr>
+  <td><%= counter_index product_cart_counter %></td>
+  <td>
+    <%= product_cart.product.name %>
+  </td>
+  <td><%= number_to_currency product_cart.product.price_discounted %></td>
+  <td><%= product_cart.quantity %></td>
+  <td><%= number_to_currency product_cart.actual_price %></td>
+</tr>

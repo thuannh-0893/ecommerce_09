@@ -1,28 +1,33 @@
 <% provide :title, t(".title") %>
 <% provide :button_text, t(".order") %>
-<div class="container">
-  <table id="cart" class="table table-hover table-condensed">
-    <thead>
-      <tr>
-        <th></th>
-        <th><%= t ".price" %></th>
-        <th><%= t ".quantity" %></th>
-        <th><%= t ".total" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: "product_cart", collection: @products %>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td></td>
-        <td colspan="2" class="hidden-xs"></td>
-        <td class="hidden-xs text-center">
-          <strong><%= t ".subtotal"%> <%= number_to_currency get_subtotal_price(@products) %></strong>
-        </td>
-        <td></td>
-      </tr>
-    </tfoot>
-  </table>
-  <%= render "form" %>
-</div>
+<section class="checkout_area section_gap">
+  <div class="container">
+    <table id="cart" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "product_cart", collection: @products %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="text-center"><strong><%= t ".subtotal"%></strong></td>
+          <td class="hidden-xs text-center">
+            <strong><%= number_to_currency get_subtotal_price(@products) %></strong>
+          </td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <%= render "form" %>
+  </div>
+</section>

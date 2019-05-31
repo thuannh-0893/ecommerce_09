@@ -8,5 +8,5 @@
   <%= f.text_field :receiver_address, class: "form-control", value: @current_user.address %>
   <%= f.label :description %>
   <%= f.text_area :description, class: "form-control" %>
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "primary-btn" %>
 <% end %>

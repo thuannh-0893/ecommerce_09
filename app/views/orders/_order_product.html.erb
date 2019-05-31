@@ -1,0 +1,9 @@
+<tr>
+  <td><%= order_product_counter + 1 %></td>
+  <td>
+    <%= order_product.product.name %>
+  </td>
+  <td><%= number_to_currency order_product.product.price_discounted %></td>
+  <td><%= order_product.quantity %></td>
+  <td><%= number_to_currency order_product.actual_price %></td>
+</tr>
