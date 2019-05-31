@@ -35,3 +35,6 @@
 //= require vendor/popper
 //= require vendor/jquery.rateyo
 //= require star
+
+//= require chartkick
+//= require Chart.bundle

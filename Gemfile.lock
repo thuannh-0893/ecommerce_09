@@ -72,6 +72,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (3.2.0)
     childprocess (1.0.1)
       rake (< 13.0)
     chromedriver-helper (2.1.1)
@@ -128,6 +129,8 @@ GEM
       thor (~> 0.14)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     i18n-js (3.2.3)
@@ -292,11 +295,13 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave (= 1.2.2)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   config
   faker
   figaro
+  groupdate
   i18n-js
   jbuilder (~> 2.5)
   jquery-rails

@@ -1,0 +1,35 @@
+<% provide :title, t(".title") %>
+<section class="section_gap_bottom">
+ 
+  <div class="main-content">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+      <ul class="breadcrumb">
+        <li>
+          <i class="ace-icon fa fa-home home-icon"></i>
+          <%= link_to t(".home"), admin_path %>
+        </li>
+        <li class="active"><%= t ".title" %></li>
+      </ul>
+    </div>
+    <div class="main-content-inner container">
+      <div class="page-content">
+        <div class="page-header">
+          <h1><%= t ".title" %></h1>
+          <hr>
+        </div>
+        <h4 class="text-center"><%= t ".product_by_cat" %></h4>
+        <div class="row">
+            <%= pie_chart @product_by_cat %>
+        </div>
+        <h4 class="text-center"><%= t ".user_by_day" %></h4>
+        <div class="row">
+            <%= line_chart @user_by_day, xtitle: t(".label_day"), ytitle: t(".label_quantity") %>
+        </div>
+        <h4 class="text-center"><%= t ".order_by_day_of_week" %></h4>
+        <div class="row">
+            <%= column_chart @order_by_day %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
