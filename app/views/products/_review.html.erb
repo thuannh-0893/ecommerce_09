@@ -26,13 +26,15 @@
                   <i class="fa fa-star"></i>
                 <% end %>
               </div>
+              <p><%= review.content %></p>
             </div>
-            <p><%= review.content %></p>
+          <% end %>
+          <div id="loadMore">
+            <a href="#"><%= t ".load_more" %></a>
           </div>
+        <% else %>
+          <%= t ".not_have_review"%>
         <% end %>
-      </div>
-      <div id="loadMore">
-        <a href="#"><%= t ".load_more" %></a>
       </div>
     </div>
     <div class="col-lg-6">
@@ -46,7 +48,8 @@
           <form action="javascript:void(0)" class="row contact_form">
             <div class="col-md-12">
               <div class="form-group">
-                <textarea class="form-control" name="content" id="content" rows="1" placeholder="<%= t ".review" %>"></textarea>
+                <textarea class="form-control" name="content" id="content" rows="1"
+                  placeholder="<%= t ".review" %>"></textarea>
               </div>
               <div class="col-md-12 text-right">
                 <button id="rate" class="primary-btn"><%= t "submit" %></button>

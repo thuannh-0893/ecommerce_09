@@ -8,26 +8,12 @@
           <%= t ".description" %>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="tab"
-          href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-          <%= t ".comments" %>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="review-tab" data-toggle="tab"
-          href="#review" role="tab" aria-controls="review" aria-selected="false">
-          <%= t ".reviews" %>
-        </a>
-      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home"
         role="tabpanel" aria-labelledby="home-tab">
-        <p><%= @product.description %></p>
+        <p><%= @request.description %></p>
       </div>
-      <%= render "comment" %>
-      <%= render "review" %>
     </div>
   </div>
 </section>

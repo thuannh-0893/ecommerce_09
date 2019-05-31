@@ -21,14 +21,16 @@ Rails.application.routes.draw do
     resources :cart, only: %i(index create update)
     delete "cart_destroy", to: "cart#destroy"
     resources :users
+    resources :requests
     get "/signup", to: "users#new"
-    resources :products
+    resources :products, only: %i(index show)
     get "/shop", to: "products#index"
     resources :item_photos, only: :destroy
     namespace :admin do
       resources :categories, except: :show
       resources :products
       resources :orders, only: %i(index update)
+      resources :requests, only: %i(index update destroy)
     end
   end
 end

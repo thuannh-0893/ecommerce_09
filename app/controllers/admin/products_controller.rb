@@ -1,10 +1,12 @@
 class Admin::ProductsController < ApplicationController
+  before_action :logged_in_user
+  before_action :admin_user
   before_action :load_categories
   before_action :find_product, except: %i(new create index)
   before_action :sub_cat, except: %i(index show destroy)
 
   def index
-    @products = Product.by_updated_at.paginate page: params[:page],
+    @products = Product.activated.by_updated_at.paginate page: params[:page],
       per_page: Settings.products.per_page
   end
 
@@ -15,6 +17,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @admin_product = Product.new product_params
+    @admin_product.activated = true
     @admin_product.user_id = current_user.id
     Product.transaction do
       @admin_product.save
@@ -63,13 +66,13 @@ class Admin::ProductsController < ApplicationController
   end
 
   def find_product
-    @admin_product = Product.find_by id: params[:id]
+    @admin_product = Product.activated.find_by id: params[:id]
     return if @admin_product
     flash[:danger] = t "helpers.error[product_not_found]"
     redirect_to admin_products_path
   end
 
   def sub_cat
-    @sub_categories = Category.all.sub_only.by_name
+    @sub_categories = Category.sub_only.by_name
   end
 end

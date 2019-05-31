@@ -1,0 +1,32 @@
+en:
+  requests:
+    request:
+      confirm: "You sure?"
+    index:
+      title: "Suggest a product"
+      new: "Create a suggestion"
+      name: "Name"
+      picture: "Picture"
+      price: "Price"
+      category: "Category"
+      created_at: "Created at"
+      updated_at: "Updated at"
+      status: "Status"
+    show:
+      title: "Product's details"
+      add: "Add to Cart"
+      category: "Category"
+      availibility: "Availibility"
+      in_stock: "In Stock"
+      out_stock: "Out Stock"
+      quantity: "Quantity"
+    detail_product:
+      comments: "Comments"
+      reviews: "Reviews"
+      description: "Description"
+    new:
+      title: "Suggest a new product"
+      add: "Submit"
+    edit:
+      title: "Edit your product"
+      edit: "Save change"

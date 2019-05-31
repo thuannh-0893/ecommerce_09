@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
     t.integer "views", default: 0
     t.text "description"
     t.float "discount", default: 0.0
+    t.boolean "activated", default: false
     t.bigint "category_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

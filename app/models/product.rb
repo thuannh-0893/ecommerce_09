@@ -62,6 +62,9 @@ class Product < ApplicationRecord
       order(rating: :desc)
     end
   end)
+  scope :user_request, ->(id){where user_id: id}
+  scope :activated, ->{where activated: true}
+  scope :not_yet_activate, ->{where activated: false}
 
   attr_accessor :total_quantity, :price_discounted
 

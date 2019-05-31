@@ -17,3 +17,4 @@ accept_image: "image/jpeg,image/gif,image/png"
 products:
   per_page: 9
   history_view: 9
+min_discount: 0

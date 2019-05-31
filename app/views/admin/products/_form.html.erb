@@ -1,23 +1,35 @@
 <%= form_for [:admin, @admin_product], html: {multipart: true} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
-  <%= f.fields_for :item_photos do |p| %>
-    <% if p.index < 1 %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.fields_for :item_photos do |p| %>
       <%= f.label :picture %> <br>
       <%= p.file_field :photo, multiple: true, name: "item_photos[photo][]", class: "upload-image", accept: Settings.accept_image %> <br>
     <% end %>
-  <% end %>
-  <div id="preview"></div>
-  <%= f.label :category %>
-  <%= f.collection_select :category_id, @sub_categories, :id, :name, include_blank: false, class: "form-control"%>
-  <%= f.label :price %>
-  <%= f.text_field :price, class: "form-control" %>
-  <%= f.label :discount %>
-  <%= f.number_field :discount, class: "form-control" %>
-  <%= f.label :quantity %>
-  <%= f.number_field :quantity, min: 0, class: "form-control" %>
-  <%= f.label :description %>
-  <%= f.text_area :description, class: "form-control", rows: "10" %>
+    <div id="preview"></div>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, @sub_categories, :id, :name, include_blank: false, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :discount %>
+    <%= f.number_field :discount, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, min: 0, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", rows: "10" %>
+  </div>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
