@@ -1,0 +1,12 @@
+en:
+  cart:
+    index:
+      title: "Cart"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      back: "Home"
+      next: "Next"
+      subtotal: "Subtotal:"
+    product_cart:
+      you_sure: "You sure?"

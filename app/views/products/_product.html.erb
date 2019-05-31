@@ -6,8 +6,8 @@
       <!-- sample data -->
       <h6><%= product.name %></h6>
       <div class="price">
-        <h6>$<%= price_discounted(product.price, product.discount) %></h6>
-        <h6 class="l-through">$<%= product.price %></h6>
+        <h6><%= number_to_currency price_discounted(product.price, product.discount) %></h6>
+        <h6 class="l-through"><%= number_to_currency product.price %></h6>
       </div>
       <div class="rating_list">
         <i class="fa fa-star"></i>

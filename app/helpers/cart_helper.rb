@@ -24,7 +24,30 @@ module CartHelper
     @products.size
   end
 
+  def get_subtotal_price products
+    products.reduce(0) do |sum, product|
+      sum + product.get_total_price
+    end
+  end
+
+  def delete_product product_id
+    check_cookie_cart
+    return @products unless @products.key?(product_id)
+    @products.delete product_id
+    update_cookie_cart @products
+  end
+
+  def update_quantity_product product_id, quantity
+    check_cookie_cart
+    @products[product_id] = quantity
+    update_cookie_cart @products
+  end
+
   def price_discounted price, discount
     @price_discounted = price - (price * discount / 100)
+  end
+
+  def total_price quantity, price
+    @total_price = quantity * price
   end
 end
