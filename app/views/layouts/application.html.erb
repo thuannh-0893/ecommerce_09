@@ -19,5 +19,9 @@
       I18n.defaultLocale = "<%= I18n.default_locale %>";
       I18n.locale = "<%= I18n.locale %>";
     </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=1830343053873535&autoLogAppEvents=1"></script>
+    <%= javascript_include_tag "subiz_chat" %>
   </body>
 </html>
