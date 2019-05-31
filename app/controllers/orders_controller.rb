@@ -7,7 +7,9 @@ class OrdersController < ApplicationController
   def new
     products_in_cart = check_cookie_cart
     list_products_cart products_in_cart
-    @order = Order.new
+    return @order = Order.new if @products.any?
+    flash[:danger] = t "helpers.info[access_denied]"
+    redirect_to index_cart_path
   end
 
   def create

@@ -2,7 +2,7 @@ class CartController < ApplicationController
   before_action :load_categories
 
   def create
-    add_product params[:product_aid]
+    add_product params[:product_aid], params[:qty].to_i
     render json: {size_cart: size_cart}
   end
 

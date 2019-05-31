@@ -3,11 +3,9 @@
   <div class="row">
     <%= render "left_bar" %>
     <div class="col-xl-9 col-lg-8 col-md-7">
-      <!-- Start Filter Bar -->
       <div class="filter-bar d-flex flex-wrap align-items-center">
         <%= will_paginate %>
       </div>
-      <!-- End Filter Bar -->
       <!-- Start Best Seller -->
       <section class="lattest-product-area pb-40 category-list">
         <div class="row">
@@ -15,11 +13,9 @@
         </div>
       </section>
       <!-- End Best Seller -->
-      <!-- Start Filter Bar -->
       <div class="filter-bar d-flex flex-wrap align-items-center">
         <%= will_paginate @products, inner_window: 2, outer_window: 4, gap: "..." %>
       </div>
-      <!-- End Filter Bar -->
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 module CartHelper
-  def add_product product_id, quantity = 1
+  def add_product product_id, quantity
+    quantity = 1 if quantity.zero?
     check_cookie_cart
     if @products.key? product_id
       @products[product_id] += quantity

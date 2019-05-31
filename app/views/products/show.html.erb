@@ -47,15 +47,14 @@
           </div>
           <% if @product.quantity > 0 %>
             <div class="card_area d-flex align-items-center">
-              <a class="primary-btn" href="#"><%= t ".add" %></a>
-            </div>
-          <% end %>
+              <%= link_to t(".add"), "javascript:void(0)", class: "primary-btn shopping", data_product_id: @product.id %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!--================End Single Product Area =================-->
-<%= render partial: "detail_product", object: @product %>
-<%= render "shared/recently_viewed" %>
-<%= javascript_include_tag "ajax_cart" %>
+  <!--================End Single Product Area =================-->
+  <%= render partial: "detail_product", object: @product %>
+  <%= render "shared/recently_viewed" %>
+  <%= javascript_include_tag "ajax_cart" %>
