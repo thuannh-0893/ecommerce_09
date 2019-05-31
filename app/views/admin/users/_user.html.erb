@@ -1,0 +1,28 @@
+<tr>
+  <td><%= counter_index user_counter %></td>
+  <td><%= link_to user.name, user, target: "_blank"%></td>
+  <td><%= image_tag user.avatar_url, class: "table-img" %></td>
+  <td><%= user.email %></td>
+  <td><%= user.phone %></td>
+  <td><%= user.address %></td>
+  <td><%= l user.created_at %></td>
+  <td><%= l user.updated_at %></td>
+  <td>
+    <label class="switch">
+      <%
+        checked = "";
+        checked = "checked" if user.activated == true
+      %>
+      <input idUser="<%= user.id %>" class="status" type="checkbox" <%= checked %> >
+      <span class="slider round"></span>
+    </label>
+  </td>
+  <td>
+    <%= link_to edit_admin_user_path(user) do %>
+      <span class="far fa-edit"></span> <%= t ".edit" %>
+    <% end %>
+    <%= link_to(admin_user_path(user), method: :delete, data: { confirm: t(".confirm") }) do %>
+      <span class="far fa-trash-alt"></span> <%= t ".delete" %>
+    <% end %>
+  </td>
+</tr>

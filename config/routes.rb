@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       resources :orders, only: %i(index update)
       resources :requests, only: %i(index update destroy)
       resources :charts, only: %i(index)
+      resources :users
     end
   end
 end

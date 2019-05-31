@@ -1,0 +1,27 @@
+en:
+  admin:
+    users:
+      index:
+        title: "User management"
+        home: "Dashboard"
+        new: "Add new user"
+        name: "Name"
+        avatar: "Avatar"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        status: "Activation"
+        not_have_user: "Do not have user"
+      new:
+        title: "New user"
+        add: "Create"
+        home: "Dashboard"
+      edit:
+        title: "Edit user"
+        edit: "Edit"
+      user:
+        confirm: "You sure?"
+        delete: "Delete"
+        edit: "Edit"
