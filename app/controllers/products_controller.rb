@@ -3,17 +3,18 @@ class ProductsController < ApplicationController
   before_action :find_product, except: %i(new create index filter)
 
   def index
-    shop_parmas = params.slice(:rating, :price_min, :price_max, :sort)
+    shop_parmas = params.slice(:rating,
+      :price_min, :price_max, :sort, :shop, :cat)
     if shop_parmas.blank?
       @products = Product.by_updated_at
+    elsif params[:shop].present?
+      @products = Product.by_hot_trend(params[:shop])
     else
       filter
     end
     @products = @products.paginate page: params[:page],
       per_page: Settings.products.per_page
   end
-
-  def show; end
 
   def new
     @products = Product.new
@@ -64,18 +65,12 @@ class ProductsController < ApplicationController
     redirect_to shop_path
   end
 
-  def check_params
-    params[:rating] = 0 if params[:rating].nil?
-    params[:price_min] = 0 if params[:price_min].nil?
-    params[:price_max] = 1000 if params[:price_max].nil?
-  end
-
   def filter
-    check_params
     @products = Product.select_price_discounted
                        .rating(params[:rating])
                        .price_min(params[:price_min])
                        .price_max(params[:price_max])
+                       .by_category_id(params[:cat])
                        .sort_product(params[:sort])
   end
 end
