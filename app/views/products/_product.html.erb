@@ -3,13 +3,16 @@
   <div class="single-product">
     <%= image_tag product.item_photos.first.photo_url, class: "img-fluid"  %>
     <div class="product-details">
-      <h6><%= product.name %></h6>
+      <h6><%= link_to product.name, product %></h6>
       <div class="price">
         <h6><%= number_to_currency price_discounted(product.price, product.discount) %></h6>
         <% if product.discount > 0 %>
           <h6 class="l-through"><%= number_to_currency product.price %></h6>
         <% end %>
       </div>
+      <% overall = product.rates.average(:rating) %>
+      <% overall = 0 if overall.blank?%>
+      <div>Rating: <%= overall.round(1) %> <i class="fa fa-star"></i></div>
       <div class="prd-bottom">
         <%= link_to "javascript:void(0)", class: "social-info shopping", data_product_id: product.id do %>
           <span class="fas fa-cart-plus"></span>

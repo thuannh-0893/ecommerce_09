@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/search", to: "searchs#index"
     get "/history-orders", to: "history_orders#index"
+    post "/rates", to: "rates#create"
+
     resources :orders, only: %i(new create)
-    resources :cart
+    resources :cart, only: %i(index create update)
+    delete "cart_destroy", to: "cart#destroy"
     resources :users
     get "/signup", to: "users#new"
     resources :products

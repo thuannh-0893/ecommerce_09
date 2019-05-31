@@ -1,0 +1,67 @@
+<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="row total_rate">
+        <div class="col-12">
+          <div class="box_total d-flex flex-column align-items-center">
+            <h5><%= t ".overall" %></h5>
+            <% overall @product %>
+            <h3><%= @overall.round(1) %></h3>
+            <div data="<%= @overall %>" class="rateyo-readonly"></div>
+            <h6>(<%= t ".reviews", count: @product.rates.count(:rating) %>)</h6>
+          </div>
+        </div>
+      </div>
+      <div class="review_list">
+        <% reviews = sort_by_date @product.id %>
+        <% reviews.each do |review| %>
+          <div class="review_item">
+            <div class="media">
+              <div class="d-flex">
+                <%= image_tag review.user.avatar.url %>
+              </div>
+              <div class="media-body">
+                <h4><%= review.user.name %></h4>
+                <h4><%= l review.updated_at, format: :short %></h4>
+                <% review.rating.times.each do %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+              </div>
+            </div>
+            <p><%= review.content %></p>
+          </div>
+        <% end %>
+      </div>
+      <div id="loadMore">
+        <a href="#"><%= t ".load_more" %></a>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <% if logged_in? %>
+        <div class="review_box">
+          <h4><%= t ".add_review" %></h4>
+          <div class="col-md-12 d-flex align-items-center">
+            <p><%= t ".your_rating" %>:</p>
+            <div pid="<%= @product.id %>" class="rateyo"></div>
+          </div>
+          <form action="javascript:void(0)" class="row contact_form">
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea class="form-control" name="content" id="content" rows="1" placeholder="<%= t ".review" %>"></textarea>
+              </div>
+              <div class="col-md-12 text-right">
+                <button id="rate" class="primary-btn"><%= t "submit" %></button>
+              </div>
+            </div>
+          </form>
+          <div class="css-script-clear"></div>
+        </div>
+      <% else %>
+        <%= link_to t(".login"), login_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<%= javascript_include_tag "ajax_rating" %>

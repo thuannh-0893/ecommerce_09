@@ -33,3 +33,5 @@
 //= require vendor/jquery.nice-select.min
 //= require vendor/owl.carousel.min
 //= require vendor/popper
+//= require vendor/jquery.rateyo
+//= require star

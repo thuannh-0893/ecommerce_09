@@ -30,3 +30,11 @@ vi:
       categories: "Danh mục"
     filter:
       title: "Cửa hàng"
+    review:
+      overall: "Tổng quan"
+      reviews: "%{count} đánh giá"
+      load_more: "Tải thêm"
+      add_review: "Thêm đánh giá"
+      review: "Đánh giá"
+      login: "Đăng nhập"
+      your_rating: "Đánh giá của bạn"

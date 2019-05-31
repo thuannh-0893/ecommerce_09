@@ -18,4 +18,8 @@ module ApplicationHelper
     return "active" if request.path == test_path
     ""
   end
+
+  def sort_by_date product_id
+    @rates = Rate.product_reviews(product_id).by_date
+  end
 end
