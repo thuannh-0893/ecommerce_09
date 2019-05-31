@@ -20,7 +20,7 @@
     <h5 id="total-price-<%= product.id %>"><%= number_to_currency total_price(product.total_quantity, product.price_discounted) %></h5>
   </td>
   <td class="actions" data-th="">
-    <%= form_tag cart_destroy_path, method: :delete, data: { confirm: t(".you_sure") } do%>
+    <%= form_tag cart_destroy_path, method: :delete, data: { confirm: t(".you_sure") } do %>
       <%= hidden_field_tag :product_id, product.id %>
       <%= button_tag type: :submit, class: "btn btn-danger btn-sm" do %>
         <i class="fa fa-trash"></i>
