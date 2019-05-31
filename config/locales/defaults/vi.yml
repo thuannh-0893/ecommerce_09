@@ -14,6 +14,8 @@ vi:
     error[create-order-fail]: "Đặt hàng không thành công!"
     error[create-order-fail-save]: " Có lỗi trong quá trình lưu đơn hàng. Vui lòng xem lại các sản phẩm đặt hàng!"
     error[update_order_fail]: "Cập nhật đơn hàng không thành công"
+    error[added_schedule_fail_save]: "Có lỗi trong quá trình lưu lịch khuyến mãi. Vui lòng xem lại lịch đã đặt!"
+    error[schedule_not_found]: "Không tìm thấy lịch khuyến mãi"
     info[email_reset]: "Email đã được gửi đi với hướng dẫn đặt lại mật khẩu"
     info[signup]: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản"
     info[create-order]: "Đặt hàng thành công! Thông tin đặt hàng đã được gửi qua email. Cảm ơn bạn"
@@ -27,10 +29,14 @@ vi:
     success[deleted_product]: "Đã xóa sản phẩm"
     success[added_product]: "Đã thêm sản phẩm"
     success[updated_order]: "Đã cập nhật đơn hàng"
-    success[product_import]: "Nhập sản phẩm thành công"
     success[add_to_products]: "Đã thêm vào danh sách sản phẩm"
+    success[product_import]: "Nhập sản phẩm thành công"
+    success[added_schedule]: "Đã thêm lịch khuyến mãi"
+    success[deleted_schedule]: "Đã cập nhật lịch khuyến mãi"
     warning[login]: "Vui lòng đăng nhập."
     warning[not_active]: "Tài khoản chưa được kích hoạt. Kiểm tra lại email của bạn để kích hoạt."
+    warning[login_cancan]: "Bạn không có quyền. Vui lòng đăng nhập để kiểm tra."
+    warning[not_authorized]: "Bạn không có quyền truy cập trang này."
     max_size: "phải nhỏ hơn %{size}MB"
     label:
       user:
@@ -52,6 +58,14 @@ vi:
         receiver_phone: "SĐT người nhận"
         receiver_address: "Địa chỉ người nhận"
         description: "Mô tả"
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Không tìm thấy %{entry_name}"
+          one: "Hiển thị <b>1</b> %{entry_name}"
+          other: "Hiển thị <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Hiển thị %{entry_name} <b>%{first} - %{last}</b> trong tổng số <b>%{total}</b>"
   alert:
     success[ajax_shopping]: "Thêm giỏ hàng thành công!"
     error[ajax_shopping]: "Có lỗi"
@@ -88,6 +102,10 @@ vi:
         receiver_phone: "SĐT người nhận"
         receiver_address: "Địa chỉ người nhận"
         description: "Mô tả"
-  will_paginate:
-    next_label: "Sau"
-    previous_label: "Trước"
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      previous: "‹"
+      next: "›"
+      truncate: "…"

@@ -3,6 +3,6 @@
   <div class="row">
     <%= render @products %>
   </div>
-  <%= will_paginate @products %>
+  <%= paginate @products %>
 </div>
 <%= javascript_include_tag "ajax_cart" %>

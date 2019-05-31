@@ -1,7 +1,6 @@
-class Admin::ProductsController < ApplicationController
-  before_action :logged_in_user
-  before_action :admin_user
-  before_action :load_categories
+class Admin::ProductsController < Admin::BaseController
+  authorize_resource
+
   before_action :find_product, except: %i(new create index import)
   before_action :sub_cat, except: %i(index show destroy)
 
@@ -95,7 +94,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def list_product
-    @products = Product.activated.by_updated_at.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    @products = Product.activated.by_updated_at.page(params[:page])
+                       .per Settings.products.per_page
   end
 end

@@ -1,4 +1,5 @@
 <tr>
+  <td><input type="checkbox" class="checkbox" value="<%= product.id %>" name="<%= product.name %>"></td>
   <td><%= product_counter + 1 %></td>
   <td><%= link_to product.name, product, target: "_blank"%></td>
   <td><%= image_tag product.item_photos.first.photo_url, class: "table-img" %></td>

@@ -13,8 +13,7 @@ class ProductsController < ApplicationController
     else
       filter
     end
-    @products = @products.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    @products = @products.page(params[:page]).per Settings.products.per_page
   end
 
   def show

@@ -1,4 +1,6 @@
-class Admin::ChartsController < ApplicationController
+class Admin::ChartsController < Admin::BaseController
+  authorize_resource class: false
+
   def index
     @product_by_cat = Product.select(:category_id).group(:category_id).count
     @product_by_cat.keys.each do |p|

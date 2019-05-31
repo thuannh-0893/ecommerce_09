@@ -1,0 +1,28 @@
+vi:
+  admin:
+    schedules:
+      index:
+        title: "Quản lí lịch khuyến mãi"
+        home: "Trang quản lí"
+        name: "Tên"
+        start_time: "Thời gian bắt đầu"
+        end_time: "Thời gian kết thúc"
+        discount: "Giảm giá"
+        empty: "Không có lịch khuyến mãi"
+      schedule:
+        detail: "Chi tiết"
+        delete: "Xóa"
+        confirm: "Bạn chắc chắn?"
+      modal:
+        detail_schedule: "Chi tiết khuyến mãi"
+        time: "Khoảng thời gian"
+        schedule_info: "Thông tin khuyến mãi"
+        name: "Tên"
+        start_time: "Thời gian bắt đầu"
+        end_time: "Thời gian kết thúc"
+        discount: "Giảm giá"
+        product_schedule: "Sản phẩm áp dụng"
+        product: "Sản phẩm"
+        price: "Giá"
+        priced_discount: "Giá đã khuyến mãi"
+        close: "Đóng"

@@ -1,12 +1,12 @@
-class Admin::RequestsController < ApplicationController
-  before_action :logged_in_user
-  before_action :admin_user
+class Admin::RequestsController < Admin::BaseController
+  authorize_resource class: false
+
   before_action :find_product, only: %i(update destroy)
 
   def index
     @requests = Product.not_yet_activate.by_updated_at
-                       .paginate page: params[:page],
-                        per_page: Settings.products.per_page
+                       .page(params[:page])
+                       .per Settings.products.per_page
   end
 
   def update

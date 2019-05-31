@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :load_categories
   before_action :logged_in_user, only: :new
+  authorize_resource
 
   def new
     products_in_cart = check_cookie_cart

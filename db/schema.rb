@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_060333) do
+ActiveRecord::Schema.define(version: 2019_06_24_020748) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "product_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "schedule_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_schedules_on_product_id"
+    t.index ["schedule_id"], name: "index_product_schedules_on_schedule_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "picture"
@@ -76,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["name", "description"], name: "name", type: :fulltext
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -101,6 +111,16 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.float "discount", default: 0.0
+    t.integer "activated", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -124,6 +144,8 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
   add_foreign_key "history_views", "products"
   add_foreign_key "history_views", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "product_schedules", "products"
+  add_foreign_key "product_schedules", "schedules"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "products_orders", "orders"

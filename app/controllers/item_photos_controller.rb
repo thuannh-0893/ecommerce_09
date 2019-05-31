@@ -1,10 +1,12 @@
 class ItemPhotosController < ApplicationController
+  authorize_resource
+
   before_action :find_photo, only: :destroy
+
   def destroy
-    item = @item_photo.product
     if @item_photo.destroy
       respond_to do |format|
-        format.html{redirect_to edit_admin_product_url(item)}
+        format.html{redirect_back fallback_location: root_path}
       end
     else
       flash[:danger] = t "helpers.error[deleted_fail]"

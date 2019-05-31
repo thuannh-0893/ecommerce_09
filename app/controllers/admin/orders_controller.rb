@@ -1,11 +1,11 @@
-class Admin::OrdersController < ApplicationController
-  before_action :load_categories
+class Admin::OrdersController < Admin::BaseController
+  authorize_resource
+
   before_action :find_order, only: %i(update)
 
   def index
     @orders = Order.by_created_at.includes(:products_orders, :products)
-                   .paginate page: params[:page],
-                     per_page: Settings.products.per_page
+                   .page(params[:page]).per Settings.products.per_page
   end
 
   def update
