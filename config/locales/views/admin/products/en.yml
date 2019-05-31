@@ -1,0 +1,7 @@
+en:
+  admin:
+    products:
+      index:
+        title: "Products"
+        home: "Home"
+        new: "Add new product"

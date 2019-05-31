@@ -22,3 +22,9 @@ en:
     footer:
       contact: "Contact"
       about: "About"
+    admin:
+      users: "Users"
+      categories: "Categories"
+      products: "Products"
+      orders: "Orders"
+      requested_products: "Requested products"

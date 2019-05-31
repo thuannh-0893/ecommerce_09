@@ -1,5 +1,5 @@
 en:
-  heplers:
+  helpers:
     base_title: "Ecommerce"
     error[login]: "Invalid email/password combination"
     error[user]: "User isn't exist!"
@@ -31,9 +31,27 @@ en:
       session:
         email: "Email"
         password: "Password"
-        category:
+      category:
         name: "Name"
         parent_category: "Parent category"
   alert:
     success[ajax_shopping]: "Add cart successfully!"
     error[ajax_shopping]: "Error"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+  number:
+    currency:
+      format:
+        format: "%u%n"
+        unit: "$"
+        separator: '.'
+        delimiter: ','
+        precision: 2

@@ -22,3 +22,9 @@ vi:
     footer:
       contact: "Liên hệ"
       about: "Giới thiệu"
+    admin:
+      users: "Người dùng"
+      categories: "Danh mục"
+      products: "Sản phẩm"
+      orders: "Đơn hàng"
+      requested_products: "Sản phẩm được yêu cầu"

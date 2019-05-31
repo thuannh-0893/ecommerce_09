@@ -8,3 +8,5 @@ vi:
       description_html: "Trang liên hệ"
     home:
       title: "Trang chủ"
+    admin:
+      title: "Trang quản lí"

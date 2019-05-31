@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :products_orders, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  scope :by_updated_at, ->{order(updated_at: :desc)}
 end

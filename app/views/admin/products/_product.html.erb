@@ -1,0 +1,19 @@
+<tr>
+  <td><%= product_counter + 1 %></td>
+  <td><a href=""><%= product.name %></a></td>
+  <td><%= image_tag "p6.jpg", size: "40" %></td>
+  <td><%= number_to_currency(product.price) %></td>
+  <td><%= product.quantity %></td>
+  <td><%= product.discount %></td>
+  <td><%= product.category.name %></td>
+  <td><%= l product.created_at %></td>
+  <td><%= l product.updated_at %></td>
+  <td>
+    <%= link_to edit_admin_product_path(product) do %>
+      <span class="far fa-edit"></span> <%= t ".edit" %>
+    <% end %>
+    <%= link_to(admin_product_path(product), method: :delete, data: { confirm: t(".confirm") }) do %>
+      <span class="far fa-trash-alt"></span> <%= t ".delete" %>
+    <% end %>
+  </td>
+</tr>
