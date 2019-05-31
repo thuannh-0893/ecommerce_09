@@ -1,0 +1,30 @@
+<tr>
+  <td>
+    <div class="media">
+      <div class="d-flex">
+        <%= image_tag product.item_photos.first.photo_url, class: "img-responsive"%>
+      </div>
+      <div class="media-body">
+        <%= link_to product.name, product %>
+      </div>
+    </div>
+  </td>
+  <td>
+    <h5><%= number_to_currency product.price_discounted %></h5>
+  </td>
+  <td>
+    <input type="number" class="form-control text-center changing" value="<%= product.total_quantity %>"
+      min="1" max="<%= product.quantity %>" data-product-id="<%= product.id %>">
+  </td>
+  <td>
+    <h5 id="total-price-<%= product.id %>"><%= number_to_currency total_price(product.total_quantity, product.price_discounted) %></h5>
+  </td>
+  <td class="actions" data-th="">
+    <%= form_tag cart_path(id:0), method: :delete, data: { confirm: t(".you_sure") } do%>
+      <%= hidden_field_tag :product_id, product.id %>
+      <%= button_tag type: :submit, class: "btn btn-danger btn-sm" do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    <% end %>
+  </td>
+</tr>
