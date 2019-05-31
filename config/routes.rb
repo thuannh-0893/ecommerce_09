@@ -20,8 +20,9 @@ Rails.application.routes.draw do
     get "/signup", to: "users#new"
     resources :products
     get "/shop", to: "products#index"
+    resources :item_photos, only: :destroy
     namespace :admin do
-      resources :categories, except: %i(show)
+      resources :categories, except: :show
       resources :products
     end
   end

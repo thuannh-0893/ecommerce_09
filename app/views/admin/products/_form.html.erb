@@ -1,13 +1,14 @@
-<%= form_for [:admin, @admin_product] do |f| %>
+<%= form_for [:admin, @admin_product], html: {multipart: true} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.label :name %>
   <%= f.text_field :name, class: "form-control" %>
-  <%= f.label :picture %> <br>
-  <% if !@admin_product.nil? %>
-    <%= image_tag @admin_product.picture.url, size: "400" %> <br>
-    <br>
+  <%= f.fields_for :item_photos do |p| %>
+    <% if p.index < 1 %>
+      <%= f.label :picture %> <br>
+      <%= p.file_field :photo, multiple: true, name: "item_photos[photo][]", class: "upload-image", accept: Settings.accept_image %> <br>
+    <% end %>
   <% end %>
-  <%= f.file_field :picture, accept: Settings.accept_image %>
+  <div id="preview"></div>
   <%= f.label :category %>
   <%= f.collection_select :category_id, @sub_categories, :id, :name, include_blank: false, class: "form-control"%>
   <%= f.label :price %>

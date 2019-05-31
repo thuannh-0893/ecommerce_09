@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
       per_page: Settings.products.per_page
   end
 
+  def show; end
+
   def new
     @products = Product.new
   end
@@ -16,7 +18,7 @@ class ProductsController < ApplicationController
     @product.user_id = current_user.id
     if @product.save
       flash[:info] = t "helpers.success[added_product]"
-      redirect_to products_path
+      redirect_to shop_path
     else
       render :new
     end
@@ -27,7 +29,7 @@ class ProductsController < ApplicationController
   def update
     if @admin_product.update_attributes product_params
       flash[:success] = t "helper.success[update_product]"
-      redirect_to admin_products_path
+      redirect_to shop_path
     else
       render :edit
     end
@@ -39,7 +41,7 @@ class ProductsController < ApplicationController
     else
       flash[:danger] = t "helper.error[delete_failed]"
     end
-    redirect_to products_path
+    redirect_to shop_path
   end
 
   private
@@ -50,9 +52,9 @@ class ProductsController < ApplicationController
   end
 
   def find_product
-    @admin_product = Product.find_by id: params[:id]
-    return if @admin_product
+    @product = Product.find_by id: params[:id]
+    return if @product
     flash[:danger] = t "helpers.error[product_not_found]"
-    redirect_to admin_products_path
+    redirect_to shop_path
   end
 end

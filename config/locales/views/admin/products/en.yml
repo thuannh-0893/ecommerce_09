@@ -13,3 +13,4 @@ en:
         title: "Edit product"
         edit: "Save changes"
         home: "Dashboard"
+        destroy: "Destroy"
