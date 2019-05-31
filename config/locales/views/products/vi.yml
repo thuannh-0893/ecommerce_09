@@ -45,3 +45,5 @@ vi:
       submit: "Bình luận"
       comment: "Bình luận"
       post_a_comment: "Thêm bình luận"
+    recently_viewed:
+      no_recently_product: "Không có sản phẩm đã xem gần đây"

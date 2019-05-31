@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include ProductsHelper
+
   before_action :load_categories, except: %i(destroy show)
   before_action :find_product, except: %i(new create index filter)
 
@@ -17,6 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    new_history_view
     @comments = Comment.product_comments_parrent(params[:id]).by_date
     @reviews = Rate.product_reviews(params[:id]).by_date
   end

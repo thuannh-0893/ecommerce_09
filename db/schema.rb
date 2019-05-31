@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2019_06_10_060333) do
   end
 
   create_table "history_views", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "viewed_at"
     t.bigint "user_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
