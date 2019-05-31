@@ -5,4 +5,4 @@ vi:
         one: "Biểu mẫu chứa 1 lỗi"
         other: "Biểu mẫu chứa %{count} lỗi"
     recently_viewed:
-      title: "Sản phẩm đã xem"
+      recently_view: "Sản phẩm được xem gần đây"

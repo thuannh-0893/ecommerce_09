@@ -13,20 +13,22 @@
         </div>
       </div>
       <div class="review_list">
-        <% @reviews.each do |review| %>
-          <div class="review_item">
-            <div class="media">
-              <div class="d-flex">
-                <%= image_tag review.user.avatar.url %>
+        <% if @reviews.any? %>
+          <% @reviews.each do |review| %>
+            <div class="review_item">
+              <div class="media">
+                <div class="d-flex">
+                  <%= image_tag review.user.avatar.url %>
+                </div>
+                <div class="media-body">
+                  <h4><%= review.user.name %></h4>
+                  <h4><%= l review.updated_at, format: :short %></h4>
+                  <% review.rating.times.each do %>
+                    <i class="fa fa-star"></i>
+                  <% end %>
+                </div>
+                <p><%= review.content %></p>
               </div>
-              <div class="media-body">
-                <h4><%= review.user.name %></h4>
-                <h4><%= l review.updated_at, format: :short %></h4>
-                <% review.rating.times.each do %>
-                  <i class="fa fa-star"></i>
-                <% end %>
-              </div>
-              <p><%= review.content %></p>
             </div>
           <% end %>
           <div id="loadMore">
@@ -63,7 +65,5 @@
       <% end %>
     </div>
   </div>
-</div>
-</div>
 </div>
 <%= javascript_include_tag "ajax_rating" %>

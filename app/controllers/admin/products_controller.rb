@@ -2,12 +2,22 @@ class Admin::ProductsController < ApplicationController
   before_action :logged_in_user
   before_action :admin_user
   before_action :load_categories
-  before_action :find_product, except: %i(new create index)
+  before_action :find_product, except: %i(new create index import)
   before_action :sub_cat, except: %i(index show destroy)
 
   def index
-    @products = Product.activated.by_updated_at.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    list_product
+    respond_to do |format|
+      format.html
+      format.xls{send_data Product.to_csv, filename: "product.xls"}
+      format.csv do
+        if params[:template].present?
+          send_data Product.to_csv_template, filename: "template.csv"
+        else
+          send_data Product.to_csv, filename: "product.csv"
+        end
+      end
+    end
   end
 
   def new
@@ -57,6 +67,14 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def import
+    if params[:file].present?
+      Product.import(params[:file].path, current_user)
+      flash[:success] = t("helpers.success[product_import]")
+    end
+    redirect_to admin_products_path
+  end
+
   private
 
   def product_params
@@ -74,5 +92,10 @@ class Admin::ProductsController < ApplicationController
 
   def sub_cat
     @sub_categories = Category.sub_only.by_name
+  end
+
+  def list_product
+    @products = Product.activated.by_updated_at.paginate page: params[:page],
+      per_page: Settings.products.per_page
   end
 end

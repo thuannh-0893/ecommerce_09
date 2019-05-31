@@ -3,7 +3,7 @@
     <% current_user.history_views.each do |h| %>
     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
       <div class="single-related-product d-flex">
-        <a href="#"><%= image_tag h.product.item_photos.first.photo_url, {class: "img-fluid p_image"}  %></a>
+        <a href="#"><%= image_tag h.item_photos.first.photo_url, {class: "img-fluid p_image"}  %></a>
         <div class="desc" id="product-recently">
           <a href="#" class="title"><%= h.name %></a>
           <div class="price">

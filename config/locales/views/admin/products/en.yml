@@ -5,6 +5,10 @@ en:
         title: "Products"
         home: "Dashboard"
         new: "Add new product"
+        import: "Import product"
+        exportCSV: "Export CSV"
+        exportExcel: "Export Excel"
+        exportCSV_template: "Export Template"
       new:
         title: "Add new product"
         add: "Add"

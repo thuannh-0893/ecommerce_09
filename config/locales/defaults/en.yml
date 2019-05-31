@@ -26,6 +26,7 @@ en:
     success[deleted_product]: "Deleted product"
     success[added_product]: "Added product"
     success[updated_order]: "Updated order"
+    success[product_import]: "Import product successfully"
     warning[login]: "Please log in."
     warning[not_active]: "Account not activated yet. Check your email for the activation link."
     max_size: "should be less than %{size}MB"

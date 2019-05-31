@@ -5,4 +5,4 @@ en:
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
     recently_viewed:
-      title: "Recently viewed products"
+      recently_view: "Recently viewed products"

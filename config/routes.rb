@@ -28,7 +28,9 @@ Rails.application.routes.draw do
     resources :item_photos, only: :destroy
     namespace :admin do
       resources :categories, except: :show
-      resources :products
+      resources :products do
+        collection { post :import }
+      end
       resources :orders, only: %i(index update)
       resources :requests, only: %i(index update destroy)
     end

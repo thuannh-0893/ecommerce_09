@@ -5,6 +5,10 @@ vi:
         title: "Quản lí sản phẩm"
         home: "Trang quản lí"
         new: "Thêm sản phẩm mới"
+        import: "Nhập sản phẩm"
+        exportCSV: "Xuất tệp CSV"
+        exportExcel: "Xuất tệp Excel"
+        exportCSV_template: "Xuất tệp CSV mẫu"
       new:
         title: "Thêm sản phẩm mới"
         add: "Thêm"
