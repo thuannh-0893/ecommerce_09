@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   has_many :products_orders, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :item_photos, dependent: :destroy
+  has_many :product_schedules, dependent: :destroy
 
   delegate :name, to: :category, prefix: true
 

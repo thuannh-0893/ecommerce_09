@@ -30,6 +30,7 @@ gem "rails-i18n"
 gem "ransack"
 gem "redis", "~> 4.0"
 gem "rubocop", "~> 0.54.0", require: false
+gem "rufus-scheduler"
 gem "sass-rails", "~> 5.0"
 gem "search_cop"
 gem "uglifier", ">= 1.3.0"

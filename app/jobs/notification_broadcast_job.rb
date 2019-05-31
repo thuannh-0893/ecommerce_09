@@ -22,6 +22,8 @@ class NotificationBroadcastJob < ApplicationJob
         product_activity notification
       elsif notification.trackable_type == "Order"
         order_activity notification
+      elsif notification.trackable_type == "Schedule"
+        schedule_activity notification
       end
       @notifications << @html
     end
@@ -58,6 +60,16 @@ class NotificationBroadcastJob < ApplicationJob
             elsif notification.key == "order.create"
               ApplicationController.render locals: {activity: notification},
                 partial: "public_activity/order/create"
+            end
+  end
+
+  def schedule_activity notification
+    @html = if notification.key == "schedule.on_schedule"
+              ApplicationController.render locals: {activity: notification},
+                partial: "public_activity/schedule/on_schedule"
+            elsif notification.key == "schedule.off_schedule"
+              ApplicationController.render locals: {activity: notification},
+                partial: "public_activity/schedule/off_schedule"
             end
   end
 end
