@@ -1,5 +1,6 @@
 class RatesController < ApplicationController
   include RatesHelper
+
   def create
     @rate = Rate.new product_id: params[:product_id],
       rating: params[:rating], content: params[:content],

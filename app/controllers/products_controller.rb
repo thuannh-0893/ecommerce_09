@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
       per_page: Settings.products.per_page
   end
 
+  def show
+    @comments = Comment.product_comments_parrent(params[:id]).by_date
+    @reviews = Rate.product_reviews(params[:id]).by_date
+  end
+
   def new
     @products = Product.new
   end

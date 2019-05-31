@@ -2,82 +2,67 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="comment_list">
-        <div class="comment_item">
-          <div class="media">
-            <div class="d-flex">
-              <img src="img/product/review-1.png" alt="">
+        <% if @comments.any? %>
+          <% @comments.each do |comment| %>
+            <div class="comment_item">
+              <div class="media">
+                <div class="d-flex">
+                  <%= image_tag comment.user.avatar.url %>
+                </div>
+                <div class="media-body">
+                  <h4><%= comment.user.name %></h4>
+                  <h5><%= l comment.updated_at, format: :short %></h5>
+                  <a class="reply_btn" parent_id="<%= comment.id %>" user="<%= comment.user.name %>"
+                      href="javascript:void(0)"><%= t ".reply" %></a>
+                </div>
+              </div>
+              <p><%= comment.content %></p>
             </div>
-            <div class="media-body">
-              <h4>Blake Ruiz</h4>
-              <h5>12th Feb, 2018 at 05:56 pm</h5>
-              <a class="reply_btn" href="#">Reply</a>
-            </div>
+            <% sub_comments(comment.id).each do |sub_comment| %>
+              <div class="comment_item reply">
+                <div class="media">
+                  <div class="d-flex">
+                    <%= image_tag sub_comment.user.avatar.url %>
+                  </div>
+                  <div class="media-body">
+                    <h4><%= sub_comment.user.name %></h4>
+                    <h5><%= l sub_comment.updated_at, format: :short %></h5>
+                    <a class="reply_btn" parent_id="<%= comment.id %>" user="<%= sub_comment.user.name %>"
+                        href="javascript:void(0)"><%= t ".reply" %></a>
+                  </div>
+                </div>
+                <p><%= sub_comment.content %></p>
+              </div>
+            <% end %>
+          <% end %>
+          <div id="loadMoreComment">
+            <a href="#"><%= t ".load_more" %></a>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo</p>
-        </div>
-        <div class="comment_item reply">
-          <div class="media">
-            <div class="d-flex">
-              <img src="img/product/review-2.png" alt="">
-            </div>
-            <div class="media-body">
-              <h4>Blake Ruiz</h4>
-              <h5>12th Feb, 2018 at 05:56 pm</h5>
-              <a class="reply_btn" href="#">Reply</a>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo</p>
-        </div>
-        <div class="comment_item">
-          <div class="media">
-            <div class="d-flex">
-              <img src="img/product/review-3.png" alt="">
-            </div>
-            <div class="media-body">
-              <h4>Blake Ruiz</h4>
-              <h5>12th Feb, 2018 at 05:56 pm</h5>
-              <a class="reply_btn" href="#">Reply</a>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo</p>
-        </div>
+        <% else %>
+          <%= t ".not_have_comment"%>
+        <% end %>
       </div>
     </div>
     <div class="col-lg-6">
       <div class="review_box">
-        <h4>Post a comment</h4>
-        <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-          <div class="col-md-12">
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name">
+        <% if logged_in? %>
+          <h4><%= t ".post_a_comment"%></h4>
+          <form id="fComment" action="javascript:void(0)" class="row contact_form">
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea pid="<%= @product.id %>" parent_id="" class="form-control" name="comment"
+                  id="comment" rows="1" placeholder="<%= t ".comment" %>"></textarea>
+              </div>
             </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+            <div class="col-md-12 text-right">
+              <button id="btn-comment" class="btn primary-btn"><%= t ".submit" %></button>
             </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="form-group">
-              <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
-            </div>
-          </div>
-          <div class="col-md-12 text-right">
-            <button type="submit" value="submit" class="btn primary-btn">Submit Now</button>
-          </div>
-        </form>
+          </form>
+        <% else %>
+          <%= link_to t(".login"), login_path %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+<%= javascript_include_tag "ajax_comment" %>

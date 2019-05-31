@@ -5914,9 +5914,6 @@ label {
 .review_item,
 .comment_item {
   margin-bottom: 15px;
-}
-
-.review_item {
   display: none;
 }
 
