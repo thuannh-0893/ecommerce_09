@@ -9,7 +9,7 @@ vi:
       home: "Trang chủ"
       contact: "Liên hệ"
       about: "Giới thiệu"
-      cart: " Giỏ hàng (%{count})"
+      cart: " Giỏ hàng"
       login: "Đăng nhập"
       signup: "Đăng kí"
       logout: "Đăng xuất"

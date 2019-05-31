@@ -4,11 +4,10 @@
     <%= image_tag "p6.jpg", alt: "product" %>
     <div class="product-details">
       <!-- sample data -->
-      <h6>addidas New Hammer sole
-        for Sports person</h6>
+      <h6><%= product.name %></h6>
       <div class="price">
-        <h6>$150.00</h6>
-        <h6 class="l-through">$210.00</h6>
+        <h6>$<%= price_discounted(product.price, product.discount) %></h6>
+        <h6 class="l-through">$<%= product.price %></h6>
       </div>
       <div class="rating_list">
         <i class="fa fa-star"></i>
@@ -19,10 +18,11 @@
       </div>
       <!-- end sample data -->
       <div class="prd-bottom">
-        <a href="" class="social-info">
+        
+        <%= link_to "javascript:void(0)", class: "social-info shopping", data_product_id: product.id do %>
           <span class="fas fa-cart-plus"></span>
           <p class="hover-text"><%= t (".add_to_cart") %></p>
-        </a>
+        <% end %>
         <a href="" class="social-info">
           <span class="fas fa-info"></span>
           <p class="hover-text"><%= t (".view_more") %></p>

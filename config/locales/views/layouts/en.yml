@@ -9,7 +9,7 @@ en:
       home: "Home"
       contact: "Contact"
       about: "About"
-      cart: " Cart (%{count})"
+      cart: " Cart"
       login: "Login"
       signup: "Sign up"
       logout: "Logout"

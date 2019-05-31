@@ -1,8 +1,7 @@
 <% provide :title, t(".title") %>
 <div class="lattest-product-area category-list">
   <div class="row">
-    <% 9.times.each do |item| %>
-      <%= render "products/product" %>
-    <% end %>
+      <%= render @products %>
   </div>
 </div>
+<%= javascript_include_tag "ajax_cart" %>

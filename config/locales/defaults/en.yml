@@ -31,3 +31,6 @@ en:
       session:
         email: "Email"
         password: "Password"
+  alert:
+    success[ajax_shopping]: "Add cart successfully!"
+    error[ajax_shopping]: "Error"
