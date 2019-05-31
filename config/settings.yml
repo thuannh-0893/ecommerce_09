@@ -29,3 +29,4 @@ add_index: 1
 time_zone: "Asia/Bangkok"
 controller:
   namespace_for_admin: "Admin"
+notifications: 5

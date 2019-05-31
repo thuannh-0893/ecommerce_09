@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
       params[:item_photos]["photo"].each do |a|
         @picture = @request.item_photos.create!(photo: a)
       end
+      add_activity "request.create"
       flash[:info] = t "helpers.success[added_product]"
       redirect_to requests_path
     end
@@ -41,6 +42,7 @@ class RequestsController < ApplicationController
           @picture = @request.item_photos.create!(photo: a)
         end
       end
+      add_activity "request.update"
       flash[:success] = t "helpers.success[update_product]"
       redirect_to requests_path
     end
@@ -49,6 +51,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    return if @request.activated?
     if @request.destroy
       flash[:success] = t "helpers.success[deleted_product]"
     else
@@ -73,5 +76,10 @@ class RequestsController < ApplicationController
 
   def sub_cat
     @sub_categories = Category.sub_only.by_name
+  end
+
+  def add_activity key
+    create_notification Product.name, @request,
+      key, User.admin.first
   end
 end

@@ -42,6 +42,8 @@ class OrdersController < ApplicationController
         quantity: p.total_quantity, actual_price: p.price_discounted)
       @products_order.save
     end
+    create_notification Order.name, @order,
+      "order.create", User.admin.first
     cookies.delete :products
     # OrderMailer.order_complete(current_user, @order).deliver_now
   end

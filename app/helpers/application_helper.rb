@@ -26,4 +26,8 @@ module ApplicationHelper
   def counter_index index
     index + Settings.add_index
   end
+
+  def count_notifications
+    @counter = Notification.correct_user(current_user.id).unread.count
+  end
 end

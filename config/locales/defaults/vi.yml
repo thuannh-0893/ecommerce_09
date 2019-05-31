@@ -76,6 +76,7 @@ vi:
   alert:
     success[ajax_shopping]: "Thêm giỏ hàng thành công!"
     error[ajax_shopping]: "Có lỗi"
+    error[notification]: "Đã xảy ra lỗi"
   date:
     formats:
       default: "%Y-%m-%d"

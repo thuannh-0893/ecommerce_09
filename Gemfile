@@ -23,15 +23,16 @@ gem "jquery-rails"
 gem "mini_magick", "~> 4.8"
 gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "nested_form_fields"
+gem "public_activity"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.3"
 gem "rails-i18n"
+gem "redis", "~> 4.0"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "will_paginate"
 # gem "capistrano-rails", group: :development
-# gem "redis", "~> 4.0"
 # gem "mini_racer", platforms: :ruby
 
 group :development, :test do

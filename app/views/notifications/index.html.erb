@@ -1,0 +1,9 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <div class="d-flex flex-column table-notifications">
+    <%= render_activities(@notifications_all) %>
+  </div>
+  <div class="filter-bar d-flex flex-wrap align-items-center">
+    <%= will_paginate @notifications_all %>
+  </div>
+</div>

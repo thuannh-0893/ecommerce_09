@@ -1,0 +1,21 @@
+vi:
+  public_activity:
+    product:
+      create:
+        message: "%{owner} đã thêm sản phẩm %{product}"
+      update:
+        message: "%{owner} đã cập nhật sản phẩm %{product}"
+    request:
+      create:
+        message: "%{owner} đã đề xuất sản phẩm %{product}"
+      update:
+        message: "%{owner} đã cập nhật sản phẩm %{product}"
+    order:
+      create:
+        message: "%{owner} đã tạo một đơn hàng"
+      processing:
+        message: "Đơn hàng của bạn đang được xử lý"
+      completed:
+        message: "Đơn hàng của bạn đã hoàn thành"
+      canceled:
+        message: "Đơn hàng của bạn đã bị hủy"

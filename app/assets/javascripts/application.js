@@ -12,6 +12,7 @@
 //
 //= require jquery-2.2.4.min
 //= require jquery
+//= require cable
 //= require bootstrap.min
 //= require bootstrap
 //= require rails-ujs
@@ -38,3 +39,4 @@
 
 //= require chartkick
 //= require Chart.bundle
+//= require ajax_notification

@@ -1,0 +1,21 @@
+en:
+  public_activity:
+    product:
+      create:
+        message: "%{owner} has created product %{product}"
+      update:
+        message: "%{owner} has updated product %{product}"
+    request:
+      create:
+        message: "%{owner} has suggested product %{product}"
+      update:
+        message: "%{owner} has updated product %{product}"
+    order:
+      create:
+        message: "%{owner} has created an order"
+      processing:
+        message: "Your order is being processed"
+      completed:
+        message: "Your order has been completed"
+      canceled:
+        message: "Your order has been canceled"

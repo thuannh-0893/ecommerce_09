@@ -76,6 +76,7 @@ en:
   alert:
     success[ajax_shopping]: "Add cart successfully!"
     error[ajax_shopping]: "Error"
+    error[notification]: "Something went wrong"
   date:
     formats:
       default: "%Y-%m-%d"
