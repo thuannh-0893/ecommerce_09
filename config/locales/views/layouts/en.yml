@@ -1,6 +1,21 @@
 en:
   layouts:
     application:
+      base_title: "Ecommerce"
+    header:
+      logo: "Ecommerce"
       language_en: "English"
       language_vi: "Tiếng Việt"
-      title: "Ecommerce"
+      home: "Home"
+      contact: "Contact"
+      about: "About"
+      cart: " Cart (%{count})"
+      login: "Login"
+      signup: "Sign up"
+      hot_trend: "Hot trend"
+      new_products: "New products"
+      sale_off: "Sale off"
+      categories: "Categories"
+    footer:
+      contact: "Contact"
+      about: "About"

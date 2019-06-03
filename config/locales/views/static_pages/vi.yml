@@ -1,0 +1,10 @@
+vi:
+  static_pages:
+    about:
+      title: "Giới thiệu"
+      description_html: "Trang giới thiệu"
+    contact:
+      title: "Liên hệ"
+      description_html: "Trang liên hệ"
+    home:
+      title: "Trang chủ"

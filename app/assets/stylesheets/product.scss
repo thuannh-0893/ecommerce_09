@@ -1,0 +1,114 @@
+.single-product {
+  margin-bottom: 50px;
+
+  img {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .product-details {
+    h6 {
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .price {
+      h6 {
+        font-size: 14px;
+        display: inline-block;
+        padding-right: 15px;
+        margin: 0;
+      }
+
+      .l-through {
+        text-decoration: line-through;
+        color: #cccccc;
+        margin-bottom: 0;
+      }
+    }
+
+    .prd-bottom {
+      position: relative;
+      margin-top: 20px;
+
+      .social-info {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        overflow: hidden;
+
+        span {
+          position: relative;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          text-align: center;
+          background: #828bb2;
+          border-radius: 50%;
+          display: inline-block;
+          color: #fff;
+          -webkit-transition: all 0.3s ease 0s;
+          -moz-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+          z-index: 1;
+
+          &:after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            content: "";
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -1;
+          }
+        }
+
+        .hover-text {
+          position: absolute;
+          left: 0;
+          top: 3px;
+          width: 100px;
+          left: -40px;
+          text-transform: uppercase;
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+          color: #222222;
+          -webkit-transition: all 0.3s ease 0s;
+          -moz-transition: all 0.3s ease 0s;
+          -o-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:hover {
+          width: 130px;
+
+          span:after {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .hover-text {
+            opacity: 1;
+            visibility: visible;
+            left: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fa-star {
+  color: #fbd600;
+}

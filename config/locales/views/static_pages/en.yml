@@ -1,0 +1,10 @@
+en:
+  static_pages:
+    about:
+      title: "About"
+      description_html: "About page"
+    contact:
+      title: "Contact"
+      description_html: "Contact page"
+    home:
+      title: "Home"

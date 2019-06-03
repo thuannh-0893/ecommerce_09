@@ -1,6 +1,21 @@
 vi:
   layouts:
     application:
+      base_title: "Ecommerce"
+    header:
+      logo: "Ecommerce"
       language_en: "English"
       language_vi: "Tiếng Việt"
-      title: "Ecommerce"
+      home: "Trang chủ"
+      contact: "Liên hệ"
+      about: "Giới thiệu"
+      cart: " Giỏ hàng (%{count})"
+      login: "Đăng nhập"
+      signup: "Đăng kí"
+      hot_trend: "Xu hướng"
+      new_products: "Sản phẩm mới"
+      sale_off: "Khuyến mãi"
+      categories: "Danh mục"
+    footer:
+      contact: "Liên hệ"
+      about: "Giới thiệu"
