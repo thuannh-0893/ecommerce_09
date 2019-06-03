@@ -1,5 +1,6 @@
 vi:
   shared:
-    single_product:
+  products:
+    product:
       view_more: "xem chi tiết"
       add_to_cart: "mua ngay"
