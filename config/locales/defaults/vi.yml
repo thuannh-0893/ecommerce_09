@@ -1,5 +1,24 @@
 vi:
-  helpers:
+  heplers:
+    base_title: "Ecommerce"
+    error[login]: "Email hoặc mật khẩu không đúng"
+    error[user]: "Người dùng không tồn tại!"
+    error[email_not_found]: "Không tìm thấy địa chỉ email"
+    error[password_reset_expired]: "Hết hạn đặt lại mật khẩu."
+    error[empty]: "không thể để trống"
+    error[not_correct_user]: "Bạn không có quyền xóa"
+    error[delete_failed]: "Xóa không thành công"
+    error[invalid_activation_link]: "Liên kết kích hoạt không hợp lệ"
+    info[email_reset]: "Email đã được gửi đi với hướng dẫn đặt lại mật khẩu"
+    info[signup]: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản"
+    success[updated_profile]: "Đã cập nhận hồ sơ"
+    success[deleted_user]: "Đã xóa người dùng"
+    success[welcome]: "Chào mừng đến với Sample App!"
+    success[password_reset]: "Mật khẩu đã được đặt lại."
+    success[activated]: "Tài khoản đã được kích hoạt!"
+    warning[login]: "Vui lòng đăng nhập."
+    warning[not_active]: "Tài khoản chưa được kích hoạt. Kiểm tra lại email của bạn để kích hoạt."
+    max_size: "phải nhỏ hơn %{size}MB"
     label:
       user:
         name: "Tên"
