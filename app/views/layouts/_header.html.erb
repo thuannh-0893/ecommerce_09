@@ -6,8 +6,8 @@
       <li><%= link_to t(".contact"), contact_path %></li>
       <li><%= link_to t(".about"), about_path %></li>
       <li>
-        <%= link_to("#") do %>
-          <span class="glyphicon glyphicon-shopping-cart"></span> <%= t ".cart", count: 2 %>
+        <%= link_to cart_path do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span> <%=t ".cart" %> (<span id="size-cart"><%=size_cart%></span>)
         <% end %>
       </li>
     </ul>
@@ -16,7 +16,7 @@
         <li><%= link_to @current_user.name, current_user %></li>
         <% if @current_user.admin? %>
           <li><%= link_to t(".dashboard"), "#" %></li>
-        <% end %>>
+        <% end %>
         <li><%= link_to t(".my_orders"), "#" %></li>
         <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
       <% else %>

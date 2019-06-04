@@ -130,6 +130,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.2.3)
+      i18n (>= 0.6.6)
     io-like (0.3.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -291,6 +293,7 @@ DEPENDENCIES
   config
   faker
   figaro
+  i18n-js
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

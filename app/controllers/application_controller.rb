@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include CartHelper
+
   protect_from_forgery with: :exception
   include SessionsHelper
   before_action :set_locale

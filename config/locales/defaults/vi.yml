@@ -31,3 +31,6 @@ vi:
       session:
         email: "Email"
         password: "Mật khẩu"
+  alert:
+    success[ajax_shopping]: "Thêm giỏ hàng thành công!"
+    error[ajax_shopping]: "Có lỗi"

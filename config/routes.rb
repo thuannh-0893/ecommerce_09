@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    post "/shopping", to: "cart#shopping"
+    get "/cart", to: "cart#show"
+    delete "/cart", to: "cart#destroy"
     resources :users
   end
 end
