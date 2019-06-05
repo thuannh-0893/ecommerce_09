@@ -1,0 +1,7 @@
+vi:
+  admin:
+    products:
+      index:
+        title: "Quản lí sản phẩm"
+        home: "Trang quản lí"
+        new: "Thêm sản phẩm mới"

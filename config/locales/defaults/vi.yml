@@ -1,5 +1,5 @@
 vi:
-  heplers:
+  helpers:
     base_title: "Ecommerce"
     error[login]: "Email hoặc mật khẩu không đúng"
     error[user]: "Người dùng không tồn tại!"
@@ -37,3 +37,21 @@ vi:
   alert:
     success[ajax_shopping]: "Thêm giỏ hàng thành công!"
     error[ajax_shopping]: "Có lỗi"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+  number:
+    currency:
+      format:
+        format: "%u%n"
+        unit: "$"
+        separator: '.'
+        delimiter: ','
+        precision: 2

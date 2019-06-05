@@ -8,3 +8,5 @@ en:
       description_html: "Contact page"
     home:
       title: "Home"
+    admin:
+      title: "Admin page"
