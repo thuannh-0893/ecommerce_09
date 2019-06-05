@@ -31,6 +31,9 @@ vi:
       session:
         email: "Email"
         password: "Mật khẩu"
+      category:
+        name: "Tên danh mục"
+        parent_category: "Danh mục cha"
   alert:
     success[ajax_shopping]: "Thêm giỏ hàng thành công!"
     error[ajax_shopping]: "Có lỗi"

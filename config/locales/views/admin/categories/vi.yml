@@ -1,0 +1,20 @@
+vi:
+  admin:
+    categories:
+      index:
+        title: "Quản lí danh mục"
+        name: "Tên danh mục"
+        parent_name: "Danh mục cha"
+        new: "Thêm danh mục mới"
+        home: "Trang quản lí"
+        empty: "Chưa có danh mục"
+      category:
+        edit: "Sửa"
+        delete: "Xóa"
+        confirm: "Bạn có chắc muốn xóa?"
+      new:
+        title: "Danh mục mới"
+        add: "Thêm danh mục"
+      edit:
+        title: "Sửa danh mục"
+        edit: "Sửa"

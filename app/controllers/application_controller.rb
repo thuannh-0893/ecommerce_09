@@ -36,4 +36,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "helpers.error[not_admin]"
     redirect_to root_url
   end
+
+  def list_categories
+    @list_categories = Category.all.by_name
+  end
 end

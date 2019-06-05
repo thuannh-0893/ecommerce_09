@@ -31,6 +31,9 @@ en:
       session:
         email: "Email"
         password: "Password"
+        category:
+        name: "Name"
+        parent_category: "Parent category"
   alert:
     success[ajax_shopping]: "Add cart successfully!"
     error[ajax_shopping]: "Error"

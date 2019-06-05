@@ -9,4 +9,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def sub_categories parent_id
+    @subcategories = Category.sub_categories parent_id
+  end
 end

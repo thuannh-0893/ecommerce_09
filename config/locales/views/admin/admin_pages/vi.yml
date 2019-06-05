@@ -1,0 +1,10 @@
+vi:
+  admin:
+    admin_pages:
+      index:
+        title: "Trang quản lí"
+        users: "Người dùng"
+        categories: "Danh mục"
+        products: "Sản phẩm"
+        orders: "Đơn hàng"
+        requested_products: "Sản phẩm được yêu cầu"

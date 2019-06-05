@@ -1,0 +1,11 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="list-menu">
+  <ul>
+    <li><%= link_to t(".users"), users_path %></li>
+    <li><%= link_to t(".categories"), admin_categories_path %></li>
+    <li><%= link_to t(".products"), "#" %></li>
+    <li><%= link_to t(".orders"), "#" %></li>
+    <li><%= link_to t(".requested_products"), "#" %></li>
+  </ul>
+</div>

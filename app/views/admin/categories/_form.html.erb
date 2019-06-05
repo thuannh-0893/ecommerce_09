@@ -1,0 +1,8 @@
+<%= form_for [:admin, @category] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :parent_category %>
+  <%= f.collection_select :parent_id, @parent_categories, :id, :name, include_blank: true, class: "form-control"%>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

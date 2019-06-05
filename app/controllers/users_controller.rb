@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: %i(destroy)
   before_action :find_user, except: %i(new create index)
+  before_action :list_categories
 
   def index
-    @users = User.paginate(page: params[:page],
-      per_page: Settings.per_page)
+    @users = User.by_name.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def show; end

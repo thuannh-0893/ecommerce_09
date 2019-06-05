@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController
+  before_action :list_categories
+
   def new; end
 
   def create
     @user = User.find_by email: params[:session][:email].downcase
-    if @user &. authenticate params[:session][:password]
+    if @user&.authenticate params[:session][:password]
       log_in @user
       redirect_back_or @user
     else
