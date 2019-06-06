@@ -1,0 +1,12 @@
+vi:
+  cart:
+    index:
+      title: "Giỏ hàng"
+      price: "Giá"
+      quantity: "Số lượng"
+      total: "Thành tiền"
+      back: "Trang chủ"
+      next: "Tiếp"
+      subtotal: "Tổng tiền:"
+    product_cart:
+      you_sure: "Bạn chắc chắn?"
