@@ -16,7 +16,7 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:info] = t "helpers.info[signup]"
+      flash[:info] = t "helpers.success[added_category]"
       redirect_to admin_categories_path
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.destroy
       flash[:success] = t "helper.success[deleted_category]"
     else
-      flash[:danger] = t "helper.error[fail_to_delete]"
+      flash[:danger] = t "helper.error[delete_failed]"
     end
     redirect_to admin_categories_path
   end
@@ -52,7 +52,7 @@ class Admin::CategoriesController < ApplicationController
   def find_category
     @category = Category.find_by id: params[:id]
     return if @category
-    flash[:danger] = t "helpers.error[user]"
+    flash[:danger] = t "helpers.error[category_not_found]"
     redirect_to admin_path
   end
 

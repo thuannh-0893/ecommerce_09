@@ -1,0 +1,22 @@
+<%= form_for [:admin, @admin_product] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :picture %> <br>
+  <% if !@admin_product.nil? %>
+    <%= image_tag @admin_product.picture.url, size: "400" %> <br>
+    <br>
+  <% end %>
+  <%= f.file_field :picture, accept: Settings.accept_image %>
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, @sub_categories, :id, :name, include_blank: false, class: "form-control"%>
+  <%= f.label :price %>
+  <%= f.text_field :price, class: "form-control" %>
+  <%= f.label :discount %>
+  <%= f.number_field :discount, class: "form-control" %>
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity, min: 0, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control", rows: "10" %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

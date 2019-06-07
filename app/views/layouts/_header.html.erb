@@ -48,7 +48,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <%= t ".categories" %> <span class="caret"></span></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="container">
+          <div class="dropdown-content">
             <div class="row">
               <% @list_categories.each do |category| %>
                 <% if category.parent_id.nil? %>
