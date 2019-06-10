@@ -18,6 +18,7 @@ module SessionsHelper
 
   def log_out
     session.delete :user_id
+    cookies.delete :products
     @current_user = nil
   end
 

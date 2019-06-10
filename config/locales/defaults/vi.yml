@@ -10,8 +10,11 @@ vi:
     error[delete_failed]: "Xóa không thành công"
     error[invalid_activation_link]: "Liên kết kích hoạt không hợp lệ"
     error[product_not_found]: "Không tìm thấy sản phẩm"
+    error[create-order-fail]: "Đặt hàng không thành công!"
+    error[create-order-fail-save]: " Có lỗi trong quá trình lưu đơn hàng. Vui lòng xem lại các sản phẩm đặt hàng!"
     info[email_reset]: "Email đã được gửi đi với hướng dẫn đặt lại mật khẩu"
     info[signup]: "Vui lòng kiểm tra email của bạn để kích hoạt tài khoản"
+    info[create-order]: "Đặt hàng thành công! Thông tin đặt hàng đã được gửi qua email. Cảm ơn bạn"
     success[updated_profile]: "Đã cập nhận hồ sơ"
     success[deleted_user]: "Đã xóa người dùng"
     success[welcome]: "Chào mừng đến với Sample App!"
@@ -38,6 +41,11 @@ vi:
       category:
         name: "Tên danh mục"
         parent_category: "Danh mục cha"
+      order:
+        receiver_name: "Tên người nhận"
+        receiver_phone: "SĐT người nhận"
+        receiver_address: "Địa chỉ người nhận"
+        description: "Mô tả"
   alert:
     success[ajax_shopping]: "Thêm giỏ hàng thành công!"
     error[ajax_shopping]: "Có lỗi"
@@ -56,6 +64,21 @@ vi:
       format:
         format: "%u%n"
         unit: "$"
-        separator: '.'
-        delimiter: ','
+        separator: "."
+        delimiter: ","
         precision: 2
+  activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        phone: "SĐT"
+        address: "Địa chỉ"
+        avatar: "Hình đại diện"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+      order:
+        receiver_name: "Tên người nhận"
+        receiver_phone: "SĐT người nhận"
+        receiver_address: "Địa chỉ người nhận"
+        description: "Mô tả"

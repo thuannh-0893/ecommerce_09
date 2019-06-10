@@ -50,4 +50,12 @@ module CartHelper
   def total_price quantity, price
     @total_price = quantity * price
   end
+
+  def list_products_cart products_in_cart
+    @products = Product.find_product_id(products_in_cart.keys)
+    @products.each do |p|
+      p.total_quantity = products_in_cart[p.id.to_s].to_i
+      p.price_discounted = price_discounted p.price, p.discount
+    end
+  end
 end

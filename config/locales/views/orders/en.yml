@@ -1,0 +1,9 @@
+en:
+  orders:
+    new:
+      title: "Order"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      subtotal: "Subtotal:"
+      order: "Order"
