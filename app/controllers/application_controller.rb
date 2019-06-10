@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-  def list_categories
+  def load_categories
     @list_categories = Category.all.by_name
   end
 end

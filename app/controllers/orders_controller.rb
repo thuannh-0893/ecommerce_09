@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :list_categories
+  before_action :load_categories
   before_action :logged_in_user, only: :new
 
   def new

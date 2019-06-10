@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-  before_action :list_categories
+  before_action :load_categories
 
   def create
     add_product params[:product_aid]
