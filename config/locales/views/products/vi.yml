@@ -1,0 +1,10 @@
+vi:
+  products:
+    product:
+      view_more: "xem chi tiết"
+      add_to_cart: "mua ngay"
+    index:
+      title: "Cửa hàng"
+    left_bar:
+      categories: "Danh mục"
+      filters: "Lọc sản phẩm"

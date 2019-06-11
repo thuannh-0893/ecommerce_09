@@ -82,3 +82,6 @@ vi:
         receiver_phone: "SĐT người nhận"
         receiver_address: "Địa chỉ người nhận"
         description: "Mô tả"
+  will_paginate:
+    next_label: "Sau"
+    previous_label: "Trước"

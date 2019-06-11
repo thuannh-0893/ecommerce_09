@@ -1,0 +1,10 @@
+en:
+  products:
+    product:
+      view_more: "view more"
+      add_to_cart: "add to cart"
+    index:
+      title: "Shop"
+    left_bar:
+      categories: "Categories"
+      filter: "Product filters"

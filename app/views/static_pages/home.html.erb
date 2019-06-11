@@ -1,8 +1,39 @@
 <% provide :title, t(".title") %>
-<div class="lattest-product-area category-list">
-  <div class="row">
-    <%= render @products %>
+<%= render "feature" %>
+<%= render "product_feature" %>
+<!-- start product Area -->
+<section class="owl-carousel active-product-area section_gap">
+  <!-- single product slide -->
+  <div class="single-product-slider">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-title">
+            <h1><%= t ".lasted-products" %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <%= render partial: "products/product", collection: @new_products, as: :product %>
+      </div>
+    </div>
   </div>
-  <%= will_paginate @products %>
-</div>
+  <!-- single product slide -->
+  <div class="single-product-slider">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-title">
+            <h1><%= t ".saleoff-products" %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <%= render partial: "products/product", collection: @saleoff_products, as: :product %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end product Area -->
+<%= render "shared/recently_viewed" %>
 <%= javascript_include_tag "ajax_cart" %>

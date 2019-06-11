@@ -19,6 +19,8 @@ vi:
       new_products: "Sản phẩm mới"
       sale_off: "Khuyến mãi"
       categories: "Danh mục"
+      shop: "Cửa hàng"
+      languages: "Languages"
     footer:
       contact: "Liên hệ"
       about: "Giới thiệu"

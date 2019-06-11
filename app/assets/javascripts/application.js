@@ -10,12 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery-2.2.4.min
 //= require jquery
+//= require bootstrap.min
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require fontawesome
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
+//= require vendor/ion.rangeSlider
+//= require vendor/jquery.sticky
+//= require vendor/nouislider.min
+//= require vendor/parallax.min
+
+//= require vendor/jquery.ajaxchimp.min
+//= require vendor/jquery.magnific-popup.min
+//= require vendor/jquery.nice-select.min
+//= require main
+//= require vendor/owl.carousel.min
+//= require vendor/popper

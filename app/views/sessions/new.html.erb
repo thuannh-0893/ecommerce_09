@@ -1,19 +1,42 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span><%= t ".remember" %></span>
-      <% end %>
-      <%= f.submit t(".title"), class: "btn btn-primary" %>
-    <% end %>
-    <%= link_to t(".forgot_password"), "#" %>
-    <p><%= t ".new_user" %> <%= link_to t(".signup"), signup_path %></p>
+<!--================Login Box Area =================-->
+<section class="login_box_area section_gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="login_box_img">
+          <img class="img-fluid" src="/assets/img/login.jpg" alt="">
+          <div class="hover">
+            <h4>New to our website?</h4>
+            <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+            <%= link_to t(".create-account"), signup_path, class: "primary-btn" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login_form_inner">
+          <h3><%= t ".title" %></h3>
+          <%= form_for(:session, url: login_path, html: {class: "row login_form"}) do |f| %>
+            <div class="col-md-12 form-group">
+              <%= f.email_field :email, class: "form-control", placeholder: :email %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.password_field :password, class: "form-control", placeholder: :password %>
+            </div>
+            <div class="col-md-12 form-group">
+              <div class="creat_account">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.submit t(".title"), class: "primary-btn" %>
+              <%= link_to t(".forgot_password"), "#" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+<!--================End Login Box Area =================-->

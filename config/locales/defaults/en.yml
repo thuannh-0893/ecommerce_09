@@ -82,3 +82,6 @@ en:
         receiver_phone: "Receiver phone"
         receiver_address: "Receiver address"
         description: "Description"
+  will_paginate:
+    next_label: "Next"
+    previous_label: "Prev"

@@ -1,22 +1,13 @@
 <!-- single product -->
-<div class="col-sm-4">
+<div class="col-lg-4 col-md-6">
   <div class="single-product">
-    <%= image_tag product.picture.url, alt: product.name %>
+    <%= image_tag product.picture.url, class: "img-fluid"  %>
     <div class="product-details">
-      <!-- sample data -->
       <h6><%= product.name %></h6>
       <div class="price">
         <h6><%= number_to_currency price_discounted(product.price, product.discount) %></h6>
         <h6 class="l-through"><%= number_to_currency product.price %></h6>
       </div>
-      <div class="rating_list">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <!-- end sample data -->
       <div class="prd-bottom">
         <%= link_to "javascript:void(0)", class: "social-info shopping", data_product_id: product.id do %>
           <span class="fas fa-cart-plus"></span>
@@ -24,7 +15,7 @@
         <% end %>
         <a href="" class="social-info">
           <span class="fas fa-info"></span>
-          <p class="hover-text"><%= t (".view_more") %></p>
+          <p class="hover-text"><%= t ".view_more" %></p>
         </a>
       </div>
     </div>
