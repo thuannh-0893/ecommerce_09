@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: %i(destroy)
   before_action :find_user, except: %i(new create index)
-  before_action :load_categories
 
   def index
     @users = User.by_name.paginate page: params[:page],

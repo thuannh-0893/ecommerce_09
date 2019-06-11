@@ -1,9 +1,7 @@
 class StaticPagesController < ApplicationController
-  before_action :load_categories
-
   def home
-    @products = Product.all.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    @new_products = Product.lasted.limit Settings.products.per_page
+    @saleoff_products = Product.high_discount.limit Settings.products.per_page
   end
 
   def contact; end

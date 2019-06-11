@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :load_categories
-
   def new; end
 
   def create
