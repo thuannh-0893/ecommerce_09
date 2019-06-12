@@ -5,7 +5,10 @@ class Product < ApplicationRecord
   has_many :rates, dependent: :destroy
   has_many :products_orders, dependent: :destroy
   has_many :comments, dependent: :destroy
-  mount_uploader :picture, PictureUploader
+  has_many :item_photos, dependent: :destroy
+
+  accepts_nested_attributes_for :item_photos, allow_destroy: true,
+    reject_if: proc{|attributes| attributes["photo"].blank?}
 
   scope :by_updated_at, ->{order updated_at: :desc}
   scope :find_product_id, ->(id){where id: id}

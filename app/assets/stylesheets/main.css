@@ -2212,6 +2212,12 @@ h6 {
   margin-bottom: 0;
 }
 
+.price .l-through {
+  text-decoration: line-through;
+  color: #cccccc;
+  margin-bottom: 0;
+}
+
 .single-product .product-details .prd-bottom {
   position: relative;
   margin-top: 20px;

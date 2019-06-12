@@ -10,35 +10,46 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @admin_product = Product.new
+    @picture = @admin_product.item_photos.build
   end
 
   def create
     @admin_product = Product.new product_params
     @admin_product.user_id = current_user.id
-    if @admin_product.save
+    Product.transaction do
+      @admin_product.save
+      params[:item_photos]["photo"].each do |a|
+        @picture = @admin_product.item_photos.create!(photo: a)
+      end
       flash[:info] = t "helpers.success[added_product]"
       redirect_to admin_products_path
-    else
-      render :new
     end
+  rescue ActiveRecord::RecordInvalid
+    render :new
   end
 
   def edit; end
 
   def update
-    if @admin_product.update_attributes product_params
-      flash[:success] = t "helper.success[update_product]"
+    Product.transaction do
+      @admin_product.update_attributes product_params
+      if params[:item_photos].present?
+        params[:item_photos]["photo"].each do |a|
+          @picture = @admin_product.item_photos.create!(photo: a)
+        end
+      end
+      flash[:success] = t "helpers.success[update_product]"
       redirect_to admin_products_path
-    else
-      render :edit
     end
+  rescue ActiveRecord::RecordInvalid
+    render :edit
   end
 
   def destroy
     if @admin_product.destroy
-      flash[:success] = t "helper.success[deleted_product]"
+      flash[:success] = t "helpers.success[deleted_product]"
     else
-      flash[:danger] = t "helper.error[delete_failed]"
+      flash[:danger] = t "helpers.error[delete_failed]"
     end
     redirect_to admin_products_path
   end
@@ -46,8 +57,9 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit :name, :picture, :category_id,
-      :price, :discount, :quantity, :description
+    params.require(:product).permit :name, :category_id,
+      :price, :discount, :quantity, :description,
+      item_photos_attributes: [:id, :photo]
   end
 
   def find_product

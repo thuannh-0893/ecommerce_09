@@ -8,3 +8,15 @@ vi:
     left_bar:
       categories: "Danh mục"
       filters: "Lọc sản phẩm"
+    show:
+      title: "Chi tiết sản phẩm"
+      add: "Thêm vào giỏ hàng"
+      category: "Danh mục"
+      availibility: "Trạng thái"
+      in_stock: "Còn hàng"
+      out_stock: "Hết hàng"
+      quantity: "Số lượng"
+    detail_product:
+      comments: "Bình luận"
+      reviews: "Đánh giá"
+      description: "Chi tiết"

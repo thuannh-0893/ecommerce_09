@@ -6,9 +6,3 @@ vi:
         other: "Biểu mẫu chứa %{count} lỗi"
     recently_viewed:
       title: "Sản phẩm đã xem"
-  products:
-    product:
-      view_more: "xem chi tiết"
-      add_to_cart: "mua ngay"
-    index:
-      title: "Cửa hàng"

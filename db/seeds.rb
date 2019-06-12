@@ -1,5 +1,5 @@
 sql_products = "ALTER TABLE products ADD FULLTEXT (name, description)"
-ActiveRecord::Base.connection.execute(sql)
+ActiveRecord::Base.connection.execute(sql_products)
 
 categories = []
 15.times do |n|
@@ -41,7 +41,6 @@ end
 products = []
 50.times do |n|
   name  = Faker::Lorem.sentence
-  picture = Faker::LoremFlickr.image
   description = Faker::Marketing.buzzwords
   quantity = Faker::Number.between(10, 200)
   price = Faker::Number.between(10, 500)
@@ -58,4 +57,5 @@ products = []
     rating: rating,
     discount: discount,
     user_id: user)
+  ItemPhoto.create!(product_id: (n+1), photo: "default.png")
 end

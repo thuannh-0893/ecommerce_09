@@ -1,7 +1,7 @@
 <!-- single product -->
 <div class="col-lg-4 col-md-6">
   <div class="single-product">
-    <%= image_tag product.picture.url, class: "img-fluid"  %>
+    <%= image_tag product.item_photos.first.photo_url, class: "img-fluid"  %>
     <div class="product-details">
       <h6><%= product.name %></h6>
       <div class="price">
@@ -13,10 +13,10 @@
           <span class="fas fa-cart-plus"></span>
           <p class="hover-text"><%= t (".add_to_cart") %></p>
         <% end %>
-        <a href="" class="social-info">
+        <%= link_to product, class: "social-info" do %>
           <span class="fas fa-info"></span>
           <p class="hover-text"><%= t ".view_more" %></p>
-        </a>
+        <% end %>
       </div>
     </div>
   </div>

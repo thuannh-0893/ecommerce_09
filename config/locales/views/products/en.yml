@@ -8,3 +8,15 @@ en:
     left_bar:
       categories: "Categories"
       filter: "Product filters"
+    show:
+      title: "Product's details"
+      add: "Add to Cart"
+      category: "Category"
+      availibility: "Availibility"
+      in_stock: "In Stock"
+      out_stock: "Out Stock"
+      quantity: "Quantity"
+    detail_product:
+      comments: "Comments"
+      reviews: "Reviews"
+      description: "Description"

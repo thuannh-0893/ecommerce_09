@@ -6,9 +6,3 @@ en:
         other: "The form contains %{count} errors"
     recently_viewed:
       title: "Recently viewed products"
-  products:
-    product:
-      view_more: "view more"
-      add_to_cart: "add to cart"
-    index:
-      title: "Shop"
