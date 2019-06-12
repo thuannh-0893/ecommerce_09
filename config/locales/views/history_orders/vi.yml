@@ -1,0 +1,29 @@
+vi:
+  history_orders:
+    index:
+      title: "Lịch sử đặt hàng"
+      order_id: "ID"
+      date: "Ngày mua"
+      product: "Sản phẩm"
+      subtotal: "Tổng tiền"
+      status: "Trạng thái"
+    order:
+      detail: "Chi tiết"
+    modal:
+      detail_order: "Chi tiết đơn đặt hàng #"
+      close: "Đóng"
+      order_id: "ID"
+      date: "Ngày mua"
+      subtotal: "Tổng tiền"
+      status: "Trạng thái"
+      receiver_name: "Tên người nhận"
+      receiver_phone: "SĐT người nhận"
+      receiver_address: "Địa chỉ người nhận"
+      description: "Mô tả"
+      order_details: "Chi tiết đơn hàng"
+      product: "Sản phẩm"
+      quantity: "Số lượng"
+      total: "Tổng"
+      order_info: "Thông tin đặt hàng"
+      receiver_info: "Thông tin người nhận"
+

@@ -15,7 +15,6 @@
   <td data-th="Subtotal"><span id="total-price-<%= product_cart.id %>"><%= number_to_currency total_price(product_cart.total_quantity, product_cart.price_discounted) %></span></td>
   <td class="actions" data-th="">
     <%= form_tag cart_path(id:0), method: :delete, data: { confirm: t(".you_sure") } do%>
-      <%= hidden_field_tag :product_id, product_cart.id %>
       <%= button_tag type: :submit, class: "btn btn-danger btn-sm" do %>
         <i class="fa fa-trash"></i>
       <% end %>

@@ -28,7 +28,7 @@
                   <% if @current_user.admin? %>
                     <li class="nav-item"><%= link_to t(".dashboard"), admin_path, class: "nav-link" %></li>
                   <% end %>
-                  <li class="nav-item"><%= link_to t(".my_orders"), "#", class: "nav-link" %></li>
+                  <li class="nav-item"><%= link_to t(".my_orders"), history_orders_path, class: "nav-link" %></li>
                   <li class="nav-item"><%= link_to t(".logout"), logout_path, method: :delete, class: "nav-link" %></li>
                 </ul>
               </li>
