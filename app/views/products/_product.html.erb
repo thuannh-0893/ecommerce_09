@@ -6,7 +6,9 @@
       <h6><%= product.name %></h6>
       <div class="price">
         <h6><%= number_to_currency price_discounted(product.price, product.discount) %></h6>
-        <h6 class="l-through"><%= number_to_currency product.price %></h6>
+        <% if product.discount > 0 %>
+          <h6 class="l-through"><%= number_to_currency product.price %></h6>
+        <% end %>
       </div>
       <div class="prd-bottom">
         <%= link_to "javascript:void(0)", class: "social-info shopping", data_product_id: product.id do %>

@@ -1,37 +1,49 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
-<div class="container">
-  <table id="cart" class="table table-hover table-condensed">
-    <thead>
-      <tr>
-        <th></th>
-        <th><%= t ".price" %></th>
-        <th><%= t ".quantity" %></th>
-        <th><%= t ".total" %></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: "product_cart", collection: @products %>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td>
-          <%= link_to home_path, class: "btn btn-warning" do %>
-            <i class="fa fa-angle-left"></i> <%= t ".back" %>
-          <% end %>
-        </td>
-        <td colspan="2" class="hidden-xs"></td>
-        <td class="hidden-xs text-center">
-          <strong><%= t ".subtotal"%> <span id="subtotal"><%= number_to_currency get_subtotal_price(@products) %></span></strong>
-        </td>
-        <td>
-          <%= link_to new_order_path, class: "btn btn-success btn-block" do %>
-            <%= t ".next" %> <i class="fa fa-angle-right"></i>
-          <% end %>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+    <div class="cart_inner">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "product", collection: @products %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <h5>Subtotal</h5>
+              </td>
+              <td>
+                <h5 id="subtotal"><%= number_to_currency get_subtotal_price(@products) %></h5>
+              </td>
+              <td></td>
+            </tr>
+            <tr class="out_button_area">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="checkout_btn_inner d-flex align-items-center">
+                  <%= link_to t(".continue"), shop_path, class: "gray_btn" %>
+                  <%= link_to t(".checkout"), "#", class: "primary-btn" %>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================End Cart Area =================-->
 <%= javascript_include_tag "ajax_cart" %>
