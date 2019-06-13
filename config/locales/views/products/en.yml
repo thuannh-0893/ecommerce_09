@@ -5,9 +5,6 @@ en:
       add_to_cart: "add to cart"
     index:
       title: "Shop"
-    left_bar:
-      categories: "Categories"
-      filter: "Product filters"
     show:
       title: "Product's details"
       add: "Add to Cart"
@@ -20,3 +17,16 @@ en:
       comments: "Comments"
       reviews: "Reviews"
       description: "Description"
+    left_bar:
+      product_filters: "Product Filters"
+      sort: "Sort"
+      sort_a_z: "Name A -> Z"
+      sort_z_a: "Name Z -> A"
+      sort_new: "Most new"
+      sort_price_a_z: "Highest price"
+      sort_price_z_a: "Lowest price"
+      rating: "Rating"
+      bigger: "> "
+      categories: "Categories"
+    filter:
+      title: "Shop"

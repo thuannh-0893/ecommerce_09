@@ -5,9 +5,6 @@ vi:
       add_to_cart: "mua ngay"
     index:
       title: "Cửa hàng"
-    left_bar:
-      categories: "Danh mục"
-      filters: "Lọc sản phẩm"
     show:
       title: "Chi tiết sản phẩm"
       add: "Thêm vào giỏ hàng"
@@ -20,3 +17,16 @@ vi:
       comments: "Bình luận"
       reviews: "Đánh giá"
       description: "Chi tiết"
+    left_bar:
+      product_filters: "Bộ lọc sản phẩm"
+      sort: "Sắp xếp"
+      sort_a_z: "Tên A -> Z"
+      sort_z_a: "Tên Z -> A"
+      sort_new: "Mới nhất"
+      sort_price_a_z: "Giá cao nhất"
+      sort_price_z_a: "Giá thấp nhất"
+      rating: "Xếp hạng"
+      bigger: "> "
+      categories: "Danh mục"
+    filter:
+      title: "Cửa hàng"

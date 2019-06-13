@@ -20,46 +20,58 @@
     </ul>
   </div>
   <div class="sidebar-filter mt-50">
-    <div class="top-filter-head"><%= t ".filters" %></div>
+    <%= form_tag(shop_path, method: :get, id: "click-radio-sort") do %>  
+    <div class="top-filter-head"><%= t ".product_filters" %></div>
     <div class="common-filter">
-      <div class="head">Brands</div>
-      <form action="#">
+      <div class="head"><%= t ".sort" %></div>
         <ul>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_a_z" name="sort" value="sort_a_z"><label for="sort_a_z"><%= t ".sort_a_z" %></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_z_a" name="sort" value="sort_z_a"><label for="sort_z_a"><%= t ".sort_z_a" %></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_new" name="sort" value="sort_new"><label for="sort_new"><%= t ".sort_new" %></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_price_a_z" name="sort" value="sort_price_a_z"><label for="sort_price_a_z"><%= t ".sort_price_a_z" %></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_price_z_a" name="sort" value="sort_price_z_a"><label for="sort_price_z_a"><%= t ".sort_price_z_a" %></label></li>
         </ul>
-      </form>
     </div>
     <div class="common-filter">
-      <div class="head">Color</div>
-      <form action="#">
+      <div class="head"><%= t ".rating" %></div>
         <ul>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">Black
-              Leather<span>(29)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">Black
-              with red<span>(19)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">Gold<span>(19)</span></label></li>
-          <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">Spacegrey<span>(19)</span></label></li>
+          <li class="filter-list"><input class="pixel-radio radio-rating" type="radio" id="rating-4" name="rating" value="4">
+            <label for="rating-4"><%= t ".bigger" %>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </label>
+          </li>
+          <li class="filter-list"><input class="pixel-radio radio-rating" type="radio" id="rating-3" name="rating" value="3">
+            <label for="rating-3"><%= t ".bigger" %>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </label>
+          </li>
+          <li class="filter-list"><input class="pixel-radio radio-rating" type="radio" id="rating-2" name="rating" value="2">
+            <label for="rating-2"><%= t ".bigger" %>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </label>
+          </li>
+          <li class="filter-list"><input class="pixel-radio radio-rating" type="radio" id="rating-1" name="rating" value="1">
+            <label for="rating-1"><%= t ".bigger" %>
+              <i class="fa fa-star"></i>
+            </label>
+          </li>
         </ul>
-      </form>
     </div>
     <div class="common-filter">
       <div class="head">Price</div>
-      <div class="price-range-area">
-        <div id="price-range"></div>
-        <div class="value-wrapper d-flex">
-          <div class="price">Price:</div>
-          <span>$</span>
-          <div id="lower-value"></div>
-          <div class="to">to</div>
-          <span>$</span>
-          <div id="upper-value"></div>
-        </div>
-      </div>
+      <section class="range-slider">
+        <span class="rangeValues"></span>
+        <input value="<%= params[:price_min] || 0 %>" min="0" max="1000" step="10" type="range" name="price_min" id="price_min">
+        <input value="<%= params[:price_max] || 1000 %>" min="0" max="1000" step="100" type="range" name="price_max" id="price_max">
+      </section>
     </div>
+    <% end %>
   </div>
 </div>
+<%= javascript_include_tag "filter" %>

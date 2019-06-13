@@ -13,6 +13,7 @@
  *= require_self
  *= require product
  *= require cart
+ *= require filter
  *= require bootstrap
  *= require jquerysctipttop
  *= require main

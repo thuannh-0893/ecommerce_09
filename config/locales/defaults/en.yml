@@ -15,6 +15,7 @@ en:
     info[email_reset]: "Email sent with password reset instructions"
     info[signup]: "Please check your email to activate your account."
     info[create-order]: "Order successfully! Order information has been sent via email. Thank you"
+    info[create-order-fail]: "Order failed!"
     success[updated_profile]: "Profile updated"
     success[deleted_user]: "User deleted"
     success[welcome]: "Welcome to Sample App!"
