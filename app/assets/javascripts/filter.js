@@ -1,9 +1,39 @@
-$('.radio-sort').click(function() {
+function submitFilter(){
+  var cat = getUrlParameter('cat');
+  if (cat != null) {
+    var input = $("<input>")
+               .attr("type", "hidden")
+               .attr("name", "cat").val(cat);
+    $('#click-radio-sort').append(input);
+  }
   $( '#click-radio-sort' ).submit();
-});
-$('.radio-rating').click(function() {
-  $( '#click-radio-sort' ).submit();
-});
+}
+function getVals(){
+  // Get slider values
+  var parent = this.parentNode;
+  var slides = parent.getElementsByTagName("input");
+  var slide1 = parseFloat( slides[0].value );
+  var slide2 = parseFloat( slides[1].value );
+  // Neither slider will clip the other, so make sure we determine which is larger
+  if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+  
+  var displayElement = parent.getElementsByClassName("rangeValues")[0];
+  displayElement.innerHTML = "$ " + slide1 + "- $" + slide2;
+}
+window.onload = function(){
+  // Initialize Sliders 
+  var sliderSections = document.getElementsByClassName("range-slider");
+  for( var x = 0; x < sliderSections.length; x++ ){
+    var sliders = sliderSections[x].getElementsByTagName("input");
+    for( var y = 0; y < sliders.length; y++ ){
+      if( sliders[y].type ==="range" ){
+        sliders[y].oninput = getVals;
+        // Manually trigger event first time to display values
+        sliders[y].oninput();
+      }
+    }
+  }
+}
 var getUrlParameter = function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1),
       sURLVariables = sPageURL.split('&'),
@@ -18,6 +48,18 @@ var getUrlParameter = function getUrlParameter(sParam) {
       }
   }
 };
+$('.radio-sort').click(function() {
+  submitFilter();
+});
+$('.radio-rating').click(function() {
+  submitFilter();
+});
+$('#price_min').click(function() {
+  submitFilter();
+});
+$('#price_max').click(function() {
+  submitFilter();
+});
 var sort = getUrlParameter('sort');
 if (sort == 'sort_a_z') {
   document.getElementById('sort_a_z').checked = true;
@@ -47,37 +89,3 @@ if (rating == '2') {
 if (rating == '1') {
   document.getElementById('rating-1').checked = true;
 }
-
-function getVals(){
-  // Get slider values
-  var parent = this.parentNode;
-  var slides = parent.getElementsByTagName("input");
-  var slide1 = parseFloat( slides[0].value );
-  var slide2 = parseFloat( slides[1].value );
-  // Neither slider will clip the other, so make sure we determine which is larger
-  if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
-  
-  var displayElement = parent.getElementsByClassName("rangeValues")[0];
-  displayElement.innerHTML = "$ " + slide1 + "- $" + slide2;
-}
-
-window.onload = function(){
-  // Initialize Sliders 
-  var sliderSections = document.getElementsByClassName("range-slider");
-  for( var x = 0; x < sliderSections.length; x++ ){
-    var sliders = sliderSections[x].getElementsByTagName("input");
-    for( var y = 0; y < sliders.length; y++ ){
-      if( sliders[y].type ==="range" ){
-        sliders[y].oninput = getVals;
-        // Manually trigger event first time to display values
-        sliders[y].oninput();
-      }
-    }
-  }
-}
-$('#price_min').click(function() {
-  $( '#click-radio-sort' ).submit();
-});
-$('#price_max').click(function() {
-  $( '#click-radio-sort' ).submit();
-});

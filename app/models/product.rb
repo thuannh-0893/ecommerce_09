@@ -33,9 +33,35 @@ class Product < ApplicationRecord
       order(price_discounted: :asc)
     end
   end)
-  scope :rating, ->(rating_option){where("rating > ?", rating_option)}
-  scope :price_min, ->(price_min){where("price > ?", price_min)}
-  scope :price_max, ->(price_max){where("price < ?", price_max)}
+  scope :rating, (lambda do |rating_option|
+    return if rating_option.nil?
+    where("rating > ?", rating_option)
+  end)
+  scope :price_min, (lambda do |price_min|
+    return if price_min.nil?
+    where("price > ?", price_min)
+  end)
+  scope :price_max, (lambda do |price_max|
+    return if price_max.nil?
+    where("price < ?", price_max)
+  end)
+  scope :by_category_id, (lambda do |category_id|
+    return if category_id.nil?
+    category = Category.sub_categories_or(category_id)
+    where category_id: category if category.any?
+  end)
+  scope :by_hot_trend, (lambda do |hot_trend|
+    case hot_trend
+    when "hot-trend"
+      order(views: :desc)
+    when "new-products"
+      order(id: :desc)
+    when "sale-off"
+      order(discount: :desc)
+    when "high-rating"
+      order(rating: :desc)
+    end
+  end)
 
   attr_accessor :total_quantity, :price_discounted
 

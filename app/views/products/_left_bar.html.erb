@@ -6,12 +6,16 @@
         <% if category.parent_id.nil? %>
           <li class="main-nav-list">
             <div class="row col-lg-12">
-              <a class="col-md-10" href="#"><%= category.name %></a>
+              <%= link_to(category.name, shop_path(cat: category.id, sort: params[:sort], rating: params[:rating],
+                price_min: params[:price_min], price_max: params[:price_max]), class: "col-md-10 filter-category") %>
               <a class="col-md-2" data-toggle="collapse" href="#cat<%= category.id %>"><i class="arrow fas fa-angle-down"></i></a>
             </div>
             <ul class="collapse" id="cat<%= category.id %>">
               <% sub_categories(category.id).each do |sub_cat| %>
-                <li class="main-nav-list child"><a href="#"><%= sub_cat.name %></a></li>
+                <li class="main-nav-list child">
+                  <%= link_to(sub_cat.name, shop_path(cat: sub_cat.id, sort: params[:sort], rating: params[:rating],
+                    price_min: params[:price_min], price_max: params[:price_max]), class: "filter-category") %>
+                </li>
               <% end %>
             </ul>
           </li>
