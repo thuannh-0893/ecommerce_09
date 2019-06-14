@@ -3,3 +3,14 @@ vi:
     new:
       title: "Đăng kí"
       create: "Tạo tài khoản"
+    show:
+      title: "Hồ sơ"
+      name: "Tên"
+      email: "Email"
+      phone: "SĐT"
+      address: "Địa chỉ"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      my_history: "Lịch sử đặt hàng của tôi"
+    edit:
+      title: "Chỉnh sửa hồ sơ"
+      edit: "Chỉnh sửa"

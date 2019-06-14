@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: %i(new create show)
+  before_action :logged_in_user, except: %i(new create)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: %i(destroy)
   before_action :find_user, except: %i(new create index)
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "helper.success[updated_profile]"
+      flash[:success] = t "helpers.success[updated_profile]"
       redirect_to @user
     else
       render :edit
@@ -38,9 +38,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t "helper.success[deleted_user]"
+      flash[:success] = t "helpers.success[deleted_user]"
     else
-      flash[:danger] = t "helper.error[fail_to_delete]"
+      flash[:danger] = t "helpers.error[fail_to_delete]"
     end
     redirect_to users_url
   end
