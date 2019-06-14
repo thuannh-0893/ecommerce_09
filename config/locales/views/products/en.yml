@@ -30,3 +30,13 @@ en:
       categories: "Categories"
     filter:
       title: "Shop"
+    review:
+      overall: "Overall"
+      reviews:
+        one: "%{count} Review"
+        other: "%{count} Reviews"
+      load_more: "Load more"
+      add_review: "Add a review"
+      review: "Review"
+      login: "Login"
+      your_rating: "Your rating"
