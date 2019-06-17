@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get "/search", to: "searchs#index"
     get "/history-orders", to: "history_orders#index"
     post "/rates", to: "rates#create"
+    post "/comments", to: "comments#create"
 
     resources :orders, only: %i(new create)
     resources :cart, only: %i(index create update)

@@ -38,3 +38,10 @@ vi:
       review: "Đánh giá"
       login: "Đăng nhập"
       your_rating: "Đánh giá của bạn"
+    comment:
+      reply: "Trả lời"
+      load_more: "Tải thêm"
+      login: "Đăng nhập"
+      submit: "Bình luận"
+      comment: "Bình luận"
+      post_a_comment: "Thêm bình luận"

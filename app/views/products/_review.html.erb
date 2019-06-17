@@ -13,8 +13,7 @@
         </div>
       </div>
       <div class="review_list">
-        <% reviews = sort_by_date @product.id %>
-        <% reviews.each do |review| %>
+        <% @reviews.each do |review| %>
           <div class="review_item">
             <div class="media">
               <div class="d-flex">

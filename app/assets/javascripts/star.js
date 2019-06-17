@@ -1,26 +1,41 @@
 $(function () {
-  var rating = $(".rateyo-readonly").attr("data");
+  var rating = $('.rateyo-readonly').attr('data');
   if (rating == '') rating = 0
 
-  $(".rateyo-readonly").rateYo({
+  $('.rateyo-readonly').rateYo({
     rating: rating,
     readOnly: true
   });
 
-  $(".rateyo").rateYo({
+  $('.rateyo').rateYo({
     rating: 0,
     fullStar: true
   });
 });
 
 $(function () {
-  $(".review_item").slice(0, 6).show();
-  $("#loadMore").on('click', function (e) {
+  $('.review_item').slice(0, 6).show();
+  $('#loadMore').on('click', function (e) {
     e.preventDefault();
-    $(".review_item:hidden").slice(0, 6).slideDown();
-    if ($(".review_item:hidden").length == 0) {
-      $("#load").fadeOut('slow');
-      $("#loadMore a").css("cursor", "not-allowed");
+    $('.review_item:hidden').slice(0, 6).slideDown();
+    if ($('.review_item:hidden').length == 0) {
+      $('#load').fadeOut('slow');
+      $('#loadMore a').css('cursor', 'not-allowed');
+    }
+    $('html,body').animate({
+      scrollTop: $(this).offset().top
+    }, 1500);
+  });
+});
+
+$(function () {
+  $('.comment_item').slice(0, 6).show();
+  $('#loadMoreComment').on('click', function (e) {
+    e.preventDefault();
+    $('.comment_item:hidden').slice(0, 6).slideDown();
+    if ($('.comment_item:hidden').length == 0) {
+      $('#load').fadeOut('slow');
+      $('#loadMoreComment a').css('cursor', 'not-allowed');
     }
     $('html,body').animate({
       scrollTop: $(this).offset().top

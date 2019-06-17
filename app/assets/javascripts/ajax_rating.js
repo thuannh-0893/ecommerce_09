@@ -1,16 +1,15 @@
 $('#rate').on('click', function () {
-  var product_id = $('.rateyo').attr('pid');
-  var rating = $('.rateyo').rateYo('option', 'rating');
-  var content = $('#content').val();
+  var fdata = new FormData();
+  fdata.append('product_id', $('.rateyo').attr('pid'));
+  fdata.append('rating', $('.rateyo').rateYo('option', 'rating'));
+  fdata.append('content', $('#content').val());
   $.ajax({
     url: '/rates',
     type: 'POST',
     cache: false,
-    data: {
-      product_id: product_id,
-      rating: rating,
-      content: content
-    },
+    processData: false,
+    contentType: false,
+    data: fdata,
     success: function (data) {
       $('.box_total h3').text(data.overall);
       $('.box_total h6').text('(' + data.counter_reviews + ' Reviews)');

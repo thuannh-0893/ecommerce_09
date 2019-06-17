@@ -19,7 +19,7 @@ module ApplicationHelper
     ""
   end
 
-  def sort_by_date product_id
-    @rates = Rate.product_reviews(product_id).by_date
+  def sub_comments parent_id
+    @sub_comments = Comment.sub_comments(parent_id).by_date
   end
 end

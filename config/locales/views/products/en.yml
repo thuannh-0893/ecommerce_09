@@ -40,3 +40,10 @@ en:
       review: "Review"
       login: "Login"
       your_rating: "Your rating"
+    comment:
+      reply: "Reply"
+      load_more: "Load more"
+      login: "Login"
+      submit: "Submit"
+      comment: "Comment"
+      post_a_comment: "Post a comment"
