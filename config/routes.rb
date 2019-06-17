@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories, except: :show
       resources :products
+      resources :orders, only: %i(index update)
     end
   end
 end

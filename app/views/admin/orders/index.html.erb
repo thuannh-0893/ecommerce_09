@@ -1,0 +1,52 @@
+<% provide :title, t(".title") %>
+<section class="section_gap_bottom">
+  <div class="main-content">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+      <ul class="breadcrumb">
+        <li>
+          <i class="ace-icon fa fa-home home-icon"></i>
+          <%= link_to t(".home"), admin_path %>
+        </li>
+        <li class="active"><%= t ".title" %></li>
+      </ul>
+      <!-- /.breadcrumb -->
+    </div>
+    <div class="main-content-inner container">
+      <div class="page-content">
+        <div class="row">
+          <div class="col-xs-12">
+            <div>
+              <% if @orders.any? %>
+                <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th><%= t ".id" %></th>
+                      <th><%= t ".orderer" %></th>
+                      <th><%= t ".receiver_name" %></th>
+                      <th><%= t ".receiver_phone" %></th>
+                      <th><%= t ".receiver_address" %></th>
+                      <th><%= t ".created_at" %></th>
+                      <th><%= t ".updated_at" %></th>
+                      <th><%= t ".total_price" %></th>
+                      <th><%= t ".status" %></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%= render @orders %>
+                  </tbody>
+                </table>
+              <% else %>
+                <%= t ".no_order" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.page-content -->
+      <%= will_paginate %>
+    </div>
+  </div>
+  <%= render partial: "admin/orders/modal", collection: @orders %>
+  <!-- /.main-content -->
+</section>
