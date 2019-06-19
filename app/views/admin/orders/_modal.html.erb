@@ -62,7 +62,7 @@
                             (<%= t ".not_enough" %>)
                             <% end %>
                           </h5>
-                          <p>(<%= t ".in_stock" %><%= p.product.quantity %>)</p>
+                          <p>(<%= t ".in_stock" %><%= p.product_quantity %>)</p>
                         </td>
                         <td>
                           <p><%= number_to_currency total_price(p.quantity, p.actual_price) %></p>

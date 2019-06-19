@@ -47,3 +47,6 @@ en:
       submit: "Submit"
       comment: "Comment"
       post_a_comment: "Post a comment"
+    recently_viewed:
+      no_recently_product: "No product recently viewed"
+
