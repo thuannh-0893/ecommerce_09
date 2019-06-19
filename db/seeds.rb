@@ -3,13 +3,13 @@ ActiveRecord::Base.connection.execute(sql_products)
 
 categories = []
 15.times do |n|
-  name = Faker::Lorem.word + Faker::Lorem.word
+  name = Faker::House.furniture + " " + Faker::House.room
   parent_id = n > 5 ? Faker::Number.between(1, 5) : nil
   categories << Category.create!(name: name,
     parent_id: parent_id)
 end
 
-User.create!(name: "Admin Account",
+User.create!(name: "Administrator",
   email: "admin@example.com",
   password: "admin123",
   password_confirmation: "admin123",
@@ -40,8 +40,8 @@ end
 
 products = []
 50.times do |n|
-  name  = Faker::Lorem.sentence
-  description = Faker::Marketing.buzzwords
+  name  = Faker::Food.dish
+  description = Faker::Food.description
   quantity = Faker::Number.between(10, 200)
   price = Faker::Number.between(10, 500)
   category_id = Faker::Number.between(6, 15)
@@ -56,6 +56,7 @@ products = []
     category_id: category_id,
     rating: rating,
     discount: discount,
-    user_id: user)
+    user_id: user,
+    activated: [true, false].sample)
   ItemPhoto.create!(product_id: (n+1), photo: "default.png")
 end

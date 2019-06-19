@@ -1,0 +1,32 @@
+vi:
+  requests:
+    request:
+      confirm: "Bạn có chắc muốn xóa?"
+    index:
+      title: "Đề xuất sản phẩm"
+      new: "Tạo một đề xuất"
+      name: "Tên"
+      picture: "Hình ảnh"
+      price: "Giá"
+      category: "Danh mục"
+      created_at: "Ngày tạo"
+      updated_at: "Cập nhật"
+      status: "Trạng thái"
+    show:
+      title: "Chi tiết sản phẩm"
+      add: "Thêm vào giỏ hàng"
+      category: "Danh mục"
+      availibility: "Trạng thái"
+      in_stock: "Còn hàng"
+      out_stock: "Hết hàng"
+      quantity: "Số lượng"
+    detail_product:
+      comments: "Bình luận"
+      reviews: "Đánh giá"
+      description: "Chi tiết"
+    new:
+      title: "Đề xuất một sản phẩm mới"
+      add: "Gửi"
+    edit:
+      title: "Chỉnh sửa sản phẩm"
+      edit: "Lưu thay đổi"

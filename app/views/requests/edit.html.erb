@@ -1,0 +1,42 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".edit") %>
+<section class="section_gap_bottom container">
+  <div class="main-content">
+    <div class="main-content-inner">
+      <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+          <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <%= link_to t(".home"), admin_path %>
+          </li>
+          <li class="active"><%= t ".title" %></li>
+        </ul>
+        <!-- /.breadcrumb -->
+      </div>
+      <div class="page-content">
+        <div class="page-header">
+          <h1><%= t ".title" %></h1>
+          <hr>
+        </div>
+        <!-- /.page-header -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-10 col-md-6 col-md-offset-3">
+                <% @request.item_photos.each do |p| %>
+                  <%= image_tag p.photo_url, class: "p_image" %>
+                  <%= link_to t(".destroy"), item_photo_path(p), method: :delete %>
+                <% end %>
+                <%= form_for @request, url: {action: :update} do |form| %>
+                  <%= render partial: "form", locals: { f: form } %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.page-content -->
+    </div>
+  </div>
+  <!-- /.main-content -->
+</section>

@@ -5,7 +5,7 @@
     <div class="row s_product_inner">
       <div class="col-lg-6">
         <div class="s_Product_carousel">
-          <% @product.item_photos.each do |p| %>
+          <% @request.item_photos.each do |p| %>
             <div class="single-prd-item">
               <%= image_tag p.photo_url, class: "img-fluid" %>
             </div>
@@ -16,46 +16,46 @@
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
-          <h3><%= @product.name%></h3>
+          <h3><%= @request.name %></h3>
           <div class="price">
             <h3>
-              <%= number_to_currency price_discounted(@product.price, @product.discount) %>
+              <%= number_to_currency price_discounted(@request.price, @request.discount) %>
             </h3>
-            <% if @product.discount > 0 %>
-              <h5 class="l-through"><%= number_to_currency @product.price %></h5>
+            <% if @request.discount > Settings.min_discount %>
+              <h5 class="l-through"><%= number_to_currency @request.price %></h5>
             <% end %>
           </div>
           <ul class="list">
             <li>
-              <span><%= t ".category" %>:</span><%= @product.category.name %>
+              ><span><%= t ".category" %>:</span><%= @request.category.name %>
             </li>
-            <% if @product.quantity > 0 %>
+            <% if @request.quantity > 0 %>
               <li>
                 <span><%= t ".availibility" %>:</span><%= t ".in_stock" %>
               </li>
             <% else %>
               <li>
-                <span><%= t ".availibility" %>:</span><%= t ".out_stock" %>
-              </li>
-            <% end %>
-          </ul>
-          <p></p>
-          <div class="product_count">
-            <label for="qty"><%= t ".quantity" %>:</label>
-            <input type="number" class="input-text qty"
-              value="1" min="1" max="<%= @product.quantity %>">
-          </div>
-          <% if @product.quantity > 0 %>
-            <div class="card_area d-flex align-items-center">
-              <a class="primary-btn" href="#"><%= t ".add" %></a>
-            </div>
+                <%= t ".availibility" %>:</span><%= t ".out_stock" %>
+            </li>
           <% end %>
+        </ul>
+        <p></p>
+        <div class="product_count">
+          <label for="qty"><%= t ".quantity" %>:</label>
+          <input type="number" class="input-text qty"
+              value="1" min="1" max="<%= @request.quantity %>">
         </div>
+        <% if @request.quantity > 0 %>
+          <div class="card_area d-flex align-items-center">
+            <a class="primary-btn" href="#"><%= t ".add" %></a>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+</div>
 <!--================End Single Product Area =================-->
-<%= render partial: "detail_product", object: @product %>
+<%= render partial: "detail_request", object: @request %>
 <%= render "shared/recently_viewed" %>
 <%= javascript_include_tag "ajax_cart" %>
