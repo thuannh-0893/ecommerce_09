@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="comment_list">
-        <% if @comments.any? %>
+        <% if @comments&.any? %>
           <% @comments.each do |comment| %>
             <div class="comment_item">
               <div class="media">

@@ -21,6 +21,17 @@
         <div class="row">
           <div class="col-xs-12">
             <h5>
+              <%= form_tag import_admin_products_path, multipart: true do %>
+                <%= file_field_tag :file, class: "form-control" %>
+                <%= submit_tag t(".import"), class: "btn btn-info" %>
+              <% end %>
+            </h5>
+            <h5>
+              <%= link_to t(".exportCSV"), admin_products_path(format: "csv"), class: "btn btn-info" %>
+              <%= link_to t(".exportExcel"), admin_products_path(format: "xls"), class: "btn btn-info" %>
+              <%= link_to t(".exportCSV_template"), admin_products_path(format: "csv", template: true), class: "btn btn-info" %>
+            </h5>
+            <h5>
               <%= link_to(new_admin_product_path) do %>
                 <span class="fas fa-plus"><%= t ".new" %></span>
               <% end %>

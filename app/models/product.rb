@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  require "csv"
+
   belongs_to :category
   belongs_to :user
   has_many :history_views, dependent: :destroy
@@ -71,5 +73,32 @@ class Product < ApplicationRecord
   def get_total_price
     return price_discounted * total_quantity if total_quantity.present?
     price_discounted
+  end
+
+  class << self
+    def import file_path, current_user
+      CSV.foreach(file_path, headers: true) do |row|
+        product_hash = row.to_hash
+        Product.create!(product_hash.merge(user_id: current_user.id))
+      end
+    end
+
+    def to_csv
+      CSV.generate do |csv|
+        csv << column_names
+        all.each do |product|
+          csv << product.attributes.values_at(*column_names)
+        end
+      end
+    end
+
+    def to_csv_template
+      column_names = %w(name description category_id quantity price)
+      product = Product.new Settings.products.column_names.to_hash
+      CSV.generate do |csv|
+        csv << column_names
+        csv << product.attributes.values_at(*column_names)
+      end
+    end
   end
 end

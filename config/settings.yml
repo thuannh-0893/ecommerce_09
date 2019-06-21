@@ -17,4 +17,10 @@ accept_image: "image/jpeg,image/gif,image/png"
 products:
   per_page: 9
   history_view: 9
+  column_names:
+    name: "Adidas"
+    description: "From New York"
+    quantity: 10
+    price: 20
+    category_id: 1
 min_discount: 0
