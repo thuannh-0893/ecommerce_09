@@ -7,5 +7,6 @@ class CreateCategories < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_foreign_key :categories, :categories, column: :parent_id
+    add_index :categories, :name, type: :fulltext
   end
 end
