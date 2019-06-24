@@ -1,6 +1,16 @@
 <% provide :title, t(".title") %>
 <section class="section_gap_bottom">
   <div class="main-content">
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+      <ul class="breadcrumb">
+        <li>
+          <i class="ace-icon fa fa-home home-icon"></i>
+          <%= link_to t(".home"), admin_path %>
+        </li>
+        <li class="active"><%= t ".title" %></li>
+      </ul>
+      <!-- /.breadcrumb -->
+    </div>
     <div class="main-content-inner container">
       <div class="page-content">
         <div class="page-header">
@@ -9,11 +19,6 @@
         <!-- /.page-header -->
         <div class="row">
           <div class="col-xs-12">
-            <h5>
-              <%= link_to(new_request_path) do %>
-                <span class="fas fa-plus"><%= t ".new" %></span>
-              <% end %>
-            </h5>
             <!-- div.dataTables_borderWrap -->
             <div>
               <% if @requests.any? %>
@@ -27,12 +32,13 @@
                       <th><%= t ".category" %></th>
                       <th><%= t ".created_at" %></th>
                       <th><%= t ".updated_at" %></th>
+                      <th><%= t ".user" %></th>
                       <th><%= t ".status" %></th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <%= render partial: "requests/request", collection: @requests %>
+                    <%= render partial: "admin/requests/request", collection: @requests %>
                   </tbody>
                 </table>
               <% else %>

@@ -5,9 +5,9 @@ class RequestsController < ApplicationController
   before_action :sub_cat, except: %i(index show destroy)
 
   def index
-    @requests = Product.user_request current_user.id
-    @requests = @requests.by_updated_at.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    @requests = Product.user_request(current_user.id)
+                       .by_updated_at.paginate page: params[:page],
+                        per_page: Settings.products.per_page
   end
 
   def show; end

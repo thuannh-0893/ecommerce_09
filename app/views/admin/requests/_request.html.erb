@@ -1,0 +1,23 @@
+<tr>
+  <td><%= counter_index request_counter %></td>
+  <td><%= link_to request.name, request_path(request), target: "_blank" %></td>
+  <td><%= image_tag request.item_photos.first.photo_url, class: "table-img" %></td>
+  <td><%= number_to_currency(request.price) %></td>
+  <td><%= request.category_name %></td>
+  <td><%= l request.created_at %></td>
+  <td><%= l request.updated_at %></td>
+  <td><%= request.user.name %></td>
+  <% if request.activated? %>
+    <td><span class="text-success"><%= t ".approve" %></span></td>
+  <% else %>
+    <td><span class="text-warning"><%= t ".pending" %></span></td>
+  <% end %>
+  <td>
+    <%= link_to admin_request_path(request), method: :put do %>
+      <span class="far fa-check-circle text-success"></span><span class="text-success"><%= t ".approve" %></span>
+    <% end %>
+    <%= link_to(admin_request_path(request), method: :delete, data: { confirm: t(".confirm") }) do %>
+      <span class="far fa-trash-alt text-danger"></span><span class="text-danger"><%= t ".delete" %></span>
+    <% end %>
+  </td>
+</tr>

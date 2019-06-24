@@ -1,0 +1,11 @@
+en:
+  admin:
+    requests:
+      index:
+        title: "Requested Products"
+        home: "Dashboard"
+        new: "Add new product"
+      request:
+        confirm: "You sure?"
+        aprove: "Approve"
+        delete: "Delete"

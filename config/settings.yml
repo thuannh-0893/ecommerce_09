@@ -24,3 +24,4 @@ products:
     price: 20
     category_id: 1
 min_discount: 0
+add_index: 1

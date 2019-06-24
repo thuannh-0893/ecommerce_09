@@ -1,13 +1,24 @@
 <% provide :title, t(".title") %>
-<section class="section_gap_bottom">
-  <h1><%= t ".title" %></h1>
+<section class="section_gap_bottom container">
   <div class="list-menu">
-    <ul>
-      <li><%= link_to t(".users"), users_path %></li>
-      <li><%= link_to t(".categories"), admin_categories_path %></li>
-      <li><%= link_to t(".products"), admin_products_path %></li>
-      <li><%= link_to t(".orders"), admin_orders_path %></li>
-      <li><%= link_to t(".requested_products"), "#" %></li>
+    <ul class="list-group">
+      <%= link_to users_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".users" %></li>
+      <% end %>
+      <%= link_to admin_categories_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".categories" %></li>
+      <% end %>
+      <%= link_to admin_products_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".products" %></li>
+      <% end %>
+      <%= link_to admin_orders_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".orders" %></li>
+      <% end %>
+      <%= link_to admin_requests_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action">
+          <%= t ".requested_products" %><span class="text-danger"> (<%= @number_requests %>)</span>
+        </li>
+      <% end %>
     </ul>
   </div>
 </section>

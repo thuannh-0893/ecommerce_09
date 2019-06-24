@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :item_photos, dependent: :destroy
 
+  delegate :name, to: :category, prefix: true
+
   accepts_nested_attributes_for :item_photos, allow_destroy: true,
     reject_if: proc{|attributes| attributes["photo"].blank?}
 
