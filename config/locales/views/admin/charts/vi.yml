@@ -1,0 +1,11 @@
+vi:
+  admin:
+    charts:
+      index:
+        title: "Biểu đồ"
+        home: "Trang quản lí"
+        label_day: "Ngày"
+        label_quantity: "Số lượng"
+        product_by_cat: "Biểu đồ sản phẩm theo danh mục"
+        user_by_day: "Biểu đồ người dùng theo ngày"
+        order_by_day_of_week: "Biểu đồ đơn đặt hàng theo ngày của tuần"

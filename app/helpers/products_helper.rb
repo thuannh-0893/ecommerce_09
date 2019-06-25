@@ -5,6 +5,7 @@ module ProductsHelper
   end
 
   def new_history_view
+    return unless logged_in?
     check_history_view_product @product.id
     check_history_view_quatity
     @history_view = HistoryView.new user_id: current_user.id,

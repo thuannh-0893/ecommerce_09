@@ -2,6 +2,9 @@
 <section class="section_gap_bottom container">
   <div class="list-menu">
     <ul class="list-group">
+      <%= link_to admin_charts_path do %>
+        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".charts" %></li>
+      <% end %>
       <%= link_to users_path do %>
         <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".users" %></li>
       <% end %>

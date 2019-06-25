@@ -1,0 +1,11 @@
+en:
+  admin:
+    charts:
+      index:
+        title: "Charts"
+        home: "Home"
+        label_day: "Day"
+        label_quantity: "Quantity"
+        product_by_cat: "Chart product by category"
+        user_by_day: "Chart user by day"
+        order_by_day_of_week: "Chart order by day of week"
