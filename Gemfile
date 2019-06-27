@@ -37,6 +37,8 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -49,10 +51,12 @@ end
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
+  gem "database_cleaner"
   gem "minitest", "5.11.3"
   gem "minitest-reporters", "1.1.14"
   gem "rails-controller-testing", "1.0.2"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
 end
 
 group :production do

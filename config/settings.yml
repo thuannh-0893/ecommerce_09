@@ -23,6 +23,10 @@ products:
     quantity: 10
     price: 20
     category_id: 1
+  name_length: 255
+  zero: 0
+  max_rating: 5
+  max_discount: 100
 min_discount: 0
 add_index: 1
 time_zone: "Asia/Bangkok"

@@ -15,6 +15,24 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :item_photos, allow_destroy: true,
     reject_if: proc{|attributes| attributes["photo"].blank?}
 
+  validates :name, presence: true,
+    length: {maximum: Settings.products.name_length}
+  validates :description, presence: true
+  validates :price, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.products.zero}
+  validates :quantity, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.products.zero,
+                   only_integer: true}
+  validates :rating, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.products.zero,
+                   less_than_or_equal_to: Settings.products.max_rating}
+  validates :views, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.products.zero,
+                   only_integer: true}
+  validates :discount, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.products.zero,
+                   less_than_or_equal_to: Settings.products.max_discount}
+
   scope :by_updated_at, ->{order updated_at: :desc}
   scope :find_product_id, ->(id){where id: id}
   scope :lasted, ->{order created_at: :desc}

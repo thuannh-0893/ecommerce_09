@@ -29,7 +29,7 @@ class Admin::ProductsController < Admin::BaseController
     @admin_product.activated = true
     @admin_product.user_id = current_user.id
     Product.transaction do
-      @admin_product.save
+      @admin_product.save!
       params[:item_photos]["photo"].each do |a|
         @picture = @admin_product.item_photos.create!(photo: a)
       end
