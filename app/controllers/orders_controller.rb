@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :load_categories
-  before_action :logged_in_user, only: :new
+  before_action :logged_in_user
+  before_action :find_order, only: :show
+
+  def show; end
 
   def new
     products_in_cart = check_cookie_cart
@@ -13,19 +15,15 @@ class OrdersController < ApplicationController
     list_products_cart products_in_cart
     @order = Order.new order_params.merge(user_id: current_user.id,
       status: :pending, total_price: get_subtotal_price(@products))
-    ActiveRecord::Base.transaction do
-      if @order.save
-        begin
-          save_product_order @products
-        rescue StandardError
-          flash[:danger] = t "helpers.error[create-order-fail-save]"
-          render :new
-        end
-      else
-        flash[:danger] = t "helpers.error[create-order-fail]"
-        render :new
-      end
+    Order.transaction do
+      @order.save
+      save_product_order @products
+      flash[:info] = t "helpers.info[create-order]"
+      redirect_to order_path(@order)
     end
+  rescue StandardError
+    flash[:danger] = t "helpers.error[create-order-fail-save]"
+    render :new
   end
 
   private
@@ -42,7 +40,13 @@ class OrdersController < ApplicationController
       @products_order.save
     end
     cookies.delete :products
-    flash[:info] = t "helpers.info[create-order]"
-    redirect_to root_url
+    # OrderMailer.order_complete(current_user, @order).deliver_now
+  end
+
+  def find_order
+    @order = Order.find_by(id: params[:id])
+    return if @order
+    flash[:danger] = t "helpers.error[order_not_found]"
+    redirect_to cart_path
   end
 end

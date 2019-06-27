@@ -14,6 +14,8 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :item_photos, allow_destroy: true,
     reject_if: proc{|attributes| attributes["photo"].blank?}
 
+  validates :category_id, presence: true
+
   scope :by_updated_at, ->{order updated_at: :desc}
   scope :find_product_id, ->(id){where id: id}
   scope :lasted, ->{order created_at: :desc}

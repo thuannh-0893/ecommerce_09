@@ -1,4 +1,20 @@
 en:
+  order_mailer:
+    order_complete:
+      subject: "Confirm order"
+      order_infor: "Order information"
+      order_number: "Order number"
+      date: "Date"
+      total: "Total"
+      payment_method: "Payment method"
+      description: "Description"
+      reciever_infromation: "Reciever information"
+      name: "Name"
+      address: "Address"
+      phone: "Phone"
+      order_detail: "Order detail"
+      price: "Price"
+      quantity: "Quantity"
   helpers:
     base_title: "Ecommerce"
     error[login]: "Invalid email/password combination"
