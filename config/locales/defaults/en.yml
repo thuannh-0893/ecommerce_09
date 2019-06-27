@@ -15,6 +15,9 @@ en:
       order_detail: "Order detail"
       price: "Price"
       quantity: "Quantity"
+    order_cancel:
+      subject: "Cancel order"
+      title: "Order generated storage error"
   helpers:
     base_title: "Ecommerce"
     error[login]: "Invalid email/password combination"

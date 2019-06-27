@@ -1,8 +1,23 @@
 <% provide :title, t(".title") %>
-<div class="lattest-product-area category-list">
+<div class="container">
   <div class="row">
-    <%= render @products %>
+    <%= render "left_bar" %>
+    <div class="col-xl-9 col-lg-8 col-md-7">
+      <div class="filter-bar d-flex flex-wrap align-items-center">
+        <%= will_paginate @products %>
+      </div>
+      <!-- Start Best Seller -->
+      <section class="lattest-product-area pb-40 category-list">
+        <div class="row">
+          <%= render @products %>
+        </div>
+      </section>
+      <!-- End Best Seller -->
+      <div class="filter-bar d-flex flex-wrap align-items-center">
+        <%= will_paginate @products %>
+      </div>
+    </div>
   </div>
-  <%= will_paginate @products %>
 </div>
+<%= render "shared/recently_viewed" %>
 <%= javascript_include_tag "ajax_cart" %>

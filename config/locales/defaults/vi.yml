@@ -15,6 +15,9 @@ vi:
       order_detail: "Chi tiết đơn hàng"
       price: "Giá"
       quantity: "Số lượng"
+    order_cancel:
+      subject: "Đơn hàng phát sinh lỗi"
+      title: "Đơn hàng phát sinh lỗi lưu kho"
   helpers:
     base_title: "Ecommerce"
     error[login]: "Email hoặc mật khẩu không đúng"

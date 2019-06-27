@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get "/home", to: "static_pages#home"
     get "/contact", to: "static_pages#contact"
     get "/about", to: "static_pages#about"
-    get "/search", to: "static_pages#search"
     get "/admin", to: "admin/admin_pages#index"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
