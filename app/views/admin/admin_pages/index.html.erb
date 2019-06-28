@@ -15,7 +15,9 @@
         <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".products" %></li>
       <% end %>
       <%= link_to admin_orders_path do %>
-        <li class="list-group-item list-group-item-info list-group-item-action"><%= t ".orders" %></li>
+        <li class="list-group-item list-group-item-info list-group-item-action">
+          <%= t ".orders" %><span class="text-danger"> (<%= @number_orders %>)</span>
+        </li>
       <% end %>
       <%= link_to admin_requests_path do %>
         <li class="list-group-item list-group-item-info list-group-item-action">

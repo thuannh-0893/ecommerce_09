@@ -3,6 +3,7 @@ en:
     product:
       view_more: "view more"
       add_to_cart: "add to cart"
+      out_stock: "Out stock"
     index:
       title: "Shop"
     show:
@@ -49,4 +50,3 @@ en:
       post_a_comment: "Post a comment"
     recently_viewed:
       no_recently_product: "No product recently viewed"
-

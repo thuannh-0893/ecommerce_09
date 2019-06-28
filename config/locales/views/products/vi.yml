@@ -3,6 +3,7 @@ vi:
     product:
       view_more: "xem chi tiết"
       add_to_cart: "mua ngay"
+      out_stock: "Hết hàng"
     index:
       title: "Cửa hàng"
     show:

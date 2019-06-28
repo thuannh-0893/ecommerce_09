@@ -42,3 +42,8 @@ $(function () {
     }, 1500);
   });
 });
+
+$(function () {
+  var url = $(location).attr('href');
+  $('.fb-share-button').attr('data-href', url)
+});

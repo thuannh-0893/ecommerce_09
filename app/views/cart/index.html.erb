@@ -3,10 +3,11 @@
 <section class="cart_area">
   <div class="container">
     <div class="cart_inner">
-      <div class="table-responsive">
+      <% if @products.any? %>
         <table class="table">
           <thead>
             <tr>
+              <th scope="col">Picture</th>
               <th scope="col">Product</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
@@ -17,8 +18,7 @@
           <tbody>
             <%= render partial: "product", collection: @products %>
             <tr>
-              <td></td>
-              <td></td>
+              <td colspan="3"></td>
               <td>
                 <h5>Subtotal</h5>
               </td>
@@ -28,9 +28,7 @@
               <td></td>
             </tr>
             <tr class="out_button_area">
-              <td></td>
-              <td></td>
-              <td></td>
+              <td colspan="3"></td>
               <td>
                 <div class="checkout_btn_inner d-flex align-items-center">
                   <%= link_to t(".continue"), shop_path, class: "gray_btn" %>

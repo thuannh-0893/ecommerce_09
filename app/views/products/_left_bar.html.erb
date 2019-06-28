@@ -24,10 +24,10 @@
     </ul>
   </div>
   <div class="sidebar-filter mt-50">
-    <%= form_tag(shop_path, method: :get, id: "click-radio-sort") do %>  
-    <div class="top-filter-head"><%= t ".product_filters" %></div>
-    <div class="common-filter">
-      <div class="head"><%= t ".sort" %></div>
+    <%= form_tag(shop_path, method: :get, id: "click-radio-sort") do %>
+      <div class="top-filter-head"><%= t ".product_filters" %></div>
+      <div class="common-filter">
+        <div class="head"><%= t ".sort" %></div>
         <ul>
           <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_a_z" name="sort" value="sort_a_z"><label for="sort_a_z"><%= t ".sort_a_z" %></label></li>
           <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_z_a" name="sort" value="sort_z_a"><label for="sort_z_a"><%= t ".sort_z_a" %></label></li>
@@ -35,9 +35,9 @@
           <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_price_a_z" name="sort" value="sort_price_a_z"><label for="sort_price_a_z"><%= t ".sort_price_a_z" %></label></li>
           <li class="filter-list"><input class="pixel-radio radio-sort" type="radio" id="sort_price_z_a" name="sort" value="sort_price_z_a"><label for="sort_price_z_a"><%= t ".sort_price_z_a" %></label></li>
         </ul>
-    </div>
-    <div class="common-filter">
-      <div class="head"><%= t ".rating" %></div>
+      </div>
+      <div class="common-filter">
+        <div class="head"><%= t ".rating" %></div>
         <ul>
           <li class="filter-list"><input class="pixel-radio radio-rating" type="radio" id="rating-4" name="rating" value="4">
             <label for="rating-4"><%= t ".bigger" %>
@@ -66,15 +66,15 @@
             </label>
           </li>
         </ul>
-    </div>
-    <div class="common-filter">
-      <div class="head">Price</div>
-      <section class="range-slider">
-        <span class="rangeValues"></span>
-        <input value="<%= params[:price_min] || 0 %>" min="0" max="1000" step="10" type="range" name="price_min" id="price_min">
-        <input value="<%= params[:price_max] || 1000 %>" min="0" max="1000" step="100" type="range" name="price_max" id="price_max">
-      </section>
-    </div>
+      </div>
+      <div class="common-filter">
+        <div class="head">Price</div>
+        <section class="range-slider">
+          <span class="rangeValues"></span>
+          <input value="<%= params[:price_min] || 0 %>" min="0" max="1000" step="10" type="range" name="price_min" id="price_min">
+          <input value="<%= params[:price_max] || 1000 %>" min="0" max="1000" step="100" type="range" name="price_max" id="price_max">
+        </section>
+      </div>
     <% end %>
   </div>
 </div>

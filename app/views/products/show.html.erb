@@ -45,10 +45,15 @@
             <input type="number" class="input-text qty"
               value="1" min="1" max="<%= @product.quantity %>">
           </div>
-          <% if @product.quantity > 0 %>
-            <div class="card_area d-flex align-items-center">
+          <div class="card_area d-flex align-items-center">
+            <% if !@product.quantity.zero? %>
               <%= link_to t(".add"), "javascript:void(0)", class: "primary-btn shopping", data_product_id: @product.id %>
             <% end %>
+            <div class="fb-share-button" data-href="#" data-layout="button_count" data-size="large">
+              <a target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">Chia sẻ</a>
+            </div>
           </div>
         </div>
       </div>
