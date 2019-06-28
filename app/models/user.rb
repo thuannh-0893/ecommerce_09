@@ -17,7 +17,8 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true,
-    length: {minimum: Settings.user.password.min_length}
+    length: {minimum: Settings.user.password.min_length},
+    allow_nil: true
 
   before_save :downcase_email
   scope :by_name, ->{order(name: :asc)}

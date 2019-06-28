@@ -1,0 +1,28 @@
+vi:
+  admin:
+    users:
+      index:
+        title: "Quản lí người dùng"
+        home: "Trang quản lí"
+        new: "Thêm người dùng"
+        name: "Tên"
+        avatar: "Ảnh"
+        email: "Email"
+        phone: "Số điện thoại"
+        address: "Địa chỉ"
+        created_at: "Ngày tạo"
+        updated_at: "Cập nhật"
+        status: "Kích hoạt"
+        not_have_user: "Chưa có người dùng"
+      new:
+        title: "Thêm người dùng"
+        add: "Tạo tài khoản"
+        home: "Trang quản lí"
+      edit:
+        title: "Chỉnh sửa người dùng"
+        edit: "Chỉnh sửa"
+      user:
+        confirm: "Bạn có chắc muốn xóa?"
+        delete: "Xóa"
+        edit: "Sửa"
+      form:
