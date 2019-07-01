@@ -40,11 +40,12 @@ vi:
       login: "Đăng nhập"
       your_rating: "Đánh giá của bạn"
     comment:
+      load_more_comment: "Tải thêm bình luận"
       reply: "Trả lời"
-      load_more: "Tải thêm"
-      login: "Đăng nhập"
-      submit: "Bình luận"
-      comment: "Bình luận"
+      load_reply: "Tải thêm %{count} trả lời"
+      not_have_comment: "Hãy là người đầu tiên bình luận."
       post_a_comment: "Thêm bình luận"
+      submit: "Bình luận"
+      login: "Đăng nhập"
     recently_viewed:
       no_recently_product: "Không có sản phẩm đã xem gần đây"

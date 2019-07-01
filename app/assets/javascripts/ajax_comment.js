@@ -17,7 +17,8 @@ $('#btn-comment').on('click', function () {
       for (var i = 0; i < data.comments.length; i++) {
         commentDiv.append(data.comments[i]);
       }
-      $('.comment_item').slice(0, 6).show();
+      loadComment();
+      loadReplies();
     },
     error: function () {
       alert(I18n.t('alert.error[ajax_shopping]'));

@@ -19,8 +19,8 @@ module ApplicationHelper
     ""
   end
 
-  def sub_comments parent_id
-    @sub_comments = Comment.sub_comments(parent_id).by_date
+  def reply_comments parent_id
+    @reply_comments = Comment.reply_comments(parent_id).by_date
   end
 
   def counter_index index

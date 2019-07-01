@@ -11,7 +11,7 @@
     <label class="switch">
       <%
         checked = "";
-        checked = "checked" if user.activated == true
+        checked = "checked" if user.activated?
       %>
       <input idUser="<%= user.id %>" class="status" type="checkbox" <%= checked %> >
       <span class="slider round"></span>

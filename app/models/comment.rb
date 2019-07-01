@@ -7,5 +7,5 @@ class Comment < ApplicationRecord
   scope :product_comments, ->(id){where product_id: id}
   scope :product_comments_parrent, ->(id){where product_id: id, parent_id: nil}
   scope :by_date, ->{order(updated_at: :desc)}
-  scope :sub_comments, ->(parent_id){where parent_id: parent_id}
+  scope :reply_comments, ->(parent_id){where parent_id: parent_id}
 end
