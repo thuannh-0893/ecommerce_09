@@ -1,5 +1,5 @@
 class HistoryOrdersController < ApplicationController
-  before_action :logged_in_user, only: :index
+  authorize_resource class: HistoryOrdersController
 
   def index
     @history_orders = current_user.orders.by_created_at

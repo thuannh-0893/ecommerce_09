@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: %i(new create)
-  before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, only: %i(destroy)
+  authorize_resource
+
+  before_action :correct_user, only: %i(edit update show)
   before_action :find_user, except: %i(new create index)
 
   def index
@@ -34,15 +34,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    if @user.destroy
-      flash[:success] = t "helpers.success[deleted_user]"
-    else
-      flash[:danger] = t "helpers.error[fail_to_delete]"
-    end
-    redirect_to users_url
   end
 
   private

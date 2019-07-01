@@ -3,6 +3,16 @@
 class ApplicationController < ActionController::Base
   include CartHelper
 
+  rescue_from CanCan::AccessDenied do
+    if logged_in?
+      flash[:danger] = t "helpers.warning[not_authorized]"
+      redirect_to root_path
+    else
+      flash[:danger] = t "helpers.warning[login_cancan]"
+      redirect_to login_url
+    end
+  end
+
   protect_from_forgery with: :exception
   include SessionsHelper
   before_action :set_locale
@@ -39,5 +49,9 @@ class ApplicationController < ActionController::Base
 
   def load_categories
     @categories = Category.by_name
+  end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_user, "")
   end
 end

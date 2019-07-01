@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :logged_in_user
-  before_action :load_categories
+  authorize_resource class: RequestsController
+
   before_action :find_request, except: %i(new create index)
   before_action :sub_cat, except: %i(index show destroy)
 

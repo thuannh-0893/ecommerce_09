@@ -1,8 +1,7 @@
-class Admin::CategoriesController < ApplicationController
-  before_action :logged_in_user
-  before_action :admin_user
+class Admin::CategoriesController < Admin::BaseController
+  authorize_resource
+
   before_action :find_category, except: %i(new create index)
-  before_action :load_categories
   before_action :list_parent_categories
 
   def index

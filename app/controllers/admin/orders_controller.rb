@@ -1,5 +1,6 @@
-class Admin::OrdersController < ApplicationController
-  before_action :load_categories
+class Admin::OrdersController < Admin::BaseController
+  authorize_resource
+
   before_action :find_order, only: %i(update)
 
   def index

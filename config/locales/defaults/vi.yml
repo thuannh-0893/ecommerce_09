@@ -50,6 +50,8 @@ vi:
     success[add_to_products]: "Đã thêm vào danh sách sản phẩm"
     warning[login]: "Vui lòng đăng nhập."
     warning[not_active]: "Tài khoản chưa được kích hoạt. Kiểm tra lại email của bạn để kích hoạt."
+    warning[login_cancan]: "Bạn không có quyền. Vui lòng đăng nhập để kiểm tra."
+    warning[not_authorized]: "Bạn không có quyền truy cập trang này."
     max_size: "phải nhỏ hơn %{size}MB"
     label:
       user:

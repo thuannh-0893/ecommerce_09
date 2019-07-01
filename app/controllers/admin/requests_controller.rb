@@ -1,6 +1,6 @@
-class Admin::RequestsController < ApplicationController
-  before_action :logged_in_user
-  before_action :admin_user
+class Admin::RequestsController < Admin::BaseController
+  authorize_resource class: false
+
   before_action :find_product, only: %i(update destroy)
 
   def index

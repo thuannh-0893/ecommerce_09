@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     post "/rates", to: "rates#create"
     post "/comments", to: "comments#create"
 
-    resources :orders, only: %i(new create)
+    resources :orders, only: %i(new create show)
     resources :cart, only: %i(index create update)
     delete "cart_destroy", to: "cart#destroy"
     resources :users
