@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :validatable, :confirmable
   has_many :history_views, dependent: :destroy
   has_many :rates, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -15,19 +19,14 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.email.max_length},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  has_secure_password
-  validates :password, presence: true,
-    length: {minimum: Settings.user.password.min_length},
-    allow_nil: true
+  # has_secure_password
+  # validates :password, presence: true,
+  #   length: {minimum: Settings.user.password.min_length},
 
   before_save :downcase_email
   scope :by_name, ->{order(name: :asc)}
 
-  def authenticated? attribute, token
-    digest = send "#{attribute}_digest"
-    return false if digest.nil?
-    BCrypt::Password.new(digest).is_password? token
-  end
+  attr_accessor :skip_password_validation
 
   def downcase_email
     self.email = email.downcase

@@ -1,0 +1,46 @@
+<% provide :title, t(".title") %>
+<section class="login_box_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="login_form_inner">
+          <h3><%= t ".title" %></h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="col-lg-8 form-group">
+              <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
+            <div class="col-lg-12 form-group">
+              <%= f.text_field :name, autofocus: true, autocomplete: "name",
+                class: "form-control", placeholder: t(".name") %>
+            </div>
+            <div class="col-lg-12 form-group">
+              <%= f.email_field :email, autocomplete: "email",
+                class: "form-control", placeholder: t(".email") %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.telephone_field :phone, autocomplete: "phone", class: "form-control", placeholder: t(".phone") %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.text_field :address, autocomplete: "address", class: "form-control", placeholder: t(".address") %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.file_field :avatar, class: "form-control", accept: Settings.accept_image %>
+            </div>
+            <div class="col-lg-12 form-group">
+              <%= f.password_field :password, autocomplete: "new-password",
+                class: "form-control", placeholder: t(".password") %>
+            </div>
+            <div class="col-lg-12 form-group">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",
+                class: "form-control", placeholder: t(".password_confirmation") %>
+            </div>
+            <div class="col-md-12 form-group">
+              <%= f.submit t(".create"), class: "primary-btn" %>
+            </div>
+            <%= render "devise/shared/links" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

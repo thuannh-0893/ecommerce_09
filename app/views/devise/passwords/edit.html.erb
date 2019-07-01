@@ -1,0 +1,35 @@
+<% provide :title, t(".title") %>
+<section class="login_box_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="login_form_inner">
+          <h2><%= t ".title" %></h2>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+            html: { method: :put, class: "row reg_form" }) do |f| %>
+            <div class="col-lg-8 form-group">
+              <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
+            <%= f.hidden_field :reset_password_token %>
+            <div class="col-lg-8 form-group row">
+              <%= f.label :password %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password",
+                class: "form-control" %>
+            </div>
+            <div class="col-lg-8 form-group row">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off",
+                class: "form-control" %>
+            </div>
+            <div class="col-md-8 form-group">
+              <%= f.submit t(".submit"), class: "primary-btn" %>
+            </div>
+            <div class="col-md-8 form-group">
+              <%= render "devise/shared/links" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

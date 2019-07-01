@@ -4,21 +4,23 @@
     <div class="row order_d_inner">
       <div class="col-lg-4">
         <div class="details_item">
-          <%= image_tag @current_user.avatar_url, class: "img-fluid" %>
+          <%= image_tag @user.avatar_url, class: "img-fluid" %>
         </div>
       </div>
       <div class="col-lg-8">
         <div class="details_item">
           <h4><%= t ".title" %></h4>
           <ul class="list">
-            <li><a href="#"><span><%= t ".name" %></span> : <%= @current_user.name %></a></li>
-            <li><a href="#"><span><%= t ".email" %></span> : <%= @current_user.email %></a></li>
-            <li><a href="#"><span><%= t ".phone" %></span> : <%= @current_user.phone %></a></li>
-            <li><a href="#"><span><%= t ".address" %></span> : <%= @current_user.address %></a></li>
-            <li>
-              <%= link_to t(".edit_profile"), edit_user_path, class: "genric-btn info" %>
-              <%= link_to t(".my_history"), history_orders_path, class: "genric-btn info" %>
-            </li>
+            <li><a href="#"><span><%= t ".name" %></span> : <%= @user.name %></a></li>
+            <li><a href="#"><span><%= t ".email" %></span> : <%= @user.email %></a></li>
+            <li><a href="#"><span><%= t ".phone" %></span> : <%= @user.phone %></a></li>
+            <li><a href="#"><span><%= t ".address" %></span> : <%= @user.address %></a></li>
+            <% if current_user? @user %>
+              <li>
+                <%= link_to t(".edit_profile"), edit_user_registration_path, class: "genric-btn info" %>
+                <%= link_to t(".my_history"), history_orders_path, class: "genric-btn info" %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

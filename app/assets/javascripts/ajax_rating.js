@@ -13,7 +13,7 @@ $('#rate').on('click', function () {
     success: function (data) {
       $('.box_total h3').text(data.overall);
       $('.box_total h6').text('(' + data.counter_reviews + ' Reviews)');
-      $('.rateyo-readonly').attr('data', data.overall)
+      $('.rateyo-readonly').attr('data', data.overall);
       $('.rateyo-readonly').rateYo('option', 'rating', data.overall);
       $('#content').val('');
       var commentDiv = $('.review_list');
