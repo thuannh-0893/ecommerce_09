@@ -39,13 +39,18 @@ vi:
       review: "Đánh giá"
       login: "Đăng nhập"
       your_rating: "Đánh giá của bạn"
+      delete: "Xóa"
+      confirm: "Bạn có chắc muốn xóa?"
     comment:
       load_more_comment: "Tải thêm bình luận"
       reply: "Trả lời"
+      delete: "Xóa"
+      confirm: "Bạn có chắc muốn xóa?"
       load_reply: "Tải thêm %{count} trả lời"
       not_have_comment: "Hãy là người đầu tiên bình luận."
       post_a_comment: "Thêm bình luận"
       submit: "Bình luận"
       login: "Đăng nhập"
+      comment: "Bình luận"
     recently_viewed:
       no_recently_product: "Không có sản phẩm đã xem gần đây"

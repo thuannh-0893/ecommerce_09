@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     get "/admin", to: "admin/admin_pages#index"
     get "/search", to: "searchs#index"
     get "/history-orders", to: "history_orders#index"
-    post "/rates", to: "rates#create"
-    post "/comments", to: "comments#create"
 
+    resources :comments, only: %i(create destroy)
+    resources :rates, only: %i(create destroy)
     resources :notifications, only: %i(index update)
     resources :orders, only: %i(new create show)
     resources :cart, only: %i(index create update)

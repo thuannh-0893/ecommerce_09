@@ -13,7 +13,7 @@ $(function () {
   });
 });
 
-$(function loadReviews() {
+function loadReviews() {
   $('.review_item').slice(0, 6).show();
   if ($('.review_item:hidden').length == 0) {
     $('#loadMore').fadeOut('slow');
@@ -28,13 +28,10 @@ $(function loadReviews() {
       scrollTop: $(this).offset().top
     }, 1500);
   });
-});
+}
 
-$(function loadComment() {
+function loadComment() {
   $('.comment_item').slice(0, 6).show();
-  if ($('.comment_item:hidden').length == 0) {
-    $('#loadMoreComment').fadeOut('slow');
-  }
   $('#loadMoreComment').on('click', function (e) {
     e.preventDefault();
     $('.comment_item:hidden').slice(0, 6).slideDown();
@@ -45,9 +42,9 @@ $(function loadComment() {
       scrollTop: $(this).offset().top
     }, 1500);
   });
-});
+}
 
-$(function loadReplies() {
+function loadReplies() {
   var data = 0;
   $('.reply_comment_item').each(function () {
     if ($(this).attr('data') != data) {
@@ -66,9 +63,9 @@ $(function loadReplies() {
     });
     $('html,body').animate({
       scrollTop: $(this).offset().top
-    }, 1500);
+    }, 1000);
   });
-});
+}
 
 $(function () {
   var url = $(location).attr('href');
@@ -87,4 +84,10 @@ $(function () {
       $(this).children(".messages").fadeToggle(300);
     }
   });
+});
+
+$(document).ready(function () {
+  loadComment();
+  loadReplies();
+  loadReviews();
 });

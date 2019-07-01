@@ -28,8 +28,8 @@ products = []
   quantity = Faker::Number.between(10, 200)
   price = Faker::Number.between(10, 500)
   category_id = Faker::Number.between(6, 15)
-  rating = Faker::Number.between(10, 50).to_f / 10
-  view = Faker::Number.between(100, 1000)
+  rating = 0
+  view = 0
   discount = Faker::Number.between(5, 70)
   user = 1
   products << Product.create!(name: name,

@@ -5941,6 +5941,14 @@ label {
   padding-right: 15px;
 }
 
+.review_item .media .d-flex img,
+.comment_item .media .d-flex img,
+.reply_comment_item .media .d-flex img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 .review_item .media .media-body,
 .comment_item .media .media-body,
 .reply_comment_item .media .media-body {
@@ -5993,6 +6001,34 @@ label {
 .reply_comment_item .media .media-body .reply_btn:hover {
   background: #ffba00;
   border-color: #ffba00;
+  color: #fff;
+}
+
+.review_item .media .media-body .delete_review_btn,
+.comment_item .media .media-body .delete_btn,
+.reply_comment_item .media .media-body .delete_btn {
+  border: 1px solid #e0e0e0;
+  padding: 0px 28px;
+  display: inline-block;
+  line-height: 32px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #222222;
+  position: absolute;
+  right: 100px;
+  top: 14px;
+}
+
+.review_item .media .media-body .delete_review_btn {
+  right: 0px;
+}
+
+.review_item .media .media-body .delete_review_btn:hover,
+.comment_item .media .media-body .delete_btn:hover,
+.reply_comment_item .media .media-body .delete_btn:hover {
+  background: #eb1717d3;
+  border-color: #eb1717d3;
   color: #fff;
 }
 
