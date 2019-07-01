@@ -1,8 +1,8 @@
 class Admin::ProductsController < Admin::BaseController
-  authorize_resource
-
   before_action :find_product, except: %i(new create index import)
   before_action :sub_cat, except: %i(index show destroy)
+
+  authorize_resource
 
   def index
     list_product

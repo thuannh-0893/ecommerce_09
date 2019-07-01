@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  authorize_resource
-
   before_action :find_order, only: :show
+
+  authorize_resource
 
   def show; end
 

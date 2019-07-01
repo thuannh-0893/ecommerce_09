@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  authorize_resource
-  before_action :correct_user, only: :show
   before_action :find_user, only: :show
+  authorize_resource
 
   def show; end
 

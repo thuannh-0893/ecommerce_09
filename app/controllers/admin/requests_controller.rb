@@ -1,7 +1,7 @@
 class Admin::RequestsController < Admin::BaseController
-  authorize_resource class: false
-
   before_action :find_product, only: %i(update destroy)
+
+  authorize_resource class: false
 
   def index
     @requests = Product.not_yet_activate.by_updated_at

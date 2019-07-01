@@ -1,8 +1,8 @@
 class Admin::CategoriesController < Admin::BaseController
-  authorize_resource
-
   before_action :find_category, except: %i(new create index)
   before_action :list_parent_categories
+
+  authorize_resource
 
   def index
     @categories = Category.by_name.paginate page: params[:page],

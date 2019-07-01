@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
 
   def show
     new_history_view
+    @product.update_attribute :views, @product.views + Settings.products.views
     @comments = Comment.product_comments_parrent(params[:id]).by_date
     @reviews = Rate.product_reviews(params[:id]).by_date
   end
