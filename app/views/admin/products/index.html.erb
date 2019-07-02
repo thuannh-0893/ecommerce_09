@@ -19,18 +19,32 @@
         </div>
         <!-- /.page-header -->
         <div class="row">
+          <div class="col-sm-12">
+            <%= search_form_for [:admin, @search], class: "form-inline" do |f| %>
+              <div class="form-group">
+                <%= f.collection_select :category_id_eq, @sub_categories, :id, :name, {prompt: true}, {class: "form-control"} %>
+                <%= f.text_field :name_cont, placeholder: t(".name"), class: "form-control" %>
+              </div>
+              <%= f.submit t(".search"), class: "btn btn-infoear" %>
+            <% end %>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <%= form_tag import_admin_products_path, multipart: true do %>
+              <%= submit_tag t(".import"), class: "btn btn-info" %>
+              <%= file_field_tag :file %>
+            <% end %>
+          </div>
+          <div class="col-sm-6 export">
+            <%= link_to t(".exportCSV"), admin_products_path(format: "csv"), class: "btn btn-info" %>
+            <%= link_to t(".exportExcel"), admin_products_path(format: "xls"), class: "btn btn-info" %>
+            <%= link_to t(".exportCSV_template"), admin_products_path(format: "csv", template: true), class: "btn btn-info" %>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-xs-12">
-            <h5>
-              <%= form_tag import_admin_products_path, multipart: true do %>
-                <%= file_field_tag :file, class: "form-control" %>
-                <%= submit_tag t(".import"), class: "btn btn-info" %>
-              <% end %>
-            </h5>
-            <h5>
-              <%= link_to t(".exportCSV"), admin_products_path(format: "csv"), class: "btn btn-info" %>
-              <%= link_to t(".exportExcel"), admin_products_path(format: "xls"), class: "btn btn-info" %>
-              <%= link_to t(".exportCSV_template"), admin_products_path(format: "csv", template: true), class: "btn btn-info" %>
-            </h5>
             <h5>
               <%= link_to(new_admin_product_path) do %>
                 <span class="fas fa-plus"><%= t ".new" %></span>
@@ -43,14 +57,14 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th><%= t ".name" %></th>
+                      <th><%= sort_link(@search, :name, t(".name")) %></th>
                       <th><%= t ".picture" %></th>
-                      <th><%= t ".price" %></th>
-                      <th><%= t ".quantity" %></th>
-                      <th><%= t ".discount" %></th>
-                      <th><%= t ".category" %></th>
-                      <th><%= t ".created_at" %></th>
-                      <th><%= t ".updated_at" %></th>
+                      <th><%= sort_link(@search, :price, t(".price")) %></th>
+                      <th><%= sort_link(@search, :quantity, t(".quantity")) %></th>
+                      <th><%= sort_link(@search, :discount, t(".discount")) %></th>
+                      <th><%= sort_link(@search, :category, t(".category")) %></th>
+                      <th><%= sort_link(@search, :created_at, t(".created_at")) %></th>
+                      <th><%= sort_link(@search, :updated_at, t(".updated_at")) %></th>
                       <th></th>
                     </tr>
                   </thead>

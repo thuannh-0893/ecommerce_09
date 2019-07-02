@@ -3,9 +3,9 @@ class SearchsController < ApplicationController
 
   def index
     @products = if params[:keyword] != ""
-                  @products.activated.search(params[:keyword])
+                  Product.activated.search_product_public(params[:keyword])
                 else
-                  @products.activated
+                  Product.activated
                 end.paginate page: params[:page],
                     per_page: Settings.products.per_page
   end

@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["name", "description"], name: "name", type: :fulltext
+    t.index ["name", "description"], name: "name_2", type: :fulltext
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
