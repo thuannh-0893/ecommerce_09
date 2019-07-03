@@ -26,7 +26,6 @@ class Admin::ProductsController < Admin::BaseController
 
   def create
     @admin_product = Product.new product_params
-    @admin_product.activated = true
     @admin_product.user_id = current_user.id
     Product.transaction do
       @admin_product.save
@@ -40,7 +39,11 @@ class Admin::ProductsController < Admin::BaseController
     render :new
   end
 
-  def edit; end
+  def edit
+    photos = @admin_product.item_photos
+    return if photos.any?
+    @picture = photos.build
+  end
 
   def update
     Product.transaction do
@@ -68,10 +71,33 @@ class Admin::ProductsController < Admin::BaseController
 
   def import
     if params[:file].present?
-      Product.import(params[:file].path, current_user)
-      flash[:success] = t("helpers.success[product_import]")
+      counter = Product.import_file params[:file],
+        params[:overwrite], current_user
+      render_flash counter
+      flash[:success] = t("helpers.success[product_create]",
+        counter: counter[:counter_create])
+    else
+      flash[:danger] = t("helpers.error[product_import]")
     end
     redirect_to admin_products_path
+  end
+
+  def export
+    @admin_products = Product.order(category_id: :desc)
+    respond_to do |format|
+      format.xlsx
+      format.pdf do
+        render pdf: "products",
+          layout: "pdf.html",
+          template: "admin/products/products.pdf.html.erb",
+          footer: {right: "[page]"},
+          margin: {top: Settings.margin_layout.top,
+                   bottom: Settings.margin_layout.bot,
+                   left: Settings.margin_layout.left,
+                   right: Settings.margin_layout.right},
+          orientation: "Portrait", page_size: "A4"
+      end
+    end
   end
 
   private
@@ -97,5 +123,17 @@ class Admin::ProductsController < Admin::BaseController
     @search = Product.activated.search(params[:q])
     @products = @search.result.paginate page: params[:page],
       per_page: Settings.products.per_page
+  end
+
+  def render_flash counter
+    if params[:overwrite].present?
+      flash[:info] = t("helpers.success[product_update]",
+        counter: counter[:counter_update])
+    else
+      flash[:warning] = t("helpers.success[product_update_ignore]",
+        counter: counter[:counter_update])
+    end
+    flash[:danger] = t("helpers.success[product_wrong_category]",
+      counter: counter[:counter_wrong_category])
   end
 end

@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = current_user.products.new request_params
+    @request.activated = false
     Product.transaction do
       @request.save!
       params[:item_photos]["photo"].each do |a|

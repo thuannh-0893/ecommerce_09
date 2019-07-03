@@ -2,7 +2,12 @@
   <td><input type="checkbox" class="checkbox" value="<%= product.id %>" name="<%= product.name %>"></td>
   <td><%= product_counter + 1 %></td>
   <td><%= link_to product.name, product, target: "_blank"%></td>
-  <td><%= image_tag product.item_photos.first.photo_url, class: "table-img" %></td>
+  <% if product.item_photos.first %>
+    <% photo_url = product.item_photos.first.photo_url %>
+  <% else %>
+    <% photo_url = "/assets/fallback/default.jpg" %>
+  <% end %>
+  <td><%= image_tag photo_url, class: "table-img" %></td>
   <td><%= number_to_currency(product.price) %></td>
   <td><%= product.quantity %></td>
   <td><%= product.discount %></td>

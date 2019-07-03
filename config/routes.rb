@@ -36,7 +36,10 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories, except: :show
       resources :products do
-        collection { post :import }
+        collection do
+          post :import
+          get :export
+        end
       end
       resources :orders, only: %i(index update)
       resources :requests, only: %i(index update destroy)

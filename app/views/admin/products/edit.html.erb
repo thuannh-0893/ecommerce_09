@@ -9,7 +9,14 @@
             <i class="ace-icon fa fa-home home-icon"></i>
             <%= link_to t(".home"), admin_path %>
           </li>
-          <li class="active"><%= t ".title" %></li>
+          <li>
+            <i class="fas fa-angle-right"></i>
+            <%= link_to t(".products"), admin_products_path %>
+          </li>
+          <li class="active">
+            <i class="fas fa-angle-right"></i>
+            <%= t ".title" %>
+          </li>
         </ul>
         <!-- /.breadcrumb -->
       </div>
@@ -24,8 +31,10 @@
             <div class="row">
               <div class="col-lg-10 col-md-6 col-md-offset-3">
                 <% @admin_product.item_photos.each do |p| %>
-                  <%= image_tag p.photo_url, class: "p_image" %>
-                  <%= link_to t(".destroy"), item_photo_path(p), method: :delete %>
+                  <% if p.id.present? %>
+                    <%= image_tag p.photo_url, class: "p_image" %>
+                    <%= link_to t(".destroy"), item_photo_path(p), method: :delete %>
+                  <% end %>
                 <% end %>
                 <%= render "form" %>
               </div>

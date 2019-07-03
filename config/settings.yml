@@ -30,3 +30,8 @@ time_zone: "Asia/Bangkok"
 controller:
   namespace_for_admin: "Admin"
 notifications: 5
+margin_layout:
+  top: 15
+  bot: 21
+  left: 12
+  right: 12

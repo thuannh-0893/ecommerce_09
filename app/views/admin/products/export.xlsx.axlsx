@@ -1,0 +1,10 @@
+require "axlsx"
+xlsx_package = Axlsx::Package.new
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Products") do |sheet|
+  sheet.add_row %w(id name price quantity category)
+  @admin_products.each do |product|
+    sheet.add_row [product.id, product.name, product.price,
+      product.quantity, product.category.name]
+  end
+end

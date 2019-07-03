@@ -2,7 +2,12 @@
   <td>
     <div class="media">
       <div class="d-flex">
-        <%= image_tag product.item_photos.first.photo_url, class: "img-responsive"%>
+        <% if product.item_photos.first %>
+          <% photo_url = product.item_photos.first.photo_url %>
+        <% else %>
+          <% photo_url = "/assets/fallback/default.jpg" %>
+        <% end %>
+        <%= image_tag photo_url, class: "img-responsive"%>
       </div>
       <div class="media-body">
         <%= link_to product.name, product %>
