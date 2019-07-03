@@ -1,0 +1,7 @@
+<% if activity.read %>
+  <%= link_to t(".message", owner: activity.owner.name), "javascript:void(0)",
+    data_href: history_orders_path, data_id: activity.id, class: "message" %>
+<% else %>
+  <%= link_to t(".message", owner: activity.owner.name), "javascript:void(0)",
+    data_href: history_orders_path, data_id: activity.id, class: "message bg-success" %>
+<% end %>

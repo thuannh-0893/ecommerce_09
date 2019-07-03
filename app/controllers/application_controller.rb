@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :load_notifications
 
   private
 
@@ -54,5 +55,18 @@ class ApplicationController < ActionController::Base
 
   def current_ability
     @current_ability ||= Ability.new(current_user, "")
+  end
+
+  def load_notifications
+    return unless current_user
+    @notifications = Notification.correct_user(current_user.id)
+                                 .by_updated.limit Settings.notifications
+  end
+
+  def create_notification model, object, key, recipient
+    Notification.create! trackable_type: model, trackable_id: object.id,
+      owner_type: current_user.class, owner_id: current_user.id, key: key,
+      activity_type: Notification.activity_types[:notice],
+      recipient_type: recipient.class, recipient_id: recipient.id
   end
 end

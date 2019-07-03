@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     # devise_for :users
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     post "/rates", to: "rates#create"
     post "/comments", to: "comments#create"
 
+    resources :notifications, only: %i(index update)
     resources :orders, only: %i(new create show)
     resources :cart, only: %i(index create update)
     delete "cart_destroy", to: "cart#destroy"

@@ -11,6 +11,8 @@ class Admin::RequestsController < Admin::BaseController
 
   def update
     if @request.update_attribute :activated, true
+      create_notification Product.name, @request,
+        "request.update", @request.user
       flash[:success] = t "helpers.success[add_to_products]"
       redirect_to admin_requests_path
     else
