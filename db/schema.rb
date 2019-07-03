@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 2019_06_17_060709) do
     t.string "address"
     t.string "avatar"
     t.integer "role", default: 0, null: false
-    t.boolean "activated", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

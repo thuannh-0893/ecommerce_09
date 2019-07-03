@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include CartHelper
 
   rescue_from CanCan::AccessDenied do
-    if logged_in?
+    if user_signed_in?
       flash[:danger] = t "helpers.warning[not_authorized]"
       redirect_to root_path
     else

@@ -1,7 +1,7 @@
 class Admin::OrdersController < Admin::BaseController
-  authorize_resource
-
   before_action :find_order, only: %i(update)
+
+  authorize_resource
 
   def index
     @orders = Order.by_created_at.includes(:products_orders, :products)

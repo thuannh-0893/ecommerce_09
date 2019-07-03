@@ -16,27 +16,8 @@ User.create!(name: "Administrator",
   phone: "0123456789",
   address: "Da Nang",
   avatar: "",
-  role: 1)
-
-users = []
-50.times do |n|
-  name  = Faker::Name.name
-  email = Faker::Internet.free_email
-  password = "password"
-  phone = Faker::PhoneNumber.cell_phone_with_country_code
-  address = Faker::Address.full_address
-  avatar = Faker::Avatar.image
-  role = 0
-  users << User.create!(name: name,
-    email: email,
-    password: password,
-    password_confirmation: password,
-    phone: phone,
-    address: address,
-    avatar: avatar,
-    role: role)
-end
-
+  role: 1,
+  confirmed_at: Time.now)
 
 products = []
 50.times do |n|
@@ -48,7 +29,7 @@ products = []
   rating = Faker::Number.between(10, 50).to_f / 10
   view = Faker::Number.between(100, 1000)
   discount = Faker::Number.between(5, 70)
-  user = users.sample.id
+  user = 1
   products << Product.create!(name: name,
     description: description,
     quantity: quantity,

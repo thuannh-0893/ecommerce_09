@@ -1,9 +1,9 @@
 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
   <div class="row">
     <div class="col-lg-6">
-      <% if comments.any? %>
+      <% if @comments.any? %>
         <div class="comment_list">
-          <% comments.each do |comment| %>
+          <% @comments.each do |comment| %>
             <% if comment.parent_id.nil? %>
               <div class="comment_item">
                 <div class="media">
