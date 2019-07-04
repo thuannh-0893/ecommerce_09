@@ -97,7 +97,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def list_product
     @search = Product.activated.search(params[:q])
-    @products = @search.result.paginate page: params[:page],
-      per_page: Settings.products.per_page
+    @products = @search.result.page(params[:page])
+                       .per Settings.products.per_page
   end
 end

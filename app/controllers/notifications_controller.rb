@@ -5,8 +5,8 @@ class NotificationsController < ApplicationController
   def index
     @notifications_all = Notification.correct_user(current_user.id)
                                      .by_updated
-                                     .paginate page: params[:page],
-                                        per_page: Settings.per_page
+                                     .page(params[:page])
+                                     .per Settings.products.per_page
   end
 
   def update
