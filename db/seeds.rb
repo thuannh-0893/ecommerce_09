@@ -1,5 +1,7 @@
 sql_products = "ALTER TABLE products ADD FULLTEXT (name, description)"
 ActiveRecord::Base.connection.execute(sql_products)
+sql_categories = "ALTER TABLE categories ADD FULLTEXT (name)"
+ActiveRecord::Base.connection.execute(sql_categories)
 
 categories = []
 15.times do |n|

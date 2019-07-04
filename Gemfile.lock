@@ -199,6 +199,7 @@ GEM
       equatable (~> 0.6)
       tty-color (~> 0.5)
     pg (0.20.0)
+    polyglot (0.3.5)
     powerpack (0.1.2)
     public_activity (1.6.3)
       actionpack (>= 3.0.0)
@@ -275,6 +276,8 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    search_cop (1.0.9)
+      treetop
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -305,6 +308,8 @@ GEM
     tty-screen (0.6.5)
     tty-tree (0.3.0)
     tty-which (0.4.1)
+    treetop (1.6.10)
+      polyglot (~> 0.3)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
@@ -362,6 +367,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rubocop (~> 0.54.0)
   sass-rails (~> 5.0)
+  search_cop
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
