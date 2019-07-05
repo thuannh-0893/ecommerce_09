@@ -28,7 +28,7 @@ class Admin::ProductsController < Admin::BaseController
     @admin_product = Product.new product_params
     @admin_product.user_id = current_user.id
     Product.transaction do
-      @admin_product.save
+      @admin_product.save!
       params[:item_photos]["photo"].each do |a|
         @picture = @admin_product.item_photos.create!(photo: a)
       end
@@ -47,7 +47,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     Product.transaction do
-      @admin_product.update_attributes product_params
+      @admin_product.update_attributes! product_params
       if params[:item_photos].present?
         params[:item_photos]["photo"].each do |a|
           @picture = @admin_product.item_photos.create!(photo: a)

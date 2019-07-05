@@ -36,7 +36,9 @@
                     <%= link_to t(".destroy"), item_photo_path(p), method: :delete %>
                   <% end %>
                 <% end %>
-                <%= render "form" %>
+                <%= form_for [:admin, @admin_product], html: {multipart: true}, url: {action: :update, id: @admin_product.id} do |f| %>
+                  <%= render partial: "form", locals: { f: f } %>
+                <% end %>
               </div>
             </div>
           </div>
