@@ -9,6 +9,8 @@ en:
         exportCSV: "Export CSV"
         exportExcel: "Export Excel"
         exportCSV_template: "Export Template"
+        name: "Name"
+        search: "Search"
       new:
         title: "Add new product"
         add: "Add"

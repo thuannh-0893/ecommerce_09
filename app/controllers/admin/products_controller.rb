@@ -1,6 +1,6 @@
 class Admin::ProductsController < Admin::BaseController
   before_action :find_product, except: %i(new create index import)
-  before_action :sub_cat, except: %i(index show destroy)
+  before_action :sub_cat, except: %i(show destroy)
 
   authorize_resource
 
@@ -94,7 +94,8 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def list_product
-    @products = Product.activated.by_updated_at.paginate page: params[:page],
+    @search = Product.activated.search(params[:q])
+    @products = @search.result.paginate page: params[:page],
       per_page: Settings.products.per_page
   end
 end
