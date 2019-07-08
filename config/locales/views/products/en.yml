@@ -41,9 +41,13 @@ en:
       review: "Review"
       login: "Login"
       your_rating: "Your rating"
+      delete: "Delete"
+      confirm: "You sure?"
     comment:
       load_more_comment: "Load more comment"
       reply: "Reply"
+      delete: "Delete"
+      confirm: "You sure?"
       load_reply:
         one: "Load %{count} reply more"
         other: "Load %{count} replies more"
@@ -51,5 +55,6 @@ en:
       post_a_comment: "Post a comment"
       submit: "Submit"
       login: "Login"
+      comment: "Comment"
     recently_viewed:
       no_recently_product: "No product recently viewed"

@@ -21,6 +21,8 @@ class Ability
       can :destroy, ItemPhoto
       can :manage, HistoryOrdersController
       can :manage, RequestsController
+      can %i(create destroy), Comment, user_id: current_user.id
+      can %i(create destroy), Rate, user_id: current_user.id
     else
       can :manage, :all
     end

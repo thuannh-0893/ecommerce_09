@@ -13,6 +13,10 @@
                   <div class="media-body">
                     <h4><%= comment.user.name %></h4>
                     <h5><%= l comment.updated_at, format: :short %></h5>
+                    <% if comment.user.id == current_user.id %>
+                      <%= link_to t(".delete"), "javascript:void(0)", class: "delete_btn",
+                        data_id: comment.id, pid: @product.id %>
+                    <% end %>
                     <a class="reply_btn" parent_id="<%= comment.id %>"
                       user="<%= comment.user.name %>" href="javascript:void(0)"><%= t ".reply" %></a>
                   </div>
@@ -28,6 +32,10 @@
                     <div class="media-body">
                       <h4><%= reply_comment.user.name %></h4>
                       <h5><%= l reply_comment.updated_at, format: :short %></h5>
+                      <% if reply_comment.user.id == current_user.id %>
+                        <%= link_to t(".delete"), "javascript:void(0)", class: "delete_btn",
+                          data_id: reply_comment.id, pid: @product.id, data: { confirm: t(".confirm") } %>
+                      <% end %>
                       <a class="reply_btn" parent_id="<%= comment.id %>"
                         user="<%= reply_comment.user.name %>" href="javascript:void(0)"><%= t ".reply" %></a>
                     </div>

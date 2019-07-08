@@ -22,12 +22,16 @@
                 </div>
                 <div class="media-body">
                   <h4><%= review.user.name %></h4>
-                  <h4><%= l review.updated_at, format: :short %></h4>
+                  <h5><%= l review.updated_at, format: :short %></h5>
+                  <% if review.user.id == current_user.id %>
+                    <%= link_to t(".delete"), "javascript:void(0)", class: "delete_review_btn",
+                        data_id: review.id, pid: @product.id %>
+                  <% end %>
                   <% review.rating.times.each do %>
                     <i class="fa fa-star"></i>
                   <% end %>
+                  <p><%= review.content %></p>
                 </div>
-                <p><%= review.content %></p>
               </div>
             </div>
           <% end %>
