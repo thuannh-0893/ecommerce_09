@@ -5,6 +5,9 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
+gem "activerecord-import"
+gem "axlsx", "2.0.1"
+gem "axlsx_rails"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass"
@@ -29,12 +32,17 @@ gem "rails", "~> 5.2.3"
 gem "rails-i18n"
 gem "ransack"
 gem "redis", "~> 4.0"
+gem "roo"
 gem "rubocop", "~> 0.54.0", require: false
+gem "rubyzip"
 gem "rufus-scheduler"
 gem "sass-rails", "~> 5.0"
 gem "search_cop"
 gem "uglifier", ">= 1.3.0"
+gem "wicked_pdf"
 gem "will_paginate"
+gem "wkhtmltopdf-binary"
+gem "zip-zip"
 # gem "capistrano-rails", group: :development
 # gem "mini_racer", platforms: :ruby
 

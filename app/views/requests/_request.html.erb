@@ -5,7 +5,12 @@
   <% else %>
     <td><%= link_to request.name, request_path(request) %></td>
   <% end %>
-  <td><%= image_tag request.item_photos.first.photo_url, class: "table-img" %></td>
+  <% if request.item_photos.first %>
+    <% photo_url = request.item_photos.first.photo_url %>
+  <% else %>
+    <% photo_url = "/assets/fallback/default.jpg" %>
+  <% end %>
+  <td><%= image_tag photo_url, class: "table-img" %></td>
   <td><%= number_to_currency(request.price) %></td>
   <td><%= request.category_name %></td>
   <% if request.activated? %>

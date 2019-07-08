@@ -6,9 +6,10 @@ vi:
         home: "Trang quản lí"
         new: "Thêm sản phẩm mới"
         import: "Nhập sản phẩm"
-        exportCSV: "Xuất tệp CSV"
-        exportExcel: "Xuất tệp Excel"
-        exportCSV_template: "Xuất tệp CSV mẫu"
+        export_excel: "Xuất tệp Excel"
+        overwrite: "Ghi đè dữ liệu"
+        no_data: "Chưa có dữ liệu"
+        export_pdf: "Xuất tệp PDF"
         name: "Tên"
         search: "Tìm kiếm"
         scheduler: "Lịch khuyến mãi"
@@ -16,6 +17,7 @@ vi:
         title: "Thêm sản phẩm mới"
         add: "Thêm"
         home: "Trang quản lí"
+        products: "Sản phẩm"
       edit:
         title: "Chỉnh sửa sản phẩm"
         edit: "Lưu thay đổi"
@@ -24,3 +26,8 @@ vi:
       modal:
         scheduler_title: "Lịch khuyến mãi"
         add: "Thêm lịch"
+        products: "Sản phẩm"
+      product:
+        confirm: "Bạn có chắc muốn xóa?"
+        edit: "Sửa"
+        delete: "Xóa"

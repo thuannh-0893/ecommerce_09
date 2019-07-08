@@ -6,9 +6,10 @@ en:
         home: "Dashboard"
         new: "Add new product"
         import: "Import product"
-        exportCSV: "Export CSV"
-        exportExcel: "Export Excel"
-        exportCSV_template: "Export Template"
+        export_excel: "Export to Excel"
+        overwrite: "Overwrite data"
+        no_data: "No data"
+        export_pdf: "Export to PDF"
         name: "Name"
         search: "Search"
         scheduler: "Promotion schedule"
@@ -16,6 +17,7 @@ en:
         title: "Add new product"
         add: "Add"
         home: "Dashboard"
+        products: "Products"
       edit:
         title: "Edit product"
         edit: "Save changes"
@@ -24,3 +26,8 @@ en:
       modal:
         scheduler_title: "Promotion schedule"
         add: "Add schedule"
+        products: "Products"
+      product:
+        confirm: "You sure?"
+        edit: "Edit"
+        delete: "Delete"

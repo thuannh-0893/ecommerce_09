@@ -218,12 +218,21 @@ h6 {
 a {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  margin-right: 10px;
 }
 
 a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
+}
+
+.pdf {
+  color: red;
+}
+
+.excel {
+  color: green;
 }
 
 button:focus {

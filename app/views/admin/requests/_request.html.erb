@@ -1,7 +1,12 @@
 <tr>
   <td><%= counter_index request_counter %></td>
   <td><%= link_to request.name, request_path(request), target: "_blank" %></td>
-  <td><%= image_tag request.item_photos.first.photo_url, class: "table-img" %></td>
+  <% if request.item_photos.first %>
+    <% photo_url = request.item_photos.first.photo_url %>
+  <% else %>
+    <% photo_url = "/assets/fallback/default.jpg" %>
+  <% end %>
+  <td><%= image_tag photo_url, class: "table-img" %></td>
   <td><%= number_to_currency(request.price) %></td>
   <td><%= request.category_name %></td>
   <td><%= l request.created_at %></td>

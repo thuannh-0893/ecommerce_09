@@ -6,7 +6,7 @@
   </div>
   <div class="form-group">
     <%= f.fields_for :item_photos do |p| %>
-      <%= f.label :picture %> <br>
+      <%= f.label :photo %> <br>
       <%= p.file_field :photo, multiple: true, name: "item_photos[photo][]", class: "upload-image", accept: Settings.accept_image %> <br>
     <% end %>
     <div id="preview"></div>

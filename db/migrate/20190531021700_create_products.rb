@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :views, default: 0
       t.text :description
       t.float :discount, default: 0
-      t.boolean :activated, default: false
+      t.boolean :activated, default: true
       t.references :category, foreign_key: true
       t.references :user, foreign_key: true
 
