@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", type: :fulltext
     t.index ["parent_id"], name: "fk_rails_82f48f7407"
   end
 
@@ -85,6 +86,15 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "product_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "schedule_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_schedules_on_product_id"
+    t.index ["schedule_id"], name: "index_product_schedules_on_schedule_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -99,8 +109,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["name", "description"], name: "name", type: :fulltext
-    t.index ["name", "description"], name: "name_2", type: :fulltext
+    t.index ["name", "description"], name: "index_products_on_name_and_description", type: :fulltext
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -124,6 +133,16 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_rates_on_product_id"
     t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
+  create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.float "discount", default: 0.0
+    t.integer "activated", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -154,6 +173,8 @@ ActiveRecord::Schema.define(version: 2019_06_24_060710) do
   add_foreign_key "history_views", "products"
   add_foreign_key "history_views", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "product_schedules", "products"
+  add_foreign_key "product_schedules", "schedules"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "products_orders", "orders"

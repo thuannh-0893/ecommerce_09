@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       resources :requests, only: %i(index update destroy)
       resources :charts, only: %i(index)
       resources :users
+      resources :schedules, only: %i(index create destroy)
     end
   end
 end

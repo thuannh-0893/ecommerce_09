@@ -1,0 +1,28 @@
+en:
+  admin:
+    schedules:
+      index:
+        title: "Schedules"
+        home: "Dashboard"
+        name: "Name"
+        start_time: "Start time"
+        end_time: "End time"
+        discount: "Discount"
+        empty: "No schedule"
+      schedule:
+        detail: "Detail"
+        delete: "Delete"
+        confirm: "You sure?"
+      modal:
+        detail_schedule: "Detail schedule"
+        time: "Period"
+        schedule_info: "Promotion information"
+        name: "Name"
+        start_time: "Start time"
+        end_time: "End time"
+        discount: "Discount"
+        product_schedule: "Applicable products"
+        product: "Product"
+        price: "Price"
+        priced_discount: "Price discounted"
+        close: "Close"
