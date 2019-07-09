@@ -47,7 +47,7 @@
         </div>
       </div>
       <!-- /.page-content -->
-      <%= will_paginate %>
+      <%= paginate @orders %>
     </div>
   </div>
   <%= render partial: "admin/orders/modal", collection: @orders %>

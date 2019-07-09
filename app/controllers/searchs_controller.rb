@@ -6,8 +6,7 @@ class SearchsController < ApplicationController
                   Product.activated.search_product_public(params[:keyword])
                 else
                   Product.activated
-                end.paginate page: params[:page],
-                    per_page: Settings.products.per_page
+                end.page(params[:page]).per Settings.products.per_page
   end
 
   private

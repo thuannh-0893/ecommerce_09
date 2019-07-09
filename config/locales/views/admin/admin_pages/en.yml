@@ -3,6 +3,7 @@ en:
     admin_pages:
       index:
         title: "Admin page"
+        charts: "Charts"
         users: "Users"
         categories: "Categories"
         products: "Products"

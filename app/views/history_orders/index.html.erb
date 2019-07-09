@@ -16,7 +16,7 @@
     </tbody>
   </table>
   <div class="filter-bar d-flex flex-wrap align-items-center">
-    <%= will_paginate %>
+    <%= paginate @history_orders %>
   </div>
   <%= render partial: "history_orders/modal", collection: @history_orders %>
 </div>
